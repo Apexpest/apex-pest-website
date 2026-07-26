@@ -4,6 +4,7 @@ import { WhyApex } from "@/components/WhyApex";
 import { SummitShield } from "@/components/SummitShield";
 import { FourStep } from "@/components/FourStep";
 import { Comparison } from "@/components/Comparison";
+import { Reviews } from "@/components/Reviews";
 import { CtaBand } from "@/components/CtaBand";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileCallBar } from "@/components/MobileCallBar";
@@ -38,6 +39,7 @@ export default async function Home() {
         <SummitShield />
         <FourStep />
         <Comparison />
+        <Reviews />
         <CtaBand />
       </main>
       <SiteFooter settings={settings} />

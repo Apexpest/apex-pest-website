@@ -1,6 +1,7 @@
 import { Logo } from "./Logo";
 import { Container } from "./ui";
-import { services, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import { services } from "@/lib/services";
 import type { ResolvedSite } from "@/lib/getSiteSettings";
 
 const company = [
@@ -25,8 +26,8 @@ export function SiteFooter({ settings }: { settings: ResolvedSite }) {
           </div>
           <div>
             <h4 className="mb-4 font-display text-[13px] font-bold uppercase tracking-[0.08em] text-white">Services</h4>
-            {services.map((s) => (
-              <a key={s.href} href={s.href} className="block py-[5px] hover:text-white">{s.name}</a>
+            {services.slice(0, 6).map((s) => (
+              <a key={s.slug} href={`/pest-control/${s.slug}`} className="block py-[5px] hover:text-white">{s.title}</a>
             ))}
           </div>
           <div>
