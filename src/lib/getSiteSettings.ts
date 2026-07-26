@@ -51,10 +51,12 @@ export async function getSiteSettings(): Promise<ResolvedSite> {
     email: str("email", staticSite.email),
     licenseNumber: str("licenseNumber", staticSite.licenseNumber),
     serviceAreaLabel,
-    heroEyebrow: str("heroEyebrow", `Serving ${serviceAreaLabel}`),
-    heroHeadline: str("heroHeadline", "Top service."),
-    heroHeadlineAccent: str("heroHeadlineAccent", "Top communication."),
-    heroSubtext: str("heroSubtext", HERO_SUBTEXT_DEFAULT),
+    // Hero text is brand-critical and kept in code as the source of truth
+    // (not overridden by CMS) so it stays consistent across branches.
+    heroEyebrow: `Serving ${serviceAreaLabel}`,
+    heroHeadline: "Top service.",
+    heroHeadlineAccent: "Top communication.",
+    heroSubtext: HERO_SUBTEXT_DEFAULT,
     heroStats: stats,
   };
 }
