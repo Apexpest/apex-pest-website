@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { site } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 // Self-hosted fonts (no build-time or runtime dependency on Google Fonts).
 const montserrat = localFont({
@@ -59,7 +60,10 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${montserrat.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col bg-white text-charcoal">{children}</body>
+      <body className="min-h-full flex flex-col bg-white text-charcoal">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
