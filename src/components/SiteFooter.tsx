@@ -15,7 +15,7 @@ const company = [
 
 export function SiteFooter({ settings }: { settings: ResolvedSite }) {
   return (
-    <footer className="bg-black pb-[120px] pt-16 text-[14px] text-white/60 md:pb-16">
+    <footer className="bg-black pb-[120px] pt-16 text-[14px] text-white/60 xl:pb-16">
       <Container>
         <div className="mb-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
