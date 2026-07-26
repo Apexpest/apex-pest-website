@@ -24,21 +24,34 @@ const inter = localFont({
   ],
 });
 
+const TITLE = "Apex Pest Solutions | Kentucky's Premium Pest Control";
+const OG_DESC = "Top service, top communication. The pest company you never have to think about.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(`https://${site.domain}`),
+  metadataBase: new URL(site.url),
   title: {
-    default: "Apex Pest Solutions | Kentucky's Premium Pest Control",
+    default: TITLE,
     template: "%s | Apex Pest Solutions",
   },
   description:
     "Premium pest control for Kentucky homes. Summit Shield three-zone protection, the best communication in Kentucky, and free re-services within 48 hours. Serving Central Kentucky and the Fort Knox community.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Apex Pest Solutions | Kentucky's Premium Pest Control",
-    description: "Top service, top communication. The pest company you never have to think about.",
-    url: `https://${site.domain}`,
+    title: TITLE,
+    description: OG_DESC,
+    url: site.url,
     siteName: site.name,
     type: "website",
+    locale: "en_US",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: TITLE }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: TITLE,
+    description: OG_DESC,
+    images: ["/og-image.png"],
+  },
+  icons: { icon: "/favicon.ico" },
 };
 
 export default function RootLayout({

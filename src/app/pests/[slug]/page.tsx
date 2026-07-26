@@ -26,6 +26,7 @@ export async function generateMetadata({
   return {
     title: `${pest.name} — Identification & Control in Kentucky`,
     description: pest.summary,
+    alternates: { canonical: `/pests/${pest.slug}` },
   };
 }
 
@@ -45,9 +46,9 @@ export default async function PestPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `https://${site.domain}/` },
-      { "@type": "ListItem", position: 2, name: "Pest Library", item: `https://${site.domain}/pests` },
-      { "@type": "ListItem", position: 3, name: pest.name, item: `https://${site.domain}/pests/${pest.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
+      { "@type": "ListItem", position: 2, name: "Pest Library", item: `${site.url}/pests` },
+      { "@type": "ListItem", position: 3, name: pest.name, item: `${site.url}/pests/${pest.slug}` },
     ],
   };
 

@@ -7,6 +7,9 @@
 export const site = {
   name: "Apex Pest Solutions",
   domain: "apexpestky.com",
+  // Origin the site is actually served from (used for canonical URLs, sitemap, robots,
+  // and JSON-LD). Switch to "https://apexpestky.com" after the DNS cutover.
+  url: "https://apex-pest-website.vercel.app",
   phone: "502-305-7537",
   phoneHref: "tel:5023057537",
   email: "solutions@apexpestky.com",
@@ -19,7 +22,7 @@ export const site = {
 export const nav = [
   { label: "Pest Control", href: "/pest-control" },
   { label: "Pest Library", href: "/pests" },
-  { label: "Summit Shield", href: "/the-apex-standard/summit-shield" },
+  { label: "Summit Shield", href: "/#summit-shield" },
   { label: "Locations", href: "/locations" },
   { label: "The Apex Standard", href: "/the-apex-standard" },
   { label: "Careers", href: "/careers" },

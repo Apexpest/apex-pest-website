@@ -23,6 +23,7 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.intro,
+    alternates: { canonical: `/pest-control/${slug}` },
   };
 }
 

@@ -8,6 +8,7 @@ import { getSiteSettings } from "@/lib/getSiteSettings";
 import { pestCategories, pestsByCategory } from "@/lib/pests";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/pests" },
   title: "Pest Library — Identify Kentucky's Common Household Pests",
   description:
     "A homeowner's guide to the pests that invade Central Kentucky homes — wasps, ants, spiders, occasional invaders, ticks, fleas, mosquitoes, and rodents. How to identify them and how we stop them.",

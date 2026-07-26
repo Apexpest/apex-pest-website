@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local package manager artifacts (repo builds with npm on Vercel)
+package-lock.json
+pnpm-lock.yaml
+pnpm-workspace.yaml

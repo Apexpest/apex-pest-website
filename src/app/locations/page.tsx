@@ -8,6 +8,7 @@ import { getSiteSettings } from "@/lib/getSiteSettings";
 import { locations } from "@/lib/locations";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/locations" },
   title: "Service Areas — Pest Control Across Hardin County, KY",
   description:
     "Apex Pest Solutions serves Elizabethtown, Radcliff, Vine Grove, Fort Knox, and communities across Hardin County, Kentucky with three-zone Summit Shield protection.",

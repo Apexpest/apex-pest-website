@@ -24,6 +24,7 @@ export async function generateMetadata({
   return {
     title: `Pest Control in ${loc.city}, KY`,
     description: loc.metaDescription,
+    alternates: { canonical: `/locations/${loc.slug}` },
   };
 }
 
@@ -54,9 +55,9 @@ export default async function LocationPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `https://${site.domain}/` },
-      { "@type": "ListItem", position: 2, name: "Service Areas", item: `https://${site.domain}/locations` },
-      { "@type": "ListItem", position: 3, name: `${loc.city}, KY`, item: `https://${site.domain}/locations/${loc.slug}` },
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
+      { "@type": "ListItem", position: 2, name: "Service Areas", item: `${site.url}/locations` },
+      { "@type": "ListItem", position: 3, name: `${loc.city}, KY`, item: `${site.url}/locations/${loc.slug}` },
     ],
   };
 
