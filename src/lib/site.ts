@@ -13,7 +13,7 @@ export const site = {
   domain: "apexpestky.com",
   // Origin the site is actually served from (used for canonical URLs, sitemap, robots,
   // and JSON-LD). Switch to "https://apexpestky.com" after the DNS cutover.
-  url: "https://apex-pest-website.vercel.app",
+  url: "https://apexpestky.com",
   phone: "502-305-7537",
   phoneHref: "tel:5023057537",
   email: "solutions@apexpestky.com",
