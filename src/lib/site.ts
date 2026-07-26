@@ -18,6 +18,7 @@ export const site = {
 
 export const nav = [
   { label: "Pest Control", href: "/pest-control" },
+  { label: "Pest Library", href: "/pests" },
   { label: "Summit Shield", href: "/the-apex-standard/summit-shield" },
   { label: "Locations", href: "/locations" },
   { label: "The Apex Standard", href: "/the-apex-standard" },
