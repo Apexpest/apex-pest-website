@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Apex Pest Solutions — design tokens (locked brand board)
+------------------------------------------------------------------ */
+@theme {
+  /* Brand colors */
+  --color-apex-green: #1e4d34;
+  --color-forest-green: #132d1e;
+  --color-charcoal: #1b1b1b;
+  --color-black: #0d0d0d;
+  --color-stone: #dad7cf;
+  --color-stone-soft: #eeece6;
+  --color-white: #ffffff;
+  /* Accessible signal tints */
+  --color-summit-sage: #6fa285;
+  --color-alert-amber: #c8892e;
+
+  /* Fonts (wired to next/font CSS vars in layout.tsx) */
+  --font-display: var(--font-montserrat), "Helvetica Neue", Arial, sans-serif;
+  --font-body: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Base */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-white);
+  color: var(--color-charcoal);
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.eyebrow {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12.5px;
+}
+::selection { background: var(--color-summit-sage); color: var(--color-black); }
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--color-summit-sage);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
