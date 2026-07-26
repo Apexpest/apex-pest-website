@@ -26,7 +26,7 @@ export const counties: County[] = [
       "Pest control across Jefferson County, KY — Louisville and its suburbs, from St. Matthews and Middletown to Jeffersontown, Prospect, and Fern Creek. Three-zone Summit Shield protection.",
     intro: [
       "Jefferson County is the Louisville metro — the densest, most varied housing market we serve, from historic homes in the Highlands and St. Matthews to newer subdivisions pushing east through Middletown, Jeffersontown, and Prospect. Older neighborhoods, newer builds, and everything between each bring their own pest pressure.",
-      "The Ohio River valley keeps summers humid, which drives heavy mosquito and termite pressure across the county, while cooler weather sends mice and overwintering invaders indoors. Our three-zone Summit Shield process is built for that range of housing — we treat the whole structure, ground line to roofline, and back it with the Apex Promise.",
+      "The Ohio River valley keeps summers humid, which drives heavy mosquito and termite pressure across the county, while cooler weather sends mice and overwintering invaders indoors. Our three-zone Summit Shield process is built for that range of housing — we treat the whole structure, property line to peak line, and back it with the Apex Promise.",
     ],
     pestNote:
       "Ohio River valley humidity fuels mosquitoes and termites through the warm months; older housing stock across the metro means carpenter ants, spiders, and fall invaders are year-round concerns.",
@@ -41,7 +41,7 @@ export const counties: County[] = [
       "Pest control across Oldham County, KY — La Grange, Crestwood, Pewee Valley, and Goshen. Three-zone Summit Shield protection for one of Kentucky's fastest-growing counties.",
     intro: [
       "Oldham County sits just northeast of Louisville and has grown fast as families move out to its subdivisions and horse-country acreage. It's a mix of historic small towns — La Grange, Pewee Valley — and newer construction spreading across Crestwood and Goshen, with plenty of wooded and rural property in between.",
-      "New construction on cleared ground pushes ants, spiders, and field mice toward the nearest home, while older homes and the county's wooded, riverside stretches near the Ohio bring their own pressure. Summit Shield treats all three zones — ground line to roofline — and holds it with seasonal service, backed by the Apex Promise.",
+      "New construction on cleared ground pushes ants, spiders, and field mice toward the nearest home, while older homes and the county's wooded, riverside stretches near the Ohio bring their own pressure. Summit Shield treats all three zones — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
     ],
     pestNote:
       "New subdivisions on cleared land draw ants and field mice; wooded and riverside property raises tick, spider, and mosquito pressure through the warm months.",
@@ -71,7 +71,7 @@ export const counties: County[] = [
       "Pest control across Hardin County, KY — Elizabethtown, Radcliff, Vine Grove, and the surrounding communities. Three-zone Summit Shield protection tuned to the local pest calendar.",
     intro: [
       "Hardin County anchors our Central Kentucky service area, from the county seat of Elizabethtown out to Radcliff, Vine Grove, and the rural communities beyond. It's a broad mix — historic homes near the downtowns, fast-growing new subdivisions driven by regional growth, and farm and acreage properties across the county.",
-      "Humid summers drive heavy mosquito and termite pressure, and the first cold snaps push mice and overwintering invaders indoors. Our three-zone Summit Shield process treats the whole home, ground line to roofline, and holds it with seasonal service tuned to the local calendar — backed by the Apex Promise.",
+      "Humid summers drive heavy mosquito and termite pressure, and the first cold snaps push mice and overwintering invaders indoors. Our three-zone Summit Shield process treats the whole home, property line to peak line, and holds it with seasonal service tuned to the local calendar — backed by the Apex Promise.",
     ],
     pestNote:
       "Humid summers press termites and mosquitoes hard; harvest and cold weather drive field mice indoors, and new construction draws displaced ants and spiders.",

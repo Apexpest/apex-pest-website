@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 };
 
 const pages = [
-  { title: "Summit Shield", href: "/the-apex-standard/summit-shield", body: "Our three-zone system — ground line to roofline — and why treating the whole structure matters." },
+  { title: "Summit Shield", href: "/the-apex-standard/summit-shield", body: "Our three-zone system — property line to peak line — and why treating the whole property matters." },
   { title: "How It Works", href: "/the-apex-standard/how-it-works", body: "The four steps behind every service: Survey, Clear, Shield, Hold." },
   { title: "The Apex Promise", href: "/the-apex-standard/apex-promise", body: "Our guarantee: if pests return between scheduled visits, we come back at no charge." },
   { title: "Our Team", href: "/the-apex-standard/our-team", body: "The licensed, trained technicians who run the Apex Standard on every visit." },

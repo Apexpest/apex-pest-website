@@ -15,13 +15,13 @@ export const services: Service[] = [
     intro:
       "Our flagship recurring service handles the pests Kentucky homes deal with most — ants, spiders, cockroaches, silverfish, and the seasonal invaders that show up with the weather.",
     body: [
-      "General pest control is the backbone of the Apex Promise. We build the Summit Shield three-zone barrier around your home — from the ground line to the ridge line — and then hold it with scheduled seasonal service tuned to Kentucky's pest calendar.",
+      "General pest control is the backbone of the Apex Promise. We build the Summit Shield three-zone barrier around your home — from the property line to the peak line — and then hold it with scheduled seasonal service tuned to Kentucky's pest calendar.",
       "Every visit is documented in your service record, applied by licensed technicians to product-label directions. If pests show up between scheduled visits, we come back and re-treat at no charge — that's the guarantee, in writing.",
       "Most homeowners start on our Quarterly plan and never think about pests again. You get the reminders, the arrival texts, and a clear note of exactly what we treated and where.",
     ],
     highlights: [
       "Covers ants, spiders, cockroaches, silverfish, and common invaders",
-      "Three-zone Summit Shield barrier, ground line to ridge line",
+      "Three-zone Summit Shield barrier, property line to peak line",
       "Free re-services between visits — within 48 hours",
       "Documented service record every visit",
     ],
@@ -63,9 +63,9 @@ export const services: Service[] = [
     title: "Rodent Control",
     tagline: "Seal them out and keep them out.",
     intro:
-      "Mice and rats find the gaps in your structure line — utility penetrations, garage seals, and foundation gaps. We remove the active problem and close the routes they use.",
+      "Mice and rats find the gaps in your home's structure — utility penetrations, garage seals, and foundation gaps. We remove the active problem and close the routes they use.",
     body: [
-      "Our rodent service combines active knockdown with exclusion work along the Structure Line: identifying and sealing entry points so the problem doesn't simply return next season.",
+      "Our rodent service combines active knockdown with exclusion work along the Peak Line: identifying and sealing entry points so the problem doesn't simply return next season.",
       "Rodent coverage is built into our recurring general pest plans, so once we've cleared an infestation we keep monitoring on every visit.",
     ],
     highlights: [

@@ -47,24 +47,31 @@ export function SummitShield() {
   });
 
   // treatment-point markers per zone
-  const ridgePts = [
+  // Peak Line — siding, windows, doors, eaves, roofline (the whole structure)
+  const peakPts = [
     [350, 150],
     [180, 250],
     [520, 250],
     [350, 208],
-  ];
-  const structPts = [
     [263, 321],
     [437, 321],
     [350, 391],
     [350, 426],
     [502, 400],
   ];
-  const groundPts = [
+  // Foundation Line — foundation, seams, crawlspace vents
+  const foundationPts = [
     [257, 462],
     [443, 462],
     [350, 498],
     [528, 496],
+  ];
+  // Property Line — the yard, beds, perimeter
+  const propertyPts = [
+    [110, 524],
+    [300, 542],
+    [470, 542],
+    [655, 524],
   ];
 
   const Marker = ({ x, y, c }: { x: number; y: number; c: string }) => (
@@ -85,7 +92,7 @@ export function SummitShield() {
           </h2>
           <p className="mt-4 text-[18px] text-white/70">
             Most companies spray a band around your foundation and leave. We protect your home the
-            way it&apos;s actually built — from the ground line all the way up to the ridge line.
+            way it&apos;s actually built — from the property line all the way up to the peak line.
           </p>
         </div>
 
@@ -120,7 +127,7 @@ export function SummitShield() {
               viewBox="0 0 772 600"
               width="100%"
               role="img"
-              aria-label="Cross-section of a home showing the three Summit Shield protection zones: ground line, structure line and ridge line"
+              aria-label="Cross-section of a home showing the three Summit Shield protection zones: property line, foundation line and peak line"
               fontFamily="var(--font-display)"
             >
               <defs>
@@ -143,13 +150,13 @@ export function SummitShield() {
 
               {/* zone highlight bands */}
               <g style={zoneStyle(2)}>
-                <rect x="0" y="70" width="772" height="185" fill="#C8892E" opacity="0.13" />
+                <rect x="0" y="70" width="772" height="360" fill="#C8892E" opacity="0.11" />
               </g>
               <g style={zoneStyle(1)}>
-                <rect x="0" y="255" width="772" height="180" fill="#6FA285" opacity="0.13" />
+                <rect x="0" y="430" width="772" height="70" fill="#6FA285" opacity="0.15" />
               </g>
               <g style={zoneStyle(0)}>
-                <rect x="0" y="435" width="772" height="90" fill="#ffffff" opacity="0.10" />
+                <rect x="0" y="500" width="772" height="100" fill="#6FA285" opacity="0.10" />
               </g>
 
               {/* ground / soil */}
@@ -211,20 +218,20 @@ export function SummitShield() {
 
               {/* ---- ZONE MARKERS ---- */}
               <g style={zoneStyle(2)}>
-                {ridgePts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#C8892E" />)}
+                {peakPts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#C8892E" />)}
               </g>
               <g style={zoneStyle(1)}>
-                {structPts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#6FA285" />)}
+                {foundationPts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#6FA285" />)}
               </g>
               <g style={zoneStyle(0)}>
-                {groundPts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#ffffff" />)}
+                {propertyPts.map(([x, y], k) => <Marker key={k} x={x} y={y} c="#ffffff" />)}
               </g>
 
               {/* ---- LEFT: zone number chips ---- */}
               {[
-                { n: "03", y: 165, c: "#C8892E", i: 2 },
-                { n: "02", y: 345, c: "#6FA285", i: 1 },
-                { n: "01", y: 470, c: "#ffffff", i: 0 },
+                { n: "03", y: 240, c: "#C8892E", i: 2 },
+                { n: "02", y: 465, c: "#6FA285", i: 1 },
+                { n: "01", y: 545, c: "#ffffff", i: 0 },
               ].map((z) => (
                 <g key={z.n} style={zoneStyle(z.i)}>
                   <circle cx="34" cy={z.y} r="17" fill="none" stroke={z.c} strokeWidth="1.6" />
@@ -234,19 +241,19 @@ export function SummitShield() {
 
               {/* ---- RIGHT: feature labels with leader lines ---- */}
               <g style={zoneStyle(2)} fill="#C8892E">
-                <line x1="520" y1="250" x2="588" y2="230" stroke="#C8892E" strokeOpacity="0.5" />
-                <text x="592" y="226" fontSize="14" fontWeight="700">Eaves, soffits</text>
-                <text x="592" y="244" fontSize="14" fontWeight="700">&amp; roofline</text>
+                <line x1="520" y1="250" x2="588" y2="228" stroke="#C8892E" strokeOpacity="0.5" />
+                <text x="592" y="224" fontSize="14" fontWeight="700">Siding, windows, doors,</text>
+                <text x="592" y="242" fontSize="14" fontWeight="700">eaves &amp; roofline</text>
               </g>
               <g style={zoneStyle(1)} fill="#6FA285">
-                <line x1="524" y1="400" x2="590" y2="372" stroke="#6FA285" strokeOpacity="0.5" />
-                <text x="594" y="368" fontSize="14" fontWeight="700">Siding gaps,</text>
-                <text x="594" y="386" fontSize="14" fontWeight="700">weep holes &amp; seals</text>
+                <line x1="528" y1="462" x2="590" y2="440" stroke="#6FA285" strokeOpacity="0.5" />
+                <text x="594" y="436" fontSize="14" fontWeight="700">Foundation, seams</text>
+                <text x="594" y="454" fontSize="14" fontWeight="700">&amp; crawlspace vents</text>
               </g>
               <g style={zoneStyle(0)} fill="#e9efe9">
-                <line x1="443" y1="462" x2="590" y2="486" stroke="#ffffff" strokeOpacity="0.4" />
-                <text x="594" y="482" fontSize="14" fontWeight="700">Crawlspace vents</text>
-                <text x="594" y="500" fontSize="14" fontWeight="700">&amp; foundation</text>
+                <line x1="470" y1="542" x2="590" y2="520" stroke="#ffffff" strokeOpacity="0.4" />
+                <text x="594" y="516" fontSize="14" fontWeight="700">The yard, beds</text>
+                <text x="594" y="534" fontSize="14" fontWeight="700">&amp; perimeter</text>
               </g>
             </svg>
             <p className="mt-3 text-center text-[12.5px] text-white/50">

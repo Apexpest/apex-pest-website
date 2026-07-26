@@ -47,7 +47,7 @@ export const locations: Location[] = [
     intro: [
       "Elizabethtown is home base for Apex. As the Hardin County seat, Etown spans everything from century-old homes around the historic Public Square to the fast-growing new subdivisions rising on the east and south sides of town — and each puts a different kind of pest pressure on a home.",
       "The older neighborhoods near downtown deal with the classics: overwintering invaders slipping through settled foundations, carpenter ants in mature shade trees, and the occasional brown recluse in a basement or garage. The newer construction off Lincoln Parkway and out toward the bypass sits on freshly disturbed ground, which pushes ants, spiders, and field mice straight toward the closest warm structure — usually the one that just went up.",
-      "With the BlueOval SK battery park driving a wave of new homes and residents into the county, Etown is growing fast, and pest pressure grows with it. Our three-zone Summit Shield process is built for exactly that mix of old and new housing — we treat the whole home, ground line to ridge line, and back it with the Apex Promise.",
+      "With the BlueOval SK battery park driving a wave of new homes and residents into the county, Etown is growing fast, and pest pressure grows with it. Our three-zone Summit Shield process is built for exactly that mix of old and new housing — we treat the whole home, property line to peak line, and back it with the Apex Promise.",
     ],
     neighborhoods: ["Thousand Oaks", "The Cedars", "Foxborough Estates", "Winding Springs", "Triple Crown", "Summit Creek"],
     landmarks: ["Freeman Lake Park", "Historic Downtown / Public Square", "Elizabethtown Sports Park", "Towne Mall"],
@@ -69,7 +69,7 @@ export const locations: Location[] = [
       "Pest control in Radcliff, KY — three-zone Summit Shield protection for one of Hardin County's largest cities, from established subdivisions to rental and quick-turnover homes.",
     intro: [
       "Radcliff is one of the largest cities in Hardin County, with more than 22,000 residents and a busy mix of established neighborhoods, newer subdivisions, and a large share of rental properties. Homes here change hands often, and pest problems can hide between tenants and surface right as a new family is moving in.",
-      "The housing runs heavily to ranch homes, older subdivisions, and rentals, alongside quieter established streets out toward Radcliff East. Rentals and quick turnovers are exactly where rodents and cockroaches get a foothold, so our Structure Line work — sealing utility penetrations, garage gaps, and door seals — matters more here than almost anywhere in the county.",
+      "The housing runs heavily to ranch homes, older subdivisions, and rentals, alongside quieter established streets out toward Radcliff East. Rentals and quick turnovers are exactly where rodents and cockroaches get a foothold, so our Peak Line work — sealing utility penetrations, garage gaps, and door seals — matters more here than almost anywhere in the county.",
       "Whether you own on a quiet street or you're renting, the Apex Promise travels with you: if pests return between scheduled visits, we come back and re-treat at no charge. It all runs on the three-zone Summit Shield system, tuned to the local pest calendar.",
     ],
     neighborhoods: ["Radcliff East", "Woodland Hills", "Rolling Hills", "established subdivisions across the city"],
@@ -115,7 +115,7 @@ export const locations: Location[] = [
       "Pest control in Rineyville, KY — Summit Shield protection for rural homes and farm properties northwest of Elizabethtown, where field pests press hard on the structure.",
     intro: [
       "Rineyville is a rural, close-knit community about seven miles northwest of Elizabethtown, with deep agricultural roots and a lot of homes on larger lots, farmland, and wooded acreage. That country setting is part of the appeal — and it's also why pest pressure here looks different than it does in town.",
-      "When your home sits next to fields, tree lines, and outbuildings, pests come at you from the surrounding land: field mice and rats moving in as crops are cut and weather cools, wasps and hornets nesting in eaves and barns, spiders and occasional invaders working in from the woods, and ticks waiting along brushy edges. Rural properties give pests more launch points, so the Ridge Line and Structure Line zones — the eaves, gaps, and penetrations most companies skip — really earn their keep out here.",
+      "When your home sits next to fields, tree lines, and outbuildings, pests come at you from the surrounding land: field mice and rats moving in as crops are cut and weather cools, wasps and hornets nesting in eaves and barns, spiders and occasional invaders working in from the woods, and ticks waiting along brushy edges. Rural properties give pests more launch points, so the Peak Line — the eaves, gaps, and penetrations most companies skip — really earn their keep out here.",
       "Rineyville is growing as families look for space within an easy drive of Elizabethtown, and we service the area on our regular route. The three-zone Summit Shield system covers the whole home and the routes pests actually use, backed by the Apex Promise.",
     ],
     neighborhoods: ["Central Rineyville", "farm and acreage properties along Rineyville Road", "wooded lots on the county's north side", "rural subdivisions off KY-1600"],
@@ -139,7 +139,7 @@ export const locations: Location[] = [
     intro: [
       "Cecilia sits about six miles west of Elizabethtown, a small rural community that grew up around the railroad — it was once known as Cecilian Junction, where the main line met the branch toward Hodgenville. Today it's a quiet, spread-out community in the Central Hardin school district, with homes on generous lots surrounded by farmland and woods.",
       "That rural layout shapes the pest picture. Homes set among fields and tree lines take on the pests the surrounding land sends their way: mice and rats seeking shelter as the weather turns, wasps and hornets building in eaves and barns, spiders and overwintering invaders coming in from the wood line, and ticks along the brushy edges. Older farmhouses and settled foundations add their own entry points, while newer builds on cleared ground draw displaced ants and field mice.",
-      "We run Cecilia on our regular Hardin County route, so scheduling is easy and re-services are quick. The three-zone Summit Shield process treats the whole property — ground line to ridge line, house and outbuildings — and it's all backed by the Apex Promise.",
+      "We run Cecilia on our regular Hardin County route, so scheduling is easy and re-services are quick. The three-zone Summit Shield process treats the whole property — property line to peak line, house and outbuildings — and it's all backed by the Apex Promise.",
     ],
     neighborhoods: ["Central Cecilia", "acreage along Saint John Road", "farm properties toward Rineyville", "rural lots in the Central Hardin district"],
     landmarks: ["Central Hardin High School", "the historic Cecilian Junction rail site", "surrounding Hardin County farmland"],
@@ -185,7 +185,7 @@ export const locations: Location[] = [
     intro: [
       "Sonora is a small town about ten miles south of Elizabethtown that grew up along the Louisville & Nashville Railroad in the mid-1800s. It's stayed small and rural, with homes on comfortable lots surrounded by farmland, woods, and the quiet that draws people to this part of southern Hardin County.",
       "That country setting means pests arrive from the land around the home. Field mice and rats move toward warm structures as crops come off and temperatures drop; wasps and hornets nest in eaves, porches, and outbuildings; spiders, including the brown recluse, settle into basements, garages, and sheds; and ticks wait along brushy edges through the warm months. Older homes and farmhouses add settled foundations and the entry gaps that come with age.",
-      "Even though Sonora is on the southern edge of the county, it's part of our regular Hardin County route, so scheduling and re-services stay quick. The three-zone Summit Shield process treats the whole property — house and outbuildings, ground line to ridge line — and it's backed by the Apex Promise.",
+      "Even though Sonora is on the southern edge of the county, it's part of our regular Hardin County route, so scheduling and re-services stay quick. The three-zone Summit Shield process treats the whole property — house and outbuildings, property line to peak line — and it's backed by the Apex Promise.",
     ],
     neighborhoods: ["Central Sonora", "farm properties along the old rail corridor", "acreage off KY-84", "rural lots toward Buffalo"],
     landmarks: ["the historic L&N rail line through town", "downtown Sonora", "surrounding southern Hardin County farmland"],
@@ -232,7 +232,7 @@ export const locations: Location[] = [
       "Pest control in Louisville, KY — three-zone Summit Shield protection for homes across the metro, from the Highlands and Old Louisville to the East End.",
     intro: [
       "Louisville is the largest city we serve, and its housing runs the full range — the shotgun homes and Victorians of Old Louisville and the Highlands, mid-century neighborhoods like Fern Creek and Okolona, and newer construction out through the East End. Each era of home has its own weak points, and pests exploit all of them.",
-      "The Ohio River valley keeps the city humid, driving strong mosquito and termite pressure spring through fall, while the older housing stock means carpenter ants, spiders, and overwintering invaders are steady concerns. Our three-zone Summit Shield process treats the whole structure — ground line to roofline — and holds it, backed by the Apex Promise.",
+      "The Ohio River valley keeps the city humid, driving strong mosquito and termite pressure spring through fall, while the older housing stock means carpenter ants, spiders, and overwintering invaders are steady concerns. Our three-zone Summit Shield process treats the whole structure — property line to peak line — and holds it, backed by the Apex Promise.",
     ],
     neighborhoods: ["The Highlands", "Old Louisville", "Fern Creek", "Okolona", "the East End"],
     landmarks: ["Cherokee Park", "the Ohio River waterfront", "Churchill Downs", "Bardstown Road"],
@@ -296,7 +296,7 @@ export const locations: Location[] = [
       "Pest control in Middletown, KY — Summit Shield three-zone protection for this historic east-side town and its fast-growing subdivisions.",
     intro: [
       "Middletown is a historic town on Louisville's east side that's become a fast-growing suburb — its old Main Street core surrounded by newer subdivisions pushing toward Eastwood. New construction on cleared ground draws ants and field mice, while the older core carries the settled-foundation issues that come with age.",
-      "Humid summers bring strong mosquito and termite pressure, and cooler weather sends mice and overwintering invaders indoors. Summit Shield treats the whole structure, ground line to roofline, and holds it — backed by the Apex Promise.",
+      "Humid summers bring strong mosquito and termite pressure, and cooler weather sends mice and overwintering invaders indoors. Summit Shield treats the whole structure, property line to peak line, and holds it — backed by the Apex Promise.",
     ],
     neighborhoods: ["historic Main Street Middletown", "the Lake Forest area", "the Douglass Hills area", "Eastwood-adjacent subdivisions"],
     landmarks: ["historic Middletown Main Street", "Long Run Park", "the Eastwood area"],

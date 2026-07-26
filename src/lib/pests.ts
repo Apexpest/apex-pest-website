@@ -65,8 +65,8 @@ export const pests: Pest[] = [
       "Activity concentrated around doorways, decks, and rooflines",
     ],
     kentuckyNote:
-      "Paper wasps target the Ridge Line — eaves, soffits, and the roofline — which is exactly the zone most pest companies skip. Summit Shield treats it on every visit.",
-    zone: "Ridge Line",
+      "Paper wasps target the Peak Line — eaves, soffits, and the roofline — which is exactly the area most pest companies skip. Summit Shield treats it on every visit.",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -87,8 +87,8 @@ export const pests: Pest[] = [
       "Buzzing or rustling inside a wall or ceiling void",
     ],
     kentuckyNote:
-      "Ground and wall-void nests make yellowjackets a Ground Line and Structure Line problem — the two zones where Summit Shield seals and treats the routes they actually use.",
-    zone: "Ground Line & Structure Line",
+      "Ground and wall-void nests make yellowjackets a Property Line and Peak Line problem — the zones where Summit Shield seals and treats the routes they actually use.",
+    zone: "Property Line & Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -109,8 +109,8 @@ export const pests: Pest[] = [
       "Hornets reacting aggressively when you approach the area",
     ],
     kentuckyNote:
-      "Aerial nests on eaves and rooflines are a Ridge Line problem. We remove and treat them safely rather than leaving a hazard by your door.",
-    zone: "Ridge Line",
+      "Aerial nests on eaves and rooflines are a Peak Line problem. We remove and treat them safely rather than leaving a hazard by your door.",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
 
@@ -133,8 +133,8 @@ export const pests: Pest[] = [
       "A faint rustling in walls, or winged ants emerging indoors",
     ],
     kentuckyNote:
-      "Kentucky's humidity feeds the moisture problems carpenter ants love. Summit Shield addresses both the ants and the entry points along the Structure Line where they get in.",
-    zone: "Structure Line",
+      "Kentucky's humidity feeds the moisture problems carpenter ants love. Summit Shield addresses both the ants and the entry points along the Peak Line where they get in.",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -155,8 +155,8 @@ export const pests: Pest[] = [
       "Ants clustered around sinks, dishwashers, and sweet spills",
     ],
     kentuckyNote:
-      "Rainy Kentucky springs reliably push these ants indoors. Our Ground Line and Structure Line barrier intercepts them before they reach the kitchen.",
-    zone: "Ground Line & Structure Line",
+      "Rainy Kentucky springs reliably push these ants indoors. Our Foundation Line and Peak Line barrier intercepts them before they reach the kitchen.",
+    zone: "Foundation Line & Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -169,7 +169,7 @@ export const pests: Pest[] = [
       "About ⅛ inch, brown to blackish, often seen with the small mounds of excavated soil they push up between cracks in pavement, driveways, and foundation slabs. Indoors they trail along floors and baseboards.",
     body: [
       "Pavement ants nest under hard surfaces and foundations, then forage indoors for grease, sweets, and crumbs. They're a persistent nuisance in garages, basements, and ground-floor kitchens.",
-      "Because the nest is under a slab or driveway, surface sprays don't reach it. Long-term control means treating the perimeter and the nesting sites along the ground line, not just the ants you see inside.",
+      "Because the nest is under a slab or driveway, surface sprays don't reach it. Long-term control means treating the perimeter and the nesting sites along the foundation line, not just the ants you see inside.",
     ],
     signs: [
       "Small soil mounds in pavement cracks and along the foundation",
@@ -177,8 +177,8 @@ export const pests: Pest[] = [
       "Foraging around pet food, grease, and crumbs",
     ],
     kentuckyNote:
-      "These are a textbook Ground Line pest — the soil band and foundation seams Summit Shield treats first, where 80% of pests make contact.",
-    zone: "Ground Line",
+      "These are a textbook Foundation Line pest — the soil band and foundation seams Summit Shield treats first, where most pests make contact with the structure.",
+    zone: "Foundation Line",
     relatedService: "general-pest-control",
   },
 
@@ -202,7 +202,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "Brown recluse are well established across Kentucky. If you're seeing them, treat it seriously — we target the hidden harborage points, not just the spider on the wall.",
-    zone: "Structure Line",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -223,8 +223,8 @@ export const pests: Pest[] = [
       "Round, papery egg sacs in the web",
     ],
     kentuckyNote:
-      "Wood piles, crawlspaces, and outbuildings across rural Hardin County are prime widow habitat. Our Ground Line and Structure Line work targets exactly those spots.",
-    zone: "Ground Line & Structure Line",
+      "Wood piles, crawlspaces, and outbuildings across rural Hardin County are prime widow habitat. Our Property Line and Foundation Line work targets exactly those spots.",
+    zone: "Property Line & Foundation Line",
     relatedService: "general-pest-control",
   },
   {
@@ -245,8 +245,8 @@ export const pests: Pest[] = [
       "No organized web; the spider is out in the open",
     ],
     kentuckyNote:
-      "A wolf spider indoors usually means other pests are indoors too. Summit Shield seals the Ground Line gaps and reduces the insects they hunt.",
-    zone: "Ground Line",
+      "A wolf spider indoors usually means other pests are indoors too. Summit Shield seals the Foundation Line gaps and reduces the insects they hunt.",
+    zone: "Foundation Line",
     relatedService: "general-pest-control",
   },
 
@@ -269,8 +269,8 @@ export const pests: Pest[] = [
       "A pungent odor when they're disturbed or vacuumed",
     ],
     kentuckyNote:
-      "Fall is the window. A Ridge Line and Structure Line treatment before the first cold snap keeps them out of the walls in the first place.",
-    zone: "Ridge Line & Structure Line",
+      "Fall is the window. A Peak Line treatment before the first cold snap keeps them out of the walls in the first place.",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -292,7 +292,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "They ride the same fall push indoors as stink bugs and ladybugs. We treat the roofline and structure gaps together before they settle in.",
-    zone: "Ridge Line & Structure Line",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
   {
@@ -314,7 +314,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "Central Kentucky's mix of maples and ash gives boxelder bugs plenty of host trees. Timing the fall exterior treatment is what keeps them off your walls.",
-    zone: "Structure Line",
+    zone: "Peak Line",
     relatedService: "general-pest-control",
   },
 
@@ -338,7 +338,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "Kentucky's river valleys and humid summers make mosquitoes especially bad near the Nolin River, Otter Creek, and shaded low ground. Our seasonal program targets where they actually breed and rest.",
-    zone: "Ground Line",
+    zone: "Property Line",
     relatedService: "mosquito-control",
   },
   {
@@ -360,7 +360,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "The lone star tick and its alpha-gal connection are a real concern across rural Hardin County. We treat the yard edges and harborage where ticks wait, not just the open lawn.",
-    zone: "Ground Line",
+    zone: "Property Line",
     relatedService: "flea-tick-control",
   },
   {
@@ -382,7 +382,7 @@ export const pests: Pest[] = [
     ],
     kentuckyNote:
       "Wildlife traffic on rural and wooded Hardin County lots keeps re-seeding flea problems. We treat the yard harborage and the indoor sites the cycle relies on.",
-    zone: "Ground Line & Structure Line",
+    zone: "Property Line & Peak Line",
     relatedService: "flea-tick-control",
   },
 
@@ -397,7 +397,7 @@ export const pests: Pest[] = [
       "Small, gray-brown rodents about 2–4 inches in body with a long, nearly hairless tail and large ears. More often you'll find the evidence first — droppings, gnaw marks, and a musky odor — than the mouse itself.",
     body: [
       "A house mouse can slip through a gap the size of a dime, so utility penetrations, garage door corners, and foundation gaps are all open doors. Once inside, mice contaminate far more food than they eat, gnaw on wiring (a real fire risk), and reproduce fast — a small problem becomes a big one in weeks.",
-      "Mice press indoors hardest as the weather cools and at harvest, when field mice on rural properties look for shelter. Lasting control is about exclusion — finding and sealing the entry points along the structure line — paired with knocking down the active population, not just setting a couple of traps.",
+      "Mice press indoors hardest as the weather cools and at harvest, when field mice on rural properties look for shelter. Lasting control is about exclusion — finding and sealing the entry points along the peak line — paired with knocking down the active population, not just setting a couple of traps.",
     ],
     signs: [
       "Small dark droppings along walls, in cabinets, and in drawers",
@@ -405,8 +405,8 @@ export const pests: Pest[] = [
       "Scratching or scurrying in walls and ceilings at night, plus a musky smell",
     ],
     kentuckyNote:
-      "On Hardin County's rural and farm properties, harvest and the first cold snap drive field mice indoors in force. We seal the Structure Line entry points and clear the active population together.",
-    zone: "Structure Line",
+      "On Hardin County's rural and farm properties, harvest and the first cold snap drive field mice indoors in force. We seal the Peak Line entry points and clear the active population together.",
+    zone: "Peak Line",
     relatedService: "rodent-control",
   },
 ];

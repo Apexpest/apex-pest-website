@@ -35,7 +35,7 @@ export const nav = [
 export const heroStats = [
   { value: "48hr", label: "Free re-services within 48 hours if pests return between scheduled visits." },
   { value: "5★", label: "Rated five stars across Google and other review platforms." },
-  { value: "3 Zones", label: "Summit Shield protection from the ground line to the roofline." },
+  { value: "3 Zones", label: "Summit Shield protection from the property line to the peak line." },
   { value: "100%", label: "Satisfaction guarantee, backed in writing." },
 ] as const;
 
@@ -65,23 +65,23 @@ export const whyApex = [
 export const zones = [
   {
     no: "01",
-    name: "Ground Line",
-    headline: "Where most pests make first contact",
-    body: "Soil band, foundation seams, mulch beds, downspouts and crawlspace vents.",
+    name: "Property Line",
+    headline: "The yard, before pests reach the house",
+    body: "Lawn edges, landscape beds, fence and tree lines, standing water and mulch — where pests gather and breed before they ever touch the home.",
     tone: "sage",
   },
   {
     no: "02",
-    name: "Structure Line",
-    headline: "The actual entry points",
-    body: "Siding gaps, weep holes, window and door frames, garage seals and utility penetrations.",
+    name: "Foundation Line",
+    headline: "Where pests meet the structure",
+    body: "The soil band, foundation walls and seams, slab edges, crawlspace vents and downspout splash zones.",
     tone: "sage",
   },
   {
     no: "03",
-    name: "Ridge Line",
-    headline: "The part most often overlooked",
-    body: "Eaves, soffits, fascia and the roofline — where wasps, hornets and overwintering pests enter from above.",
+    name: "Peak Line",
+    headline: "The entry points, ground to peak",
+    body: "Siding gaps, weep holes, windows and door frames, garage seals, eaves, soffits and the roofline.",
     tone: "amber",
   },
 ] as const;
@@ -89,14 +89,14 @@ export const zones = [
 export const steps = [
   { num: 1, name: "Survey", body: "We walk the whole property first — all three zones, documented with photos in your service record." },
   { num: 2, name: "Clear", body: "We treat what's active now, addressing where pests nest and breed — not just where they've been seen." },
-  { num: 3, name: "Shield", body: "We build the three-zone barrier from the ground line to the roofline, sealing the routes pests use." },
+  { num: 3, name: "Shield", body: "We build the three-zone barrier from the property line to the peak line, sealing the routes pests use." },
   { num: 4, name: "Hold", body: "Seasonal service tuned to the regional pest calendar. If pests return between visits, we re-treat at no charge." },
 ] as const;
 
 export const comparison = {
   columns: ["DIY", "Typical pest control", "Apex Pest Solutions"],
   rows: [
-    { feature: "Treats the whole home, ground to roofline", diy: false, typical: "Foundation band only", apex: "All three zones" },
+    { feature: "Treats the whole property, yard to roofline", diy: false, typical: "Foundation band only", apex: "All three zones" },
     { feature: "Free return if pests come back", diy: false, typical: "Sometimes, with a wait", apex: "Within 48 hours" },
     { feature: "Proactive communication & reminders", diy: false, typical: "Inconsistent", apex: "Standard on every visit" },
     { feature: "Documented service record with photos", diy: false, typical: "Rarely", apex: "Every visit" },
