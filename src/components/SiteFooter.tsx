@@ -7,7 +7,7 @@ import type { ResolvedSite } from "@/lib/getSiteSettings";
 const company = [
   { label: "Service Areas", href: "/locations" },
   { label: "Pest Library", href: "/pests" },
-  { label: "Summit Shield", href: "/the-apex-standard/summit-shield" },
+  { label: "Summit Shield", href: "/#summit-shield" },
   { label: "The Apex Promise", href: "/the-apex-standard/apex-promise" },
   { label: "Our Team", href: "/the-apex-standard/our-team" },
   { label: "Careers", href: "/careers" },
