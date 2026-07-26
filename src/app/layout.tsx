@@ -24,8 +24,8 @@ const inter = localFont({
   ],
 });
 
-const TITLE = "Apex Pest Solutions | Kentucky's Premium Pest Control";
-const OG_DESC = "Top service, top communication. The pest company you never have to think about.";
+const TITLE = "Apex Pest Solutions | Professional Pest Control";
+const OG_DESC = "Top service. Top communication. Thorough, reliable pest control for your home or business.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Apex Pest Solutions",
   },
   description:
-    "Premium pest control for Kentucky homes. Summit Shield three-zone protection, the best communication in Kentucky, and free re-services within 48 hours. Serving Central Kentucky and the Fort Knox community.",
+    "Thorough, reliable pest control for homes and businesses. Summit Shield three-zone protection, clear communication, and free re-services within 48 hours.",
   alternates: { canonical: "/" },
   openGraph: {
     title: TITLE,

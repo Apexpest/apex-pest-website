@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/pest-control" },
   title: "Pest Control Services",
   description:
-    "Premium pest control for Kentucky homes and businesses — general pest, mosquito, termite, rodent, flea & tick, cockroach, and commercial service. Free re-services within 48 hours.",
+    "Pest control for homes and businesses — general pest, mosquito, termite, rodent, flea & tick, cockroach, and commercial service. Free re-services within 48 hours.",
 };
 
 export default async function PestControlHub() {

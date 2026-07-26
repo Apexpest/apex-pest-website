@@ -10,7 +10,6 @@ const company = [
   { label: "Summit Shield", href: "/the-apex-standard/summit-shield" },
   { label: "The Apex Promise", href: "/the-apex-standard/apex-promise" },
   { label: "Our Team", href: "/the-apex-standard/our-team" },
-  { label: "Military & PCS", href: "/the-apex-standard/military" },
   { label: "Careers", href: "/careers" },
 ];
 
@@ -22,8 +21,7 @@ export function SiteFooter({ settings }: { settings: ResolvedSite }) {
           <div>
             <Logo className="mb-4 text-white" />
             <p className="max-w-[280px]">
-              Peak protection for Kentucky homes. Proudly serving the Fort Knox community and
-              Central Kentucky.
+              Thorough pest control and clear communication for the homes and businesses we serve.
             </p>
           </div>
           <div>

@@ -18,7 +18,7 @@ export type ResolvedSite = {
 };
 
 const HERO_SUBTEXT_DEFAULT =
-  "The pest company you never have to think about. From the first knock to the last invoice, we run it so smoothly it feels effortless — you just stop worrying about pests.";
+  "Thorough, reliable pest control backed by clear communication — from your first appointment to a documented record of every visit.";
 
 const toHref = (phone: string) => `tel:${phone.replace(/[^0-9]/g, "")}`;
 
@@ -52,8 +52,8 @@ export async function getSiteSettings(): Promise<ResolvedSite> {
     licenseNumber: str("licenseNumber", staticSite.licenseNumber),
     serviceAreaLabel,
     heroEyebrow: str("heroEyebrow", `Serving ${serviceAreaLabel}`),
-    heroHeadline: str("heroHeadline", "Kentucky's Premium Pest Control."),
-    heroHeadlineAccent: str("heroHeadlineAccent", "Top service. Top communication."),
+    heroHeadline: str("heroHeadline", "Top service."),
+    heroHeadlineAccent: str("heroHeadlineAccent", "Top communication."),
     heroSubtext: str("heroSubtext", HERO_SUBTEXT_DEFAULT),
     heroStats: stats,
   };

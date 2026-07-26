@@ -41,7 +41,7 @@ export const locations: Location[] = [
     badge: "Hardin County seat",
     tier: 1,
     metaDescription:
-      "Premium pest control in Elizabethtown, KY — three-zone Summit Shield protection for Etown homes, from historic downtown to the new east-side subdivisions.",
+      "Pest control in Elizabethtown, KY — three-zone Summit Shield protection for Etown homes, from historic downtown to the new east-side subdivisions.",
     intro: [
       "Elizabethtown is home base for Apex. As the Hardin County seat, Etown spans everything from century-old homes around the historic Public Square to the fast-growing new subdivisions rising on the east and south sides of town — and each puts a different kind of pest pressure on a home.",
       "The older neighborhoods near downtown deal with the classics: overwintering invaders slipping through settled foundations, carpenter ants in mature shade trees, and the occasional brown recluse in a basement or garage. The newer construction off Lincoln Parkway and out toward the bypass sits on freshly disturbed ground, which pushes ants, spiders, and field mice straight toward the closest warm structure — usually the one that just went up.",
@@ -60,36 +60,36 @@ export const locations: Location[] = [
   {
     slug: "radcliff",
     city: "Radcliff",
-    badge: "Gateway to Fort Knox",
+    badge: "Northern Hardin County",
     tier: 1,
     metaDescription:
-      "Pest control in Radcliff, KY — three-zone Summit Shield protection built for a fast-turnover Fort Knox community, with a 5% military & PCS discount.",
+      "Pest control in Radcliff, KY — three-zone Summit Shield protection for one of Hardin County's largest cities, from established subdivisions to rental and quick-turnover homes.",
     intro: [
-      "Radcliff sits right outside the main gate of Fort Knox, and that shapes everything about pest control here. With more than 22,000 residents and constant PCS turnover, a lot of Radcliff homes change hands on military timelines — which means pest problems can hide between tenants and surface right when a family is trying to move in or out.",
-      "The housing runs heavily to ranch homes, older subdivisions, and rental properties near post, plus quieter established streets out toward Radcliff East. Rentals and quick turnovers are exactly where rodents and roaches get a foothold, so our Structure Line work — sealing utility penetrations, garage gaps, and door seals — matters more here than almost anywhere in the county.",
-      "We're proud to serve the Fort Knox community, and every service member and PCS family gets our 5% military discount. Whether you own on a quiet street or you're renting near the gate, the Apex Promise travels with you: if pests come back between visits, so do we.",
+      "Radcliff is one of the largest cities in Hardin County, with more than 22,000 residents and a busy mix of established neighborhoods, newer subdivisions, and a large share of rental properties. Homes here change hands often, and pest problems can hide between tenants and surface right as a new family is moving in.",
+      "The housing runs heavily to ranch homes, older subdivisions, and rentals, alongside quieter established streets out toward Radcliff East. Rentals and quick turnovers are exactly where rodents and cockroaches get a foothold, so our Structure Line work — sealing utility penetrations, garage gaps, and door seals — matters more here than almost anywhere in the county.",
+      "Whether you own on a quiet street or you're renting, the Apex Promise travels with you: if pests return between scheduled visits, we come back and re-treat at no charge. It all runs on the three-zone Summit Shield system, tuned to the local pest calendar.",
     ],
-    neighborhoods: ["Radcliff East", "Woodland Hills", "Rolling Hills", "areas near the Fort Knox main gate"],
-    landmarks: ["Saunders Springs Nature Preserve", "Boundary Oak Distillery", "Fort Knox main gate", "Colvin Community Center"],
+    neighborhoods: ["Radcliff East", "Woodland Hills", "Rolling Hills", "established subdivisions across the city"],
+    landmarks: ["Saunders Springs Nature Preserve", "Boundary Oak Distillery", "Colvin Community Center", "the North Wilson Road corridor"],
     housingStock:
-      "Ranch homes, older subdivisions, and a large share of rental and PCS-turnover properties near post.",
+      "Ranch homes, older subdivisions, and a large share of rental and quick-turnover properties.",
     topPests: ["Rodents", "Cockroaches", "General household pests", "Ants", "Spiders", "Mosquitoes"],
     seasonalNote:
-      "Wooded areas near Saunders Springs raise tick and mosquito pressure in summer; fall turnovers and cooling weather send mice hunting for a way indoors.",
+      "Wooded areas near Saunders Springs raise tick and mosquito pressure in summer; cooler fall weather and frequent turnover send mice hunting for a way indoors.",
     localServiceNote:
-      "We know PCS timelines — we can work around move-in and move-out dates, and the 5% military discount applies to every plan.",
+      "Radcliff is on our regular route — easy scheduling, and free re-services within 48 hours.",
   },
   {
     slug: "vine-grove",
     city: "Vine Grove",
-    badge: "Minutes from Fort Knox",
+    badge: "Small-town Hardin County",
     tier: 1,
     metaDescription:
-      "Pest control in Vine Grove, KY — Summit Shield three-zone protection for this small town near Fort Knox, from downtown to the newer subdivisions along Otter Creek.",
+      "Pest control in Vine Grove, KY — Summit Shield three-zone protection for this small town, from the historic downtown to the newer subdivisions along Otter Creek.",
     intro: [
-      "Vine Grove is a tight-knit small town just minutes from the Fort Knox main gate, with a real downtown, a strong sense of community, and Otter Creek running through the heart of it at Optimist Park. That creek and the wooded, low-lying ground around it are also a mosquito engine every summer.",
+      "Vine Grove is a tight-knit small town with a real downtown, a strong sense of community, and Otter Creek running through the heart of it at Optimist Park. That creek and the wooded, low-lying ground around it are also a mosquito engine every summer.",
       "Homes here split between older places near the downtown grid — settled foundations, mature trees, and the pest quirks that come with age — and newer subdivisions on the edges of town built on recently cleared land. The older homes see more overwintering invaders and the occasional spider or rodent; the newer ones get the ants and field mice displaced by construction.",
-      "Because Vine Grove pulls a lot of Fort Knox families, we extend the same 5% military discount here, and we tune service to the local calendar: hard on mosquitoes through the warm months, and sealed up tight against invaders before winter. It all runs on the three-zone Summit Shield system, backed by the Apex Promise.",
+      "We tune service to the local calendar: hard on mosquitoes through the warm months, and sealed up tight against invaders before winter. It all runs on the three-zone Summit Shield system, backed by the Apex Promise.",
     ],
     neighborhoods: ["Historic downtown Vine Grove", "Otter Creek area", "Highview Estates", "newer subdivisions off Highway 144"],
     landmarks: ["Optimist Park", "Otter Creek", "the Autumn Daze Festival grounds", "downtown Vine Grove"],
@@ -99,29 +99,7 @@ export const locations: Location[] = [
     seasonalNote:
       "Otter Creek and shaded low ground make mosquitoes relentless in summer; cooler weather brings mice and overwintering pests toward warm homes.",
     localServiceNote:
-      "Vine Grove is on our regular route — easy scheduling, free re-services within 48 hours, and the 5% military discount for the Fort Knox community.",
-  },
-  {
-    slug: "fort-knox",
-    city: "Fort Knox",
-    badge: "Military & PCS community",
-    tier: 1,
-    metaDescription:
-      "Pest control for the Fort Knox, KY community — Summit Shield protection built around PCS timelines, with a 5% military discount and documented, guaranteed service.",
-    intro: [
-      "Fort Knox is more than the gold vault and the Armor heritage — it's a whole community of service members and families, on post and in the towns that ring it, from Radcliff to Vine Grove to Elizabethtown. Military life runs on tight timelines, and pest control that doesn't respect those timelines just adds stress to an already busy move.",
-      "That's the gap we built our Fort Knox service around. PCS moves mean homes turn over fast and often, and pests love the gaps that turnover creates — a vacant month, a garage left open, a rental between tenants. Our documented service record matters here too: you get a clear, written record of exactly what we treated and where, which is the kind of paper trail that helps at move-out.",
-      "Every service member and PCS family gets our 5% military discount, and the Apex Promise comes standard — if something comes back between visits, so do we, at no charge. Wherever you're stationed around Knox, we'll build the three-zone Summit Shield barrier and hold it.",
-    ],
-    neighborhoods: ["On-post housing areas", "and the surrounding communities of Radcliff, Vine Grove, and Elizabethtown"],
-    landmarks: ["U.S. Bullion Depository", "General George Patton Museum area", "the Fort Knox main gate", "Saunders Springs (nearby)"],
-    housingStock:
-      "On-post housing plus a heavy share of rentals and PCS-turnover homes in the surrounding towns.",
-    topPests: ["Rodents", "Cockroaches", "General household pests", "Ants", "Spiders", "Mosquitoes"],
-    seasonalNote:
-      "Frequent turnover leaves gaps that rodents and roaches exploit year-round; summer brings strong mosquito pressure from the surrounding wooded terrain.",
-    localServiceNote:
-      "We schedule around PCS move-in and move-out dates, document every visit in writing, and apply the 5% military discount to every plan.",
+      "Vine Grove is on our regular route — easy scheduling and free re-services within 48 hours.",
   },
   {
     slug: "rineyville",
@@ -133,9 +111,9 @@ export const locations: Location[] = [
     intro: [
       "Rineyville is a rural, close-knit community about seven miles northwest of Elizabethtown, with deep agricultural roots and a lot of homes on larger lots, farmland, and wooded acreage. That country setting is part of the appeal — and it's also why pest pressure here looks different than it does in town.",
       "When your home sits next to fields, tree lines, and outbuildings, pests come at you from the surrounding land: field mice and rats moving in as crops are cut and weather cools, wasps and hornets nesting in eaves and barns, spiders and occasional invaders working in from the woods, and ticks waiting along brushy edges. Rural properties give pests more launch points, so the Ridge Line and Structure Line zones — the eaves, gaps, and penetrations most companies skip — really earn their keep out here.",
-      "Rineyville is growing as families look for space within an easy drive of Etown and Fort Knox, and we service the area on our regular route. The three-zone Summit Shield system covers the whole home and the routes pests actually use, backed by the Apex Promise.",
+      "Rineyville is growing as families look for space within an easy drive of Elizabethtown, and we service the area on our regular route. The three-zone Summit Shield system covers the whole home and the routes pests actually use, backed by the Apex Promise.",
     ],
-    neighborhoods: ["Central Rineyville", "farm and acreage properties along Rineyville Road", "wooded lots toward Fort Knox", "rural subdivisions off KY-1600"],
+    neighborhoods: ["Central Rineyville", "farm and acreage properties along Rineyville Road", "wooded lots on the county's north side", "rural subdivisions off KY-1600"],
     landmarks: ["Rineyville Elementary", "the historic rail corridor", "surrounding Hardin County farmland"],
     housingStock:
       "Rural homes on larger lots, working farms, and acreage properties with outbuildings.",

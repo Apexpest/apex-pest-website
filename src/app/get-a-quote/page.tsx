@@ -8,7 +8,7 @@ import { getSiteSettings } from "@/lib/getSiteSettings";
 export const metadata: Metadata = {
   title: "Get a Free Inspection & Quote",
   description:
-    "Request your free pest inspection and quote from Apex Pest Solutions. Serving Elizabethtown, Fort Knox, and Central Kentucky — with free re-services within 48 hours.",
+    "Request your free pest inspection and quote from Apex Pest Solutions. Serving Elizabethtown and communities across Central Kentucky — with free re-services within 48 hours.",
   alternates: { canonical: "/get-a-quote" },
 };
 
@@ -16,7 +16,7 @@ const trust = [
   { title: "Free inspection", body: "No cost, no pressure — we assess all three zones before we quote." },
   { title: "48-hour re-service", body: "Pests return between visits? So do we — free, within 48 hours." },
   { title: "Licensed & insured", body: "KDA-licensed Kentucky technicians on every visit." },
-  { title: "5% military discount", body: "For the Fort Knox community and PCS families." },
+  { title: "Documented service", body: "A written record of exactly what we treated — every visit." },
 ];
 
 export default async function GetAQuotePage() {

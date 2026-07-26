@@ -1,7 +1,11 @@
 /**
  * Central site config + content.
- * This is the single source of truth for now — structured so it maps 1:1
- * to Sanity documents when the CMS is added later (minimal migration pain).
+ * Single source of truth for now — structured to map 1:1 to Sanity documents
+ * when the CMS is added later (minimal migration pain).
+ *
+ * Geography: the brand copy here is written to stay neutral so the site can
+ * cover additional branches/states later. Region-specific wording lives in the
+ * location pages (see src/lib/locations.ts) and the pest library.
  */
 
 export const site = {
@@ -14,8 +18,8 @@ export const site = {
   phoneHref: "tel:5023057537",
   email: "solutions@apexpestky.com",
   licenseNumber: "42376", // Kentucky Dept. of Agriculture
-  positioning: "Kentucky's Premium Pest Control. Top service, top communication.",
-  militaryDiscount: "5%",
+  positioning: "Top service. Top communication.",
+  // The area currently served. Update as new branches open.
   serviceAreaLabel: "Central Kentucky",
 } as const;
 
@@ -29,31 +33,31 @@ export const nav = [
 ] as const;
 
 export const heroStats = [
-  { value: "48hr", label: "Pests come back between visits? So do we — free, within 48 hours." },
-  { value: "5★", label: "Rated five stars across Google and every review platform." },
-  { value: "3 Zones", label: "Summit Shield protection from ground line to ridge line." },
-  { value: "5%", label: "Military & PCS discount for the Fort Knox community." },
+  { value: "48hr", label: "Free re-services within 48 hours if pests return between scheduled visits." },
+  { value: "5★", label: "Rated five stars across Google and other review platforms." },
+  { value: "3 Zones", label: "Summit Shield protection from the ground line to the roofline." },
+  { value: "100%", label: "Satisfaction guarantee, backed in writing." },
 ] as const;
 
 export const whyApex = [
   {
-    title: "Communication that never leaves you guessing",
-    body: "Confirmations, arrival texts, and a clear record of exactly what we did — the best communication in Kentucky, by design.",
+    title: "Clear, proactive communication",
+    body: "Appointment confirmations, arrival notifications, and a written record of exactly what we treated — so you're always informed.",
     icon: "message",
   },
   {
-    title: "Trained to make it effortless",
-    body: "Every technician runs the same disciplined Summit Shield process, so your service is consistent no matter who's at the door.",
+    title: "Consistent, trained technicians",
+    body: "Every technician follows the same Summit Shield process, so your service is thorough and consistent no matter who is at the door.",
     icon: "check",
   },
   {
-    title: "Billing you don't have to babysit",
-    body: "Clear pricing, easy payments, no surprises. The back office runs as cleanly as the treatment does.",
+    title: "Straightforward billing",
+    body: "Clear pricing and simple payments, with no surprises on your invoice.",
     icon: "card",
   },
   {
-    title: "Backed by the Apex Promise",
-    body: "If pests return between scheduled visits, so do we — no charge, no argument. You're covered.",
+    title: "Backed by our guarantee",
+    body: "If pests return between scheduled visits, we return and re-treat at no charge — in writing.",
     icon: "shield",
   },
 ] as const;
@@ -62,7 +66,7 @@ export const zones = [
   {
     no: "01",
     name: "Ground Line",
-    headline: "Where 80% of pests make first contact",
+    headline: "Where most pests make first contact",
     body: "Soil band, foundation seams, mulch beds, downspouts and crawlspace vents.",
     tone: "sage",
   },
@@ -76,17 +80,17 @@ export const zones = [
   {
     no: "03",
     name: "Ridge Line",
-    headline: "The part almost nobody treats",
-    body: "Eaves, soffits, fascia and the roofline — where wasps, hornets and overwintering invaders get in from the top.",
+    headline: "The part most often overlooked",
+    body: "Eaves, soffits, fascia and the roofline — where wasps, hornets and overwintering pests enter from above.",
     tone: "amber",
   },
 ] as const;
 
 export const steps = [
   { num: 1, name: "Survey", body: "We walk the whole property first — all three zones, documented with photos in your service record." },
-  { num: 2, name: "Clear", body: "We knock down what's active now, treating where pests nest and breed — not just where you've seen them." },
-  { num: 3, name: "Shield", body: "We build the three-zone barrier from ground line to ridge line, sealing the routes pests actually use." },
-  { num: 4, name: "Hold", body: "Seasonal service tuned to Kentucky's pest calendar. Something comes back between visits? So do we — free." },
+  { num: 2, name: "Clear", body: "We treat what's active now, addressing where pests nest and breed — not just where they've been seen." },
+  { num: 3, name: "Shield", body: "We build the three-zone barrier from the ground line to the roofline, sealing the routes pests use." },
+  { num: 4, name: "Hold", body: "Seasonal service tuned to the regional pest calendar. If pests return between visits, we re-treat at no charge." },
 ] as const;
 
 export const comparison = {
@@ -94,9 +98,9 @@ export const comparison = {
   rows: [
     { feature: "Treats the whole home, ground to roofline", diy: false, typical: "Foundation band only", apex: "All three zones" },
     { feature: "Free return if pests come back", diy: false, typical: "Sometimes, with a wait", apex: "Within 48 hours" },
-    { feature: "Proactive communication & reminders", diy: false, typical: "Hit or miss", apex: "Best in Kentucky" },
+    { feature: "Proactive communication & reminders", diy: false, typical: "Inconsistent", apex: "Standard on every visit" },
     { feature: "Documented service record with photos", diy: false, typical: "Rarely", apex: "Every visit" },
-    { feature: "Licensed & insured KY technicians", diy: false, typical: "Usually", apex: "Always" },
+    { feature: "Licensed & insured technicians", diy: false, typical: "Usually", apex: "Always" },
   ],
 } as const;
 
@@ -105,5 +109,5 @@ export const services = [
   { name: "Termite Control", href: "/pest-control/termite-control" },
   { name: "Mosquito Control", href: "/pest-control/mosquito-control" },
   { name: "Rodent Control", href: "/pest-control/rodent-control" },
-  { name: "Mole Control", href: "/pest-control/mole-control" },
+  { name: "Cockroach Control", href: "/pest-control/cockroach-control" },
 ] as const;

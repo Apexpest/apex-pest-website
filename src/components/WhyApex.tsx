@@ -23,14 +23,14 @@ export function WhyApex() {
     <section className="bg-black py-[92px] text-white">
       <Container>
         <div className="mx-auto mb-[54px] max-w-[720px] text-center">
-          <Eyebrow>Why Apex feels different</Eyebrow>
+          <Eyebrow>Why choose Apex</Eyebrow>
           <h2 className="mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-extrabold">
-            Most companies sell a spray. We sell not having to worry.
+            A thorough process, clearly communicated.
           </h2>
           <p className="mt-4 text-[18px] text-white/70">
-            Anyone can treat a house. The difference is everything around it — the scheduling, the
-            reminders, the tech who shows up on time, the billing that just works. We package the
-            whole thing so tightly you never have to chase us for anything.
+            Treating a home is only part of the job. Consistent scheduling, proactive updates,
+            technicians who arrive on time, and simple billing are what make the service
+            dependable — and we handle all of it.
           </p>
         </div>
         <div className="grid gap-[22px] sm:grid-cols-2 lg:grid-cols-4">
