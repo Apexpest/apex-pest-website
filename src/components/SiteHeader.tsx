@@ -1,8 +1,9 @@
 import { Logo } from "./Logo";
 import { Button } from "./ui";
-import { nav, site } from "@/lib/site";
+import { nav } from "@/lib/site";
+import type { ResolvedSite } from "@/lib/getSiteSettings";
 
-export function SiteHeader() {
+export function SiteHeader({ settings }: { settings: ResolvedSite }) {
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
       <div className="mx-auto flex h-[74px] max-w-[1180px] items-center justify-between px-8">
@@ -15,8 +16,8 @@ export function SiteHeader() {
           ))}
         </nav>
         <div className="flex items-center gap-3">
-          <a href={site.phoneHref} className="hidden font-display text-[14px] font-bold text-white md:block">
-            {site.phone}
+          <a href={settings.phoneHref} className="hidden font-display text-[14px] font-bold text-white md:block">
+            {settings.phone}
           </a>
           <Button href="/get-a-quote">Get My Free Inspection</Button>
         </div>

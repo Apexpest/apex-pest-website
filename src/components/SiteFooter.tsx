@@ -1,6 +1,7 @@
 import { Logo } from "./Logo";
 import { Container } from "./ui";
-import { site, services } from "@/lib/site";
+import { services, site } from "@/lib/site";
+import type { ResolvedSite } from "@/lib/getSiteSettings";
 
 const company = [
   { label: "Summit Shield", href: "/the-apex-standard/summit-shield" },
@@ -10,7 +11,7 @@ const company = [
   { label: "Careers", href: "/careers" },
 ];
 
-export function SiteFooter() {
+export function SiteFooter({ settings }: { settings: ResolvedSite }) {
   return (
     <footer className="bg-black pb-[120px] pt-16 text-[14px] text-white/60 md:pb-16">
       <Container>
@@ -36,13 +37,13 @@ export function SiteFooter() {
           </div>
           <div>
             <h4 className="mb-4 font-display text-[13px] font-bold uppercase tracking-[0.08em] text-white">Get in touch</h4>
-            <a href={site.phoneHref} className="block py-[5px] hover:text-white">{site.phone}</a>
-            <a href={`mailto:${site.email}`} className="block py-[5px] hover:text-white">{site.email}</a>
+            <a href={settings.phoneHref} className="block py-[5px] hover:text-white">{settings.phone}</a>
+            <a href={`mailto:${settings.email}`} className="block py-[5px] hover:text-white">{settings.email}</a>
             <a href="/get-a-quote" className="block py-[5px] hover:text-white">Get a Free Quote</a>
           </div>
         </div>
         <div className="flex flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-[12.5px] text-white/45">
-          <span>© {new Date().getFullYear()} {site.name} · KDA License #{site.licenseNumber} · Licensed &amp; insured in Kentucky</span>
+          <span>© {new Date().getFullYear()} {site.name} · KDA License #{settings.licenseNumber} · Licensed &amp; insured in Kentucky</span>
           <span>
             <a href="/privacy" className="hover:text-white">Privacy</a> ·{" "}
             <a href="/terms" className="hover:text-white">Terms</a> ·{" "}

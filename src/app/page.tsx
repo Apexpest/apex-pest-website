@@ -8,37 +8,40 @@ import { CtaBand } from "@/components/CtaBand";
 import { SiteFooter } from "@/components/SiteFooter";
 import { MobileCallBar } from "@/components/MobileCallBar";
 import { site } from "@/lib/site";
+import { getSiteSettings } from "@/lib/getSiteSettings";
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "PestControlService",
-  name: site.name,
-  url: `https://${site.domain}`,
-  telephone: site.phone,
-  email: site.email,
-  areaServed: { "@type": "State", name: "Kentucky" },
-  address: { "@type": "PostalAddress", addressRegion: "KY", addressCountry: "US" },
-  slogan: "Kentucky's Premium Pest Control. Top service, top communication.",
-};
+export default async function Home() {
+  const settings = await getSiteSettings();
 
-export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "PestControlService",
+    name: site.name,
+    url: `https://${site.domain}`,
+    telephone: settings.phone,
+    email: settings.email,
+    areaServed: { "@type": "State", name: "Kentucky" },
+    address: { "@type": "PostalAddress", addressRegion: "KY", addressCountry: "US" },
+    slogan: `${settings.heroHeadline} ${settings.heroHeadlineAccent}`,
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <SiteHeader />
+      <SiteHeader settings={settings} />
       <main className="flex-1">
-        <Hero />
+        <Hero settings={settings} />
         <WhyApex />
         <SummitShield />
         <FourStep />
         <Comparison />
         <CtaBand />
       </main>
-      <SiteFooter />
-      <MobileCallBar />
+      <SiteFooter settings={settings} />
+      <MobileCallBar settings={settings} />
     </>
   );
 }
