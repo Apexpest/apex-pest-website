@@ -3,6 +3,7 @@ import { site } from "@/lib/site";
 import { services } from "@/lib/services";
 import { pests } from "@/lib/pests";
 import { locations } from "@/lib/locations";
+import { counties } from "@/lib/counties";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = site.url;
@@ -30,11 +31,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const locationRoutes = locations.map((l) => ({
-    url: `${base}/locations/${l.slug}`,
+    url: `${base}/locations/${l.county}/${l.slug}`,
     lastModified: now,
     changeFrequency: "monthly" as const,
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...pestRoutes, ...locationRoutes];
+  const countyRoutes = counties.map((c) => ({
+    url: `${base}/locations/${c.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...pestRoutes, ...countyRoutes, ...locationRoutes];
 }

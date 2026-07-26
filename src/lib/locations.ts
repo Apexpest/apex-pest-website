@@ -12,6 +12,7 @@
 
 export type Location = {
   slug: string;
+  county: string; // county slug (see counties.ts)
   city: string;
   /** Short label used in the hub card, e.g. "Hardin County seat". */
   badge: string;
@@ -40,6 +41,7 @@ export const locations: Location[] = [
     city: "Elizabethtown",
     badge: "Hardin County seat",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Elizabethtown, KY — three-zone Summit Shield protection for Etown homes, from historic downtown to the new east-side subdivisions.",
     intro: [
@@ -62,6 +64,7 @@ export const locations: Location[] = [
     city: "Radcliff",
     badge: "Northern Hardin County",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Radcliff, KY — three-zone Summit Shield protection for one of Hardin County's largest cities, from established subdivisions to rental and quick-turnover homes.",
     intro: [
@@ -84,6 +87,7 @@ export const locations: Location[] = [
     city: "Vine Grove",
     badge: "Small-town Hardin County",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Vine Grove, KY — Summit Shield three-zone protection for this small town, from the historic downtown to the newer subdivisions along Otter Creek.",
     intro: [
@@ -106,6 +110,7 @@ export const locations: Location[] = [
     city: "Rineyville",
     badge: "Rural NW Hardin County",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Rineyville, KY — Summit Shield protection for rural homes and farm properties northwest of Elizabethtown, where field pests press hard on the structure.",
     intro: [
@@ -128,6 +133,7 @@ export const locations: Location[] = [
     city: "Cecilia",
     badge: "Central Hardin County",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Cecilia, KY — Summit Shield three-zone protection for this rural community west of Elizabethtown in the Central Hardin school district.",
     intro: [
@@ -150,6 +156,7 @@ export const locations: Location[] = [
     city: "Glendale",
     badge: "Historic district & BlueOval growth",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Glendale, KY — Summit Shield protection for the historic district and the fast-growing homes around the BlueOval SK battery park.",
     intro: [
@@ -172,6 +179,7 @@ export const locations: Location[] = [
     city: "Sonora",
     badge: "Southern Hardin County",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in Sonora, KY — Summit Shield three-zone protection for this small railroad town south of Elizabethtown, tuned to rural pest pressure.",
     intro: [
@@ -194,6 +202,7 @@ export const locations: Location[] = [
     city: "White Mills",
     badge: "Nolin River community",
     tier: 1,
+    county: "hardin-county",
     metaDescription:
       "Pest control in White Mills, KY — Summit Shield protection for this historic Nolin River community, where riverside humidity drives heavy mosquito and moisture pests.",
     intro: [
@@ -211,6 +220,328 @@ export const locations: Location[] = [
     localServiceNote:
       "We target riverside mosquito breeding sites directly and watch for moisture-driven termite pressure — free re-services within 48 hours.",
   },
+
+  // ---------------- JEFFERSON COUNTY ----------------
+  {
+    slug: "louisville",
+    county: "jefferson-county",
+    city: "Louisville",
+    badge: "Jefferson County seat",
+    tier: 1,
+    metaDescription:
+      "Pest control in Louisville, KY — three-zone Summit Shield protection for homes across the metro, from the Highlands and Old Louisville to the East End.",
+    intro: [
+      "Louisville is the largest city we serve, and its housing runs the full range — the shotgun homes and Victorians of Old Louisville and the Highlands, mid-century neighborhoods like Fern Creek and Okolona, and newer construction out through the East End. Each era of home has its own weak points, and pests exploit all of them.",
+      "The Ohio River valley keeps the city humid, driving strong mosquito and termite pressure spring through fall, while the older housing stock means carpenter ants, spiders, and overwintering invaders are steady concerns. Our three-zone Summit Shield process treats the whole structure — ground line to roofline — and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["The Highlands", "Old Louisville", "Fern Creek", "Okolona", "the East End"],
+    landmarks: ["Cherokee Park", "the Ohio River waterfront", "Churchill Downs", "Bardstown Road"],
+    housingStock:
+      "Everything from historic shotgun homes and Victorians to mid-century ranches and new East End construction.",
+    topPests: ["General household pests", "Termites", "Mosquitoes", "Carpenter ants", "Spiders", "Rodents"],
+    seasonalNote:
+      "Ohio River humidity drives mosquitoes and termites spring through fall; cool weather sends mice and overwintering invaders into older homes.",
+    localServiceNote:
+      "Louisville is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "st-matthews",
+    county: "jefferson-county",
+    city: "St. Matthews",
+    badge: "Jefferson County",
+    tier: 1,
+    metaDescription:
+      "Pest control in St. Matthews, KY — Summit Shield three-zone protection for one of Louisville's most established East End suburbs.",
+    intro: [
+      "St. Matthews is one of Louisville's most established East End suburbs — leafy and walkable, with mature trees and a mix of solid mid-century homes and higher-end renovations. Those mature landscapes and settled foundations are exactly what carpenter ants, spiders, and overwintering pests take advantage of.",
+      "The dense tree canopy and older housing keep spider, ant, and occasional-invader pressure steady, and humid summers bring mosquitoes off every shaded yard. Summit Shield treats all three zones and holds the barrier, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Graymoor-Devondale", "Woodlawn Park", "Beechwood Village", "Norbourne Estates"],
+    landmarks: ["Mall St. Matthews", "Brown Park", "the Shelbyville Road district"],
+    housingStock: "Established mid-century homes and higher-end renovations under a mature tree canopy.",
+    topPests: ["Carpenter ants", "Spiders", "General household pests", "Mosquitoes", "Occasional invaders", "Rodents"],
+    seasonalNote:
+      "Mature tree cover keeps spiders and carpenter ants active; humid summers bring mosquitoes, and fall drives invaders toward warm homes.",
+    localServiceNote:
+      "St. Matthews is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "jeffersontown",
+    county: "jefferson-county",
+    city: "Jeffersontown",
+    badge: "Jefferson County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Jeffersontown (J-town), KY — Summit Shield three-zone protection for this large East End suburb and its historic Gaslight District.",
+    intro: [
+      "Jeffersontown — J-town — is one of Louisville's largest suburbs, anchored by its historic Gaslight District and ringed by decades of subdivisions and the Bluegrass Commerce Park. That mix of older homes near the center and newer neighborhoods on the edges means a full spread of pest pressure.",
+      "Wooded lots and creek corridors keep mosquito, tick, and spider pressure high in summer, while cooler weather sends mice toward warm structures. Our three-zone Summit Shield process treats the whole home and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["the Gaslight District", "Tucker Station", "Hurstbourne-adjacent subdivisions", "Charlie Vettiner area"],
+    landmarks: ["the Gaslight District", "Charlie Vettiner Park", "Bluegrass Commerce Park"],
+    housingStock: "Older homes near the Gaslight District plus decades of surrounding subdivisions.",
+    topPests: ["General household pests", "Mosquitoes", "Ticks & fleas", "Spiders", "Ants", "Rodents"],
+    seasonalNote:
+      "Wooded lots and creek corridors drive summer mosquito, tick, and spider pressure; cool weather pushes mice indoors.",
+    localServiceNote:
+      "Jeffersontown is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "middletown",
+    county: "jefferson-county",
+    city: "Middletown",
+    badge: "Jefferson County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Middletown, KY — Summit Shield three-zone protection for this historic east-side town and its fast-growing subdivisions.",
+    intro: [
+      "Middletown is a historic town on Louisville's east side that's become a fast-growing suburb — its old Main Street core surrounded by newer subdivisions pushing toward Eastwood. New construction on cleared ground draws ants and field mice, while the older core carries the settled-foundation issues that come with age.",
+      "Humid summers bring strong mosquito and termite pressure, and cooler weather sends mice and overwintering invaders indoors. Summit Shield treats the whole structure, ground line to roofline, and holds it — backed by the Apex Promise.",
+    ],
+    neighborhoods: ["historic Main Street Middletown", "the Lake Forest area", "the Douglass Hills area", "Eastwood-adjacent subdivisions"],
+    landmarks: ["historic Middletown Main Street", "Long Run Park", "the Eastwood area"],
+    housingStock: "A historic Main Street core surrounded by newer east-side subdivisions.",
+    topPests: ["General household pests", "Ants", "Termites", "Mosquitoes", "Spiders", "Rodents"],
+    seasonalNote:
+      "New construction draws ants and mice year-round; humid summers press mosquitoes and termites, and fall brings invaders indoors.",
+    localServiceNote:
+      "Middletown is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "lyndon",
+    county: "jefferson-county",
+    city: "Lyndon",
+    badge: "Jefferson County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Lyndon, KY — Summit Shield three-zone protection for this family-friendly east-side city near Tom Sawyer Park.",
+    intro: [
+      "Lyndon is a family-friendly city on Louisville's east side known for its schools and for E.P. 'Tom' Sawyer State Park. Its mix of mid-century homes and newer development along Lyndon Lane and Whipps Mill sees the usual suburban pest pressure, sharpened by the park's wooded acreage nearby.",
+      "Shaded, wooded ground keeps mosquitoes, spiders, and ticks active through summer, and cooler weather pushes mice toward warm homes. Our three-zone Summit Shield process treats the whole home and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["areas around Lyndon Lane", "Whipps Mill", "Hurstbourne-adjacent streets", "Robsion Park area"],
+    landmarks: ["E.P. Tom Sawyer State Park", "Robsion Park", "the Lyndon Lane corridor"],
+    housingStock: "Mid-century homes plus newer development along Lyndon Lane and Whipps Mill.",
+    topPests: ["General household pests", "Mosquitoes", "Spiders", "Ticks & fleas", "Ants", "Rodents"],
+    seasonalNote:
+      "Wooded park land nearby keeps mosquitoes, ticks, and spiders active in summer; fall drives mice toward warm homes.",
+    localServiceNote:
+      "Lyndon is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "prospect",
+    county: "jefferson-county",
+    city: "Prospect",
+    badge: "Jefferson County · Ohio River",
+    tier: 1,
+    metaDescription:
+      "Pest control in Prospect, KY — Summit Shield three-zone protection for this riverside community, including the Norton Commons area.",
+    intro: [
+      "Prospect is an upscale community northeast of Louisville along the Ohio River, straddling the Jefferson–Oldham line, with large homes on wooded and riverfront lots and the planned neighborhood of Norton Commons nearby. Wooded, riverside property is prime habitat for spiders, ticks, mosquitoes, and the occasional invader.",
+      "The river and dense tree cover drive heavy mosquito pressure through summer, and larger lots mean more entry points from the surrounding land. Summit Shield treats all three zones and holds the barrier, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Hunting Creek", "Norton Commons", "riverfront estates", "Sutherland"],
+    landmarks: ["the Ohio River", "Norton Commons", "Hunting Creek"],
+    housingStock: "Large homes on wooded and riverfront lots, plus the planned Norton Commons neighborhood.",
+    topPests: ["Mosquitoes", "Spiders", "Ticks & fleas", "General household pests", "Ants", "Rodents"],
+    seasonalNote:
+      "The Ohio River and heavy tree cover drive intense summer mosquito pressure; wooded lots keep spiders and ticks active.",
+    localServiceNote:
+      "Prospect is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "anchorage",
+    county: "jefferson-county",
+    city: "Anchorage",
+    badge: "Jefferson County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Anchorage, KY — Summit Shield three-zone protection for this historic, wooded east-side city.",
+    intro: [
+      "Anchorage is a small, historic, affluent city on Louisville's east side, known for its large wooded lots, mature trees, and the Anchorage Trail. Those big, tree-heavy properties bring steady spider, carpenter ant, and occasional-invader pressure, plus mosquitoes off every shaded yard.",
+      "The dense canopy and settled older homes keep pest pressure year-round, and cooler weather sends mice and overwintering invaders indoors. Our three-zone Summit Shield process treats the whole home and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["historic Anchorage", "Owl Creek", "areas along the Anchorage Trail", "Bellewood-adjacent streets"],
+    landmarks: ["the Anchorage Trail", "Owl Creek", "historic Anchorage"],
+    housingStock: "Historic homes on large, wooded, tree-heavy lots.",
+    topPests: ["Spiders", "Carpenter ants", "Occasional invaders", "Mosquitoes", "General household pests", "Rodents"],
+    seasonalNote:
+      "Heavy tree cover keeps spiders and carpenter ants active and mosquitoes strong in summer; fall drives invaders toward warm homes.",
+    localServiceNote:
+      "Anchorage is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+
+  // ---------------- OLDHAM COUNTY ----------------
+  {
+    slug: "la-grange",
+    county: "oldham-county",
+    city: "La Grange",
+    badge: "Oldham County seat",
+    tier: 1,
+    metaDescription:
+      "Pest control in La Grange, KY — Summit Shield three-zone protection for the Oldham County seat, from historic downtown to the new subdivisions.",
+    intro: [
+      "La Grange is the Oldham County seat, famous for the train that still runs right down the middle of Main Street. Its historic downtown is ringed by fast-growing subdivisions as families move out from Louisville, mixing century-old homes with new construction on freshly cleared ground.",
+      "Older homes bring settled-foundation entry points while new builds draw displaced ants and field mice, and humid summers press mosquitoes and termites countywide. Summit Shield treats all three zones and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["historic downtown La Grange", "new subdivisions off KY-53", "acreage toward Buckner", "areas near I-71"],
+    landmarks: ["the train down Main Street", "historic downtown La Grange", "the Oldham County courthouse"],
+    housingStock: "Century-old downtown homes alongside fast-growing new subdivisions.",
+    topPests: ["General household pests", "Ants", "Termites", "Mosquitoes", "Spiders", "Rodents"],
+    seasonalNote:
+      "New construction draws ants and mice year-round; humid summers press mosquitoes and termites, and fall brings invaders indoors.",
+    localServiceNote:
+      "La Grange is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "crestwood",
+    county: "oldham-county",
+    city: "Crestwood",
+    badge: "Oldham County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Crestwood, KY — Summit Shield three-zone protection for one of Oldham County's fastest-growing commuter communities.",
+    intro: [
+      "Crestwood is one of Oldham County's fastest-growing communities — a former farming area now filled with new subdivisions thanks to its easy commute to Louisville. New construction on cleared ground reliably pushes ants, spiders, and field mice toward the nearest home while the soil settles.",
+      "The surrounding wooded and rural stretches keep tick, spider, and mosquito pressure up in summer, and cooler weather sends mice indoors. Our three-zone Summit Shield process treats the whole home and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Crestwood Station area", "new subdivisions off Old Floydsburg Road", "acreage toward Pewee Valley", "South Oldham school corridor"],
+    landmarks: ["Crestwood Station", "the South Oldham schools", "Old Floydsburg Road"],
+    housingStock: "Mostly new subdivisions on former farmland, with rural acreage between.",
+    topPests: ["Ants", "Spiders", "General household pests", "Ticks & fleas", "Mosquitoes", "Rodents"],
+    seasonalNote:
+      "New construction draws ants and mice; surrounding woods and fields keep ticks, spiders, and mosquitoes active in summer.",
+    localServiceNote:
+      "Crestwood is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "pewee-valley",
+    county: "oldham-county",
+    city: "Pewee Valley",
+    badge: "Oldham County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Pewee Valley, KY — Summit Shield three-zone protection for this historic small town of 1800s homes.",
+    intro: [
+      "Pewee Valley is a small historic town of 1800s homes that grew up as a retreat for well-to-do Louisville families. Its settled foundations, mature trees, and wooded lots bring the pest quirks that come with age — carpenter ants, spiders, and overwintering invaders working in from the surrounding woods.",
+      "The dense tree cover keeps spiders and mosquitoes active through summer, and cooler weather pushes mice and invaders toward warm homes. Summit Shield treats all three zones and holds the barrier, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Pewee Valley historic district", "Central Avenue", "wooded lots off Ash Avenue", "areas toward La Grange"],
+    landmarks: ["the Pewee Valley historic district", "Central Avenue", "the Little Colonel Playhouse"],
+    housingStock: "Historic 1800s homes on mature, wooded lots.",
+    topPests: ["Carpenter ants", "Spiders", "Occasional invaders", "Mosquitoes", "General household pests", "Rodents"],
+    seasonalNote:
+      "Mature trees keep spiders and carpenter ants active and mosquitoes strong in summer; fall drives invaders toward warm homes.",
+    localServiceNote:
+      "Pewee Valley is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "goshen",
+    county: "oldham-county",
+    city: "Goshen",
+    badge: "Oldham County · Ohio River",
+    tier: 1,
+    metaDescription:
+      "Pest control in Goshen, KY — Summit Shield three-zone protection for this upscale riverside community and horse-country acreage.",
+    intro: [
+      "Goshen sits in northwestern Oldham County near the Ohio River — a quiet, upscale residential area of larger homes and horse-country acreage, home to Hermitage Farm. Wooded and riverside property keeps spider, tick, and mosquito pressure high, and larger lots mean more entry points from the surrounding land.",
+      "The river and heavy tree cover drive strong summer mosquito pressure, while cooler weather sends field mice toward warm structures. Our three-zone Summit Shield process treats the whole property and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["areas along US-42", "riverfront and acreage properties", "Harmony Landing", "wooded lots toward Prospect"],
+    landmarks: ["Hermitage Farm", "the Ohio River", "the US-42 corridor"],
+    housingStock: "Larger homes and horse-country acreage, many on wooded or riverside lots.",
+    topPests: ["Mosquitoes", "Ticks & fleas", "Spiders", "General household pests", "Rodents", "Wasps & hornets"],
+    seasonalNote:
+      "The Ohio River and heavy tree cover drive intense summer mosquito pressure; wooded acreage keeps ticks and spiders active.",
+    localServiceNote:
+      "Goshen is on our regular route — we treat the house and outbuildings alike, with free re-services within 48 hours.",
+  },
+
+  // ---------------- BULLITT COUNTY ----------------
+  {
+    slug: "shepherdsville",
+    county: "bullitt-county",
+    city: "Shepherdsville",
+    badge: "Bullitt County seat",
+    tier: 1,
+    metaDescription:
+      "Pest control in Shepherdsville, KY — Summit Shield three-zone protection for the Bullitt County seat along the Salt River and I-65.",
+    intro: [
+      "Shepherdsville is the Bullitt County seat, straddling I-65 and the Salt River just south of Louisville. It's a fast-growing mix of established neighborhoods and new construction, and the river and creek bottoms running through town drive strong mosquito pressure every summer.",
+      "New builds on cleared ground draw ants and field mice, while the riverside humidity keeps mosquitoes and moisture-loving termites active. Summit Shield treats all three zones and holds the barrier, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["established neighborhoods off KY-44", "new subdivisions near I-65", "riverside areas along the Salt River", "Cedar Grove area"],
+    landmarks: ["the Salt River", "Paroquet Springs Conference Centre", "Bernheim Forest (nearby)"],
+    housingStock: "Established neighborhoods alongside fast-growing new construction near I-65.",
+    topPests: ["Mosquitoes", "General household pests", "Ants", "Termites", "Spiders", "Rodents"],
+    seasonalNote:
+      "The Salt River and creek bottoms drive heavy summer mosquito pressure and keep termites active; new construction draws ants and mice.",
+    localServiceNote:
+      "Shepherdsville is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "mount-washington",
+    county: "bullitt-county",
+    city: "Mount Washington",
+    badge: "Bullitt County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Mount Washington, KY — Summit Shield three-zone protection for one of Kentucky's fastest-growing cities.",
+    intro: [
+      "Mount Washington is one of the fastest-growing cities in Kentucky — it nearly doubled in the last decade, with thousands of new homes under construction along KY-44. All that new construction on cleared ground pushes ants, spiders, and field mice straight toward the nearest structure while the soil settles.",
+      "The surrounding wooded ridges keep tick, spider, and mosquito pressure high in summer, and cooler weather sends mice indoors. Our three-zone Summit Shield process treats the whole home and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["new subdivisions along KY-44", "downtown Mount Washington", "acreage toward Cox's Creek", "areas near the bypass"],
+    landmarks: ["downtown Mount Washington", "the KY-44 corridor", "Mount Washington City Park"],
+    housingStock: "Overwhelmingly new construction, with an older downtown core.",
+    topPests: ["Ants", "Spiders", "General household pests", "Ticks & fleas", "Mosquitoes", "Rodents"],
+    seasonalNote:
+      "Heavy new construction draws ants and mice year-round; wooded ridges keep ticks, spiders, and mosquitoes active in summer.",
+    localServiceNote:
+      "Mount Washington is on our regular route — we can protect a new-construction home from move-in day.",
+  },
+  {
+    slug: "hillview",
+    county: "bullitt-county",
+    city: "Hillview",
+    badge: "Bullitt County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Hillview, KY — Summit Shield three-zone protection for this residential city at the Jefferson–Bullitt line.",
+    intro: [
+      "Hillview is a residential city at the northern edge of Bullitt County, right against the Jefferson County line, with a mix of established neighborhoods and wooded lots. Its position between Louisville and the Bullitt countryside brings both suburban and rural pest pressure.",
+      "Wooded lots and creek corridors keep spiders, ticks, and mosquitoes active in summer, while cooler weather sends mice toward warm homes. Summit Shield treats all three zones and holds the barrier, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["neighborhoods off Blue Lick Road", "the Maryville area", "wooded lots near Cedar Creek", "areas along Old Preston Highway"],
+    landmarks: ["the Blue Lick Road corridor", "Cedar Creek", "the Maryville area"],
+    housingStock: "Established residential neighborhoods with wooded lots along the county line.",
+    topPests: ["General household pests", "Spiders", "Mosquitoes", "Ticks & fleas", "Ants", "Rodents"],
+    seasonalNote:
+      "Wooded lots and creek corridors drive summer spider, tick, and mosquito pressure; fall pushes mice toward warm homes.",
+    localServiceNote:
+      "Hillview is on our regular route — easy scheduling and free re-services within 48 hours.",
+  },
+  {
+    slug: "lebanon-junction",
+    county: "bullitt-county",
+    city: "Lebanon Junction",
+    badge: "Bullitt County",
+    tier: 1,
+    metaDescription:
+      "Pest control in Lebanon Junction, KY — Summit Shield three-zone protection for this small railroad town near Bernheim Forest.",
+    intro: [
+      "Lebanon Junction is a small railroad town in southern Bullitt County, near the Rolling Fork river and the entrance to Bernheim Forest. Its rural, wooded, riverside setting brings strong mosquito, tick, and spider pressure, plus field mice as the weather cools.",
+      "The river bottoms and surrounding forest keep moisture-loving pests active well into fall, and older homes add settled-foundation entry points. Our three-zone Summit Shield process treats the whole property and holds it, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["downtown Lebanon Junction", "riverside areas along the Rolling Fork", "wooded lots toward Bernheim", "rural acreage off KY-61"],
+    landmarks: ["Bernheim Arboretum & Research Forest", "the Rolling Fork river", "the historic rail depot"],
+    housingStock: "Small-town and rural homes near the river and forest, many on wooded lots.",
+    topPests: ["Mosquitoes", "Ticks & fleas", "Spiders", "Rodents", "General household pests", "Wasps & hornets"],
+    seasonalNote:
+      "The Rolling Fork and Bernheim Forest keep mosquitoes, ticks, and spiders active into fall; cool weather drives field mice indoors.",
+    localServiceNote:
+      "Lebanon Junction is on our regular route — we treat the house and outbuildings alike, with free re-services within 48 hours.",
+  },
 ];
 
 export function getLocation(slug: string): Location | undefined {
@@ -218,3 +549,7 @@ export function getLocation(slug: string): Location | undefined {
 }
 
 export const tier1Locations = locations.filter((l) => l.tier === 1);
+
+export function citiesByCounty(countySlug: string): Location[] {
+  return locations.filter((l) => l.county === countySlug);
+}
