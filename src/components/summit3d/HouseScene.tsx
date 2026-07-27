@@ -221,7 +221,7 @@ function Marker({ pos, color }: { pos: Vec3; color: string }) {
 /* ---------------- rig: camera + active markers ---------------- */
 function Scene({ active }: { active: number }) {
   const controls = useRef<CameraControls>(null);
-  const first = useRef(true);
+  const [ready, setReady] = useState(false);
 
   const applyPose = (transition: boolean) => {
     const c = controls.current;
@@ -230,23 +230,18 @@ function Scene({ active }: { active: number }) {
     c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], transition);
   };
 
-  // Initial framing: wait for CameraControls to finish its own setup, then snap
-  // to the hero pose (otherwise the first view renders empty).
+  // Wait until CameraControls is fully initialized, then drive the camera the
+  // same (animated) way a click does — an instant setLookAt before first
+  // interaction doesn't render.
   useEffect(() => {
-    const t = setTimeout(() => applyPose(true), 300);
+    const t = setTimeout(() => setReady(true), 350);
     return () => clearTimeout(t);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Zone changes: smooth fly-to.
   useEffect(() => {
-    if (first.current) {
-      first.current = false;
-      return;
-    }
-    applyPose(true);
+    if (ready) applyPose(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active]);
+  }, [active, ready]);
 
   return (
     <>
