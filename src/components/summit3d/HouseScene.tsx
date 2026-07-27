@@ -233,7 +233,7 @@ function Scene({ active }: { active: number }) {
   // Initial framing: wait for CameraControls to finish its own setup, then snap
   // to the hero pose (otherwise the first view renders empty).
   useEffect(() => {
-    const t = setTimeout(() => applyPose(false), 220);
+    const t = setTimeout(() => applyPose(true), 300);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -271,7 +271,7 @@ function Scene({ active }: { active: number }) {
 
 /* ---------------- public component ---------------- */
 export default function HouseScene() {
-  const [active, setActive] = useState(-1);
+  const [active, setActive] = useState(0);
 
   return (
     <div className="overflow-hidden rounded-2xl border border-white/10 bg-[#0a1610]">
@@ -279,7 +279,7 @@ export default function HouseScene() {
         <Canvas
           shadows
           dpr={[1, 1.5]}
-          camera={{ position: HERO.cam, fov: 42 }}
+          camera={{ position: ZONES[0].cam, fov: 42 }}
           gl={{ antialias: true }}
         >
           <Scene active={active} />
