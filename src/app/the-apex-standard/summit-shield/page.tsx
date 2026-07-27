@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { Container } from "@/components/ui";
 import { getSiteSettings } from "@/lib/getSiteSettings";
 import { zones } from "@/lib/site";
+import { SummitShield3D } from "@/components/summit3d/SummitShield3D";
 
 export const metadata: Metadata = {
   title: "Summit Shield — Three-Zone Protection",
@@ -25,6 +26,12 @@ export default async function SummitShieldPage() {
       />
       <section className="py-[92px]">
         <Container>
+          <div className="mb-14">
+            <SummitShield3D />
+            <p className="mt-3 text-center text-[13px] text-[#8a8a80]">
+              Tap a zone to explore how we protect it — from the property line to the peak line.
+            </p>
+          </div>
           <div className="space-y-6">
             {zones.map((z) => (
               <div key={z.no} className="grid gap-5 rounded-2xl border border-[#e4e1d8] bg-white p-8 md:grid-cols-[auto_1fr]">
