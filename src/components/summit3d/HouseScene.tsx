@@ -223,17 +223,29 @@ function Scene({ active }: { active: number }) {
   const controls = useRef<CameraControls>(null);
   const first = useRef(true);
 
+  const applyPose = (transition: boolean) => {
+    const c = controls.current;
+    if (!c) return;
+    const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
+    c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], transition);
+  };
+
+  // Initial framing: wait for CameraControls to finish its own setup, then snap
+  // to the hero pose (otherwise the first view renders empty).
   useEffect(() => {
-    // defer one frame so CameraControls has finished initializing (otherwise it
-    // resets the camera after our call and the first view renders empty).
-    const raf = requestAnimationFrame(() => {
-      const c = controls.current;
-      if (!c) return;
-      const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
-      c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], !first.current);
+    const t = setTimeout(() => applyPose(false), 220);
+    return () => clearTimeout(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Zone changes: smooth fly-to.
+  useEffect(() => {
+    if (first.current) {
       first.current = false;
-    });
-    return () => cancelAnimationFrame(raf);
+      return;
+    }
+    applyPose(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
   return (
