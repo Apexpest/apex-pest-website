@@ -221,12 +221,19 @@ function Marker({ pos, color }: { pos: Vec3; color: string }) {
 /* ---------------- rig: camera + active markers ---------------- */
 function Scene({ active }: { active: number }) {
   const controls = useRef<CameraControls>(null);
+  const first = useRef(true);
 
   useEffect(() => {
-    const c = controls.current;
-    if (!c) return;
-    const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
-    c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], true);
+    // defer one frame so CameraControls has finished initializing (otherwise it
+    // resets the camera after our call and the first view renders empty).
+    const raf = requestAnimationFrame(() => {
+      const c = controls.current;
+      if (!c) return;
+      const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
+      c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], !first.current);
+      first.current = false;
+    });
+    return () => cancelAnimationFrame(raf);
   }, [active]);
 
   return (
