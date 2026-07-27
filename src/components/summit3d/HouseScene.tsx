@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { CameraControls, ContactShadows, Html } from "@react-three/drei";
 import * as THREE from "three";
 
@@ -221,27 +221,27 @@ function Marker({ pos, color }: { pos: Vec3; color: string }) {
 /* ---------------- rig: camera + active markers ---------------- */
 function Scene({ active }: { active: number }) {
   const controls = useRef<CameraControls>(null);
-  const inited = useRef(false);
+  const invalidate = useThree((state) => state.invalidate);
 
-  const applyPose = (transition: boolean) => {
-    const c = controls.current;
-    if (!c) return;
-    const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
-    c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], transition);
-  };
-
-  // Initial framing: run from inside the render loop so CameraControls is
-  // guaranteed live (a setLookAt before the loop/controls are ready no-ops).
-  useFrame(() => {
-    if (inited.current || !controls.current) return;
-    applyPose(true);
-    inited.current = true;
-  });
-
-  // Zone changes after init: smooth fly-to.
+  // On mount and on every zone change, animate the camera. We retry until
+  // CameraControls is live and pump frames for a moment so the animation
+  // actually renders (guards against init timing and demand-frameloop).
   useEffect(() => {
-    if (!inited.current) return;
-    applyPose(true);
+    const pose = active < 0 ? HERO : { cam: ZONES[active].cam, target: ZONES[active].target };
+    let raf = 0;
+    let applied = false;
+    const start = performance.now();
+    const pump = () => {
+      const c = controls.current;
+      if (c && !applied) {
+        c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], true);
+        applied = true;
+      }
+      invalidate();
+      if (performance.now() - start < 1600) raf = requestAnimationFrame(pump);
+    };
+    raf = requestAnimationFrame(pump);
+    return () => cancelAnimationFrame(raf);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active]);
 
