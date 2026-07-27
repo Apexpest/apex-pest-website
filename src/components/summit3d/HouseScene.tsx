@@ -221,7 +221,7 @@ function Marker({ pos, color }: { pos: Vec3; color: string }) {
 /* ---------------- rig: camera + active markers ---------------- */
 function Scene({ active }: { active: number }) {
   const controls = useRef<CameraControls>(null);
-  const [ready, setReady] = useState(false);
+  const inited = useRef(false);
 
   const applyPose = (transition: boolean) => {
     const c = controls.current;
@@ -230,18 +230,20 @@ function Scene({ active }: { active: number }) {
     c.setLookAt(pose.cam[0], pose.cam[1], pose.cam[2], pose.target[0], pose.target[1], pose.target[2], transition);
   };
 
-  // Wait until CameraControls is fully initialized, then drive the camera the
-  // same (animated) way a click does — an instant setLookAt before first
-  // interaction doesn't render.
-  useEffect(() => {
-    const t = setTimeout(() => setReady(true), 350);
-    return () => clearTimeout(t);
-  }, []);
+  // Initial framing: run from inside the render loop so CameraControls is
+  // guaranteed live (a setLookAt before the loop/controls are ready no-ops).
+  useFrame(() => {
+    if (inited.current || !controls.current) return;
+    applyPose(true);
+    inited.current = true;
+  });
 
+  // Zone changes after init: smooth fly-to.
   useEffect(() => {
-    if (ready) applyPose(true);
+    if (!inited.current) return;
+    applyPose(true);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active, ready]);
+  }, [active]);
 
   return (
     <>
@@ -273,6 +275,7 @@ export default function HouseScene() {
       <div className="relative h-[420px] w-full sm:h-[520px]">
         <Canvas
           shadows
+          frameloop="always"
           dpr={[1, 1.5]}
           camera={{ position: ZONES[0].cam, fov: 42 }}
           gl={{ antialias: true }}
