@@ -35,7 +35,7 @@ export const nav = [
 export const heroStats = [
   { value: "48hr", label: "Free re-services within 48 hours if pests return between scheduled visits." },
   { value: "5★", label: "Rated five stars across Google and other review platforms." },
-  { value: "3 Zones", label: "Summit Shield protection from the property line to the peak line." },
+  { value: "5 Points", label: "Summit Shield protection from the property line to the peak line." },
   { value: "100%", label: "Satisfaction guarantee, backed in writing." },
 ] as const;
 
@@ -67,36 +67,50 @@ export const zones = [
     no: "01",
     name: "Property Line",
     headline: "The yard, before pests reach the house",
-    body: "Lawn edges, landscape beds, fence and tree lines, standing water and mulch — where pests gather and breed before they ever touch the home.",
+    body: "A granular barrier across lawn edges, landscape beds, fence and tree lines — stopping pests where they gather and breed before they ever touch the home.",
     tone: "sage",
   },
   {
     no: "02",
     name: "Foundation Line",
-    headline: "Where pests meet the structure",
-    body: "The soil band, foundation walls and seams, slab edges, crawlspace vents and downspout splash zones.",
+    headline: "The perimeter where pests meet the structure",
+    body: "A liquid barrier band roughly three feet up the wall and three feet out from the foundation — soil band, wall seams, slab edges, crawlspace vents and downspout splash zones.",
     tone: "sage",
   },
   {
     no: "03",
+    name: "Entry Points",
+    headline: "The cracks and crevices pests slip through",
+    body: "Targeted crack-and-crevice treatment at windows, door frames, weep holes, garage seals and utility penetrations — the small gaps pests use to get inside.",
+    tone: "sage",
+  },
+  {
+    no: "04",
     name: "Peak Line",
-    headline: "The entry points, ground to peak",
-    body: "Siding gaps, weep holes, windows and door frames, garage seals, eaves, soffits and the roofline.",
+    headline: "The eaves, soffits and roofline overhead",
+    body: "An eave sweep that knocks down wasp nests, spider webs and overwintering pests high on the structure — the zone most companies never touch.",
     tone: "amber",
+  },
+  {
+    no: "05",
+    name: "Interior",
+    headline: "The rooms where pests actually show up",
+    body: "Discreet interior treatment of the common problem areas — kitchens, baths, garages and basements — targeting activity inside, not just around the home.",
+    tone: "sage",
   },
 ] as const;
 
 export const steps = [
-  { num: 1, name: "Survey", body: "We walk the whole property first — all three zones, documented with photos in your service record." },
+  { num: 1, name: "Survey", body: "We walk the whole property first — all five points, documented with photos in your service record." },
   { num: 2, name: "Clear", body: "We treat what's active now, addressing where pests nest and breed — not just where they've been seen." },
-  { num: 3, name: "Shield", body: "We build the three-zone barrier from the property line to the peak line, sealing the routes pests use." },
+  { num: 3, name: "Shield", body: "We build the five-point barrier from the property line to the peak line, sealing the routes pests use." },
   { num: 4, name: "Hold", body: "Seasonal service tuned to the regional pest calendar. If pests return between visits, we re-treat at no charge." },
 ] as const;
 
 export const comparison = {
   columns: ["DIY", "Typical pest control", "Apex Pest Solutions"],
   rows: [
-    { feature: "Treats the whole property, yard to roofline", diy: false, typical: "Foundation band only", apex: "All three zones" },
+    { feature: "Treats the whole property, yard to roofline", diy: false, typical: "Foundation band only", apex: "All five points" },
     { feature: "Free return if pests come back", diy: false, typical: "Sometimes, with a wait", apex: "Within 48 hours" },
     { feature: "Proactive communication & reminders", diy: false, typical: "Inconsistent", apex: "Standard on every visit" },
     { feature: "Documented service record with photos", diy: false, typical: "Rarely", apex: "Every visit" },

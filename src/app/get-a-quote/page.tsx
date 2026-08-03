@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 const trust = [
-  { title: "Free inspection", body: "No cost, no pressure — we assess all three zones before we quote." },
+  { title: "Free inspection", body: "No cost, no pressure — we assess all five points before we quote." },
   { title: "48-hour re-service", body: "Pests return between visits? So do we — free, within 48 hours." },
   { title: "Licensed & insured", body: "KDA-licensed Kentucky technicians on every visit." },
   { title: "Documented service", body: "A written record of exactly what we treated — every visit." },

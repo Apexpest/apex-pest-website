@@ -15,13 +15,13 @@ export const services: Service[] = [
     intro:
       "Our flagship recurring service handles the pests Kentucky homes deal with most — ants, spiders, cockroaches, silverfish, and the seasonal invaders that show up with the weather.",
     body: [
-      "General pest control is the backbone of the Apex Promise. We build the Summit Shield three-zone barrier around your home — from the property line to the peak line — and then hold it with scheduled seasonal service tuned to Kentucky's pest calendar.",
+      "General pest control is the backbone of the Apex Promise. We build the Summit Shield five-point barrier around your home — from the property line to the peak line — and then hold it with scheduled seasonal service tuned to Kentucky's pest calendar.",
       "Every visit is documented in your service record, applied by licensed technicians to product-label directions. If pests show up between scheduled visits, we come back and re-treat at no charge — that's the guarantee, in writing.",
       "Most homeowners start on our Quarterly plan and never think about pests again. You get the reminders, the arrival texts, and a clear note of exactly what we treated and where.",
     ],
     highlights: [
       "Covers ants, spiders, cockroaches, silverfish, and common invaders",
-      "Three-zone Summit Shield barrier, property line to peak line",
+      "Five-point Summit Shield barrier, property line to peak line",
       "Free re-services between visits — within 48 hours",
       "Documented service record every visit",
     ],

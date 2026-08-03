@@ -9,7 +9,7 @@ import { steps } from "@/lib/site";
 export const metadata: Metadata = {
   title: "How It Works — Survey, Clear, Shield, Hold",
   description:
-    "Every Apex service follows the same four steps: Survey the whole property, Clear what's active, Shield with the three-zone barrier, and Hold with seasonal service.",
+    "Every Apex service follows the same four steps: Survey the whole property, Clear what's active, Shield with the five-point barrier, and Hold with seasonal service.",
   alternates: { canonical: "/the-apex-standard/how-it-works" },
 };
 

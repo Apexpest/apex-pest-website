@@ -25,7 +25,6 @@ const wixRedirects: { source: string; destination: string }[] = [
 ];
 
 const nextConfig: NextConfig = {
-  transpilePackages: ["three", "@react-three/fiber", "@react-three/drei"],
   async redirects() {
     return [
       ...hardinCities.map((c) => ({

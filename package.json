@@ -9,8 +9,6 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@react-three/drei": "^10.7.7",
-    "@react-three/fiber": "^9.6.1",
     "@sanity/image-url": "^2.1.1",
     "@sanity/vision": "^6.6.0",
     "next": "16.2.12",
@@ -18,15 +16,13 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "sanity": "^6.6.0",
-    "styled-components": "^6.4.4",
-    "three": "^0.171.0"
+    "styled-components": "^6.4.4"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/three": "^0.171.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",

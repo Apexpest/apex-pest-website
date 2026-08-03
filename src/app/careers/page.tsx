@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 const roles = [
   {
     title: "Pest Control Technician",
-    body: "Run the Summit Shield process in the field — surveying properties, treating all three zones, and documenting each visit. We train you on the method; you bring reliability and attention to detail.",
+    body: "Run the Summit Shield process in the field — surveying properties, treating all five points, and documenting each visit. We train you on the method; you bring reliability and attention to detail.",
   },
   {
     title: "Office / Customer Service",

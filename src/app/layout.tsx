@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     template: "%s | Apex Pest Solutions",
   },
   description:
-    "Thorough, reliable pest control for homes and businesses. Summit Shield three-zone protection, clear communication, and free re-services within 48 hours.",
+    "Thorough, reliable pest control for homes and businesses. Summit Shield five-point protection, clear communication, and free re-services within 48 hours.",
   alternates: { canonical: "/" },
   openGraph: {
     title: TITLE,
