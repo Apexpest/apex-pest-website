@@ -76,6 +76,51 @@ export const counties: County[] = [
     pestNote:
       "Humid summers press termites and mosquitoes hard; harvest and cold weather drive field mice indoors, and new construction draws displaced ants and spiders.",
   },
+  {
+    slug: "shelby-county",
+    name: "Shelby County",
+    short: "Shelby",
+    seat: "Shelbyville",
+    badge: "East of Louisville",
+    metaDescription:
+      "Pest control across Shelby County, KY — Shelbyville, Simpsonville, and the surrounding communities along I-64. Three-zone Summit Shield protection for a fast-growing commuter county.",
+    intro: [
+      "Shelby County sits directly east of Louisville along I-64, halfway to Frankfort, and it has become one of the region's most popular landing spots for families and commuters who want small-town living within reach of the metro. Shelbyville anchors the county, with Simpsonville and a ring of smaller communities — Waddy, Bagdad, and Finchville — spread across the horse farms and rolling farmland in between.",
+      "That growth means new subdivisions rising on freshly cleared ground next to century-old homes and working farms, and each puts a different kind of pest pressure on a house. New construction pushes ants, spiders, and field mice toward the nearest structure while the soil settles, while the county's creek bottoms and wooded acreage keep mosquito, tick, and spider pressure high through the summer. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
+    ],
+    pestNote:
+      "New subdivisions on cleared farmland draw ants, spiders, and field mice; creek bottoms and wooded acreage drive summer mosquito and tick pressure, and cool weather sends rodents indoors.",
+  },
+  {
+    slug: "meade-county",
+    name: "Meade County",
+    short: "Meade",
+    seat: "Brandenburg",
+    badge: "Along the Ohio River",
+    metaDescription:
+      "Pest control across Meade County, KY — Brandenburg, Muldraugh, Flaherty, and the Fort Knox community. Three-zone Summit Shield protection tuned to the local pest calendar.",
+    intro: [
+      "Meade County runs along 56 miles of the Ohio River southwest of Louisville, with Brandenburg as its county seat and quick gate access to Fort Knox making it a favorite for military families. Between the river towns and the rolling farmland sit Muldraugh, Flaherty, Ekron, and Guston — a mix of established small-town homes, rural acreage, and newer construction serving the Fort Knox community.",
+      "Riverfront humidity and the county's wooded ridges and creek bottoms drive heavy mosquito, tick, and spider pressure through the warm months, while frequent PCS moves and quick turnovers near Fort Knox are exactly where rodents and cockroaches get a foothold. Our three-zone Summit Shield process treats the whole home — property line to peak line — sealing the entry points pests use, and backs it with the Apex Promise.",
+    ],
+    pestNote:
+      "Ohio River humidity and wooded ridges fuel summer mosquitoes, ticks, and spiders; frequent Fort Knox turnovers and cool weather send rodents and cockroaches looking for a way indoors.",
+  },
+  {
+    slug: "warren-county",
+    name: "Warren County",
+    short: "Warren",
+    seat: "Bowling Green",
+    badge: "South-Central Kentucky",
+    metaDescription:
+      "Pest control across Warren County, KY — Bowling Green, Smiths Grove, Oakland, and Woodburn. Three-zone Summit Shield protection built for cave-country homes.",
+    intro: [
+      "Warren County anchors south-central Kentucky along I-65, an hour north of Nashville, with Bowling Green — the state's fifth-largest city — at its center and the smaller communities of Smiths Grove, Oakland, and Woodburn spread across the surrounding farmland. Western Kentucky University, the Corvette plant, and a diversifying economy keep the county growing, with new subdivisions rising alongside historic downtowns and rural acreage.",
+      "Bowling Green sits squarely in cave country — the karst limestone that produced Mammoth Cave and the sinkholes beneath the city — and that geology gives pests an underground network of cracks, drains, and foundation gaps to travel through. Combined with humid summers, it drives steady pressure from ants, spiders, roaches, and rodents, plus heavy mosquito and termite activity in the warm months. Our three-zone Summit Shield process treats the whole home — property line to peak line — sealing those entry points, and backs it with the Apex Promise.",
+    ],
+    pestNote:
+      "Karst limestone and sinkhole geology give ants, roaches, spiders, and rodents underground routes into homes; humid summers press mosquitoes and termites hard across the county.",
+  },
 ];
 
 export function getCounty(slug: string): County | undefined {

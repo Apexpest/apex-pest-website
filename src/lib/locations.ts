@@ -542,6 +542,184 @@ export const locations: Location[] = [
     localServiceNote:
       "Lebanon Junction is on our regular route — we treat the house and outbuildings alike, with free re-services within 48 hours.",
   },
+  {
+    slug: "shelbyville",
+    city: "Shelbyville",
+    badge: "Shelby County seat",
+    tier: 1,
+    county: "shelby-county",
+    metaDescription:
+      "Pest control in Shelbyville, KY — three-zone Summit Shield protection for Shelby County's seat, from historic downtown to the new subdivisions along the I-64 corridor.",
+    intro: [
+      "Shelbyville is the seat of Shelby County and its largest city, sitting right on I-64 between Louisville and Frankfort. It's a classic Kentucky county-seat town — a historic courthouse square and century-old homes downtown — wrapped in fast-growing new subdivisions as commuters move east out of the metro for more room.",
+      "That old-and-new mix is exactly where pest pressure splits. The older homes near downtown deal with the classics: overwintering invaders slipping through settled foundations, carpenter ants in mature shade trees, and the occasional brown recluse in a basement or garage. The new construction along the US-60 and I-64 corridors sits on freshly disturbed farmland, which pushes ants, spiders, and field mice straight toward the closest warm structure. Add the county's horse farms, creek bottoms, and wooded acreage and summer brings heavy mosquito and tick pressure on top of it.",
+      "Our three-zone Summit Shield process is built for that range of housing — we treat the whole home, property line to peak line, and hold it with seasonal service tuned to the local calendar, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Historic downtown & the courthouse square", "New subdivisions along the US-60 corridor", "Clear Creek area", "Rural acreage toward Bagdad and Finchville"],
+    landmarks: ["Shelby County Courthouse", "Jeptha Creed Distillery", "Shelbyville Horse Show grounds", "Clear Creek Park"],
+    housingStock:
+      "A wide mix — historic homes around the downtown square alongside a boom of new construction on the town's growing edges.",
+    topPests: ["General household pests", "Ants", "Brown recluse spiders", "Termites", "Mosquitoes", "Rodents"],
+    seasonalNote:
+      "Humid summers drive heavy mosquito and termite pressure across the horse farms and creek bottoms; the first cold snaps push ladybugs, stink bugs, and mice indoors.",
+    localServiceNote:
+      "Shelbyville is on our regular route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "simpsonville",
+    city: "Simpsonville",
+    badge: "Western Shelby County",
+    tier: 2,
+    county: "shelby-county",
+    metaDescription:
+      "Pest control in Simpsonville, KY — three-zone Summit Shield protection for western Shelby County, from established homes to new subdivisions near the Outlet Shoppes.",
+    intro: [
+      "Simpsonville sits in western Shelby County, about eight miles west of Shelbyville and just 23 miles east of Louisville — close enough to the metro that it's grown quickly as a commuter community. It's best known regionally for the Outlet Shoppes of the Bluegrass, and the retail and new-home growth around it has reshaped what was a quiet farm town.",
+      "New subdivisions rising on former farmland push ants, spiders, and field mice toward the nearest home while the ground settles, and the surrounding creek bottoms and wooded stretches keep mosquito, tick, and spider pressure high in summer. Older homes and rural acreage bring the usual overwintering invaders and rodents when the weather turns. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["New subdivisions near the Outlet Shoppes", "Established streets in old-town Simpsonville", "Buck Creek area", "Rural acreage along Old Veechdale Road"],
+    landmarks: ["The Outlet Shoppes of the Bluegrass", "Simpsonville United Methodist Church", "Veterans Memorial", "I-64 corridor"],
+    housingStock:
+      "A fast-growing mix of new subdivisions and established small-town homes, with rural acreage on the edges.",
+    topPests: ["General household pests", "Ants", "Spiders", "Mosquitoes", "Rodents", "Termites"],
+    seasonalNote:
+      "Creek bottoms and wooded stretches drive summer mosquito and tick pressure; cooler fall weather sends field mice and overwintering invaders looking for a way indoors.",
+    localServiceNote:
+      "Simpsonville is on our regular route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "brandenburg",
+    city: "Brandenburg",
+    badge: "Meade County seat",
+    tier: 1,
+    county: "meade-county",
+    metaDescription:
+      "Pest control in Brandenburg, KY — three-zone Summit Shield protection for Meade County's Ohio River seat, from historic downtown to riverfront and rural homes.",
+    intro: [
+      "Brandenburg is the seat of Meade County, set right on the Ohio River southwest of Louisville. It's a historic river town — a walkable downtown and a riverfront overlooking the water — surrounded by the farmland and wooded acreage that define the county, with quick access to Fort Knox drawing military families to the area.",
+      "Riverfront humidity is the story here: it drives heavy mosquito pressure through the warm months, and the wooded ridges and creek bottoms around town keep tick and spider activity high. Older homes near downtown deal with overwintering invaders and carpenter ants, while rural properties see field mice and the occasional brown recluse. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service tuned to the local calendar, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Historic downtown & the riverfront", "New subdivisions on the edges of town", "Rural acreage along KY-79 and KY-448", "Wooded lots overlooking the Ohio"],
+    landmarks: ["Brandenburg riverfront & Riverfront Park", "Meade County Courthouse", "Buttermilk Falls", "Doe Valley"],
+    housingStock:
+      "A mix of historic riverfront homes, established in-town streets, and rural acreage across the county.",
+    topPests: ["Mosquitoes", "Ticks", "General household pests", "Ants", "Brown recluse spiders", "Rodents"],
+    seasonalNote:
+      "Ohio River humidity drives heavy summer mosquito pressure; wooded ridges keep ticks and spiders active, and cool weather sends mice indoors.",
+    localServiceNote:
+      "Brandenburg is on our Meade County route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "muldraugh",
+    city: "Muldraugh",
+    badge: "Fort Knox gate town",
+    tier: 2,
+    county: "meade-county",
+    metaDescription:
+      "Pest control in Muldraugh, KY — three-zone Summit Shield protection for the Fort Knox gate town, built for rentals, quick turnovers, and established homes.",
+    intro: [
+      "Muldraugh sits on the Meade–Hardin line at the northern gate of Fort Knox, and its housing reflects that — a high share of rentals and quick-turnover homes serving soldiers and their families, alongside established streets in the small in-town core. Homes here change hands often, and pest problems can hide between tenants and surface just as a new family is moving in.",
+      "Frequent turnover and rentals are exactly where rodents and cockroaches get a foothold, so our Peak Line work — sealing utility penetrations, garage gaps, and door seals — matters more here than almost anywhere in the county. The surrounding wooded ridges above the Ohio bring summer mosquito, tick, and spider pressure on top of it. Whether you own or you're renting through a PCS, the Apex Promise travels with you, all on the three-zone Summit Shield system.",
+    ],
+    neighborhoods: ["In-town Muldraugh core", "Rental and quick-turnover homes near the Fort Knox gate", "Established streets off US-31W", "Wooded lots along the ridgeline"],
+    landmarks: ["Fort Knox north gate", "Otter Creek Outdoor Recreation Area", "US-31W corridor", "Muldraugh water tower"],
+    housingStock:
+      "A high share of rentals and quick-turnover homes serving Fort Knox, alongside established in-town streets.",
+    topPests: ["Rodents", "Cockroaches", "General household pests", "Ants", "Spiders", "Mosquitoes"],
+    seasonalNote:
+      "Wooded ridges above the Ohio raise summer mosquito and tick pressure; frequent turnover and cool weather send mice and roaches hunting for a way indoors.",
+    localServiceNote:
+      "Muldraugh is on our Fort Knox route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "flaherty",
+    city: "Flaherty",
+    badge: "Rural Meade County",
+    tier: 2,
+    county: "meade-county",
+    metaDescription:
+      "Pest control in Flaherty, KY — three-zone Summit Shield protection for the growing rural community near Fort Knox, from new builds to farm acreage.",
+    intro: [
+      "Flaherty is a growing rural community in the heart of Meade County, popular with Fort Knox families who want more room and a country setting within an easy drive of the gate. It's a mix of newer homes on former farmland, established country properties, and working farms spread across the rolling landscape.",
+      "New construction on cleared ground pushes ants, spiders, and field mice toward the nearest structure while the soil settles, and the surrounding farm fields, creek bottoms, and wooded acreage keep mosquito, tick, and rodent pressure high — especially in summer and again as the fields are harvested in fall. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["New subdivisions off KY-144 and KY-1600", "Established country homes around Flaherty", "Working farms and acreage", "Wooded rural lots"],
+    landmarks: ["Flaherty Community Center", "KY-144 corridor", "Meade County farmland", "Rhodelia countryside"],
+    housingStock:
+      "A growing mix of new rural subdivisions, established country homes, and working farms.",
+    topPests: ["General household pests", "Ants", "Field mice & rodents", "Spiders", "Mosquitoes", "Ticks"],
+    seasonalNote:
+      "Farm fields and wooded acreage drive summer mosquito and tick pressure; harvest and the first cold snaps send field mice indoors.",
+    localServiceNote:
+      "Flaherty is on our Meade County route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "bowling-green",
+    city: "Bowling Green",
+    badge: "Warren County seat",
+    tier: 1,
+    county: "warren-county",
+    metaDescription:
+      "Pest control in Bowling Green, KY — three-zone Summit Shield protection for Kentucky's fifth-largest city, built for cave-country homes from historic districts to new subdivisions.",
+    intro: [
+      "Bowling Green is the seat of Warren County and Kentucky's fifth-largest city, a fast-growing hub built around Western Kentucky University, the Corvette plant, and a diversifying regional economy. Its housing runs the full range — historic districts near downtown and WKU, dense student rentals, and sprawling new subdivisions pushing out along the I-65 and Scottsville Road corridors.",
+      "What sets Bowling Green apart is the ground it sits on: karst limestone riddled with caves, sinkholes, and underground streams — the same geology behind nearby Mammoth Cave, and the sinkhole that famously swallowed eight cars beneath the National Corvette Museum. That underground network gives ants, roaches, spiders, and rodents a maze of cracks, drains, and foundation gaps to travel through, and humid summers pile on heavy mosquito and termite pressure. Student rentals and quick turnovers are where roaches and rodents get a foothold.",
+      "Our three-zone Summit Shield process is built for exactly this — we treat the whole home, property line to peak line, sealing the entry points that cave-country homes are prone to, and back it with the Apex Promise.",
+    ],
+    neighborhoods: ["Historic downtown & the WKU area", "Student rentals near campus", "New subdivisions along Scottsville Road", "Established neighborhoods off Cave Mill Road"],
+    landmarks: ["Western Kentucky University", "National Corvette Museum", "Lost River Cave", "Fountain Square Park"],
+    housingStock:
+      "The full range — historic districts, dense student rentals near WKU, and fast-growing new subdivisions on the city's edges.",
+    topPests: ["General household pests", "Cockroaches", "Ants", "Rodents", "Spiders", "Termites", "Mosquitoes"],
+    seasonalNote:
+      "Karst geology gives pests year-round underground routes indoors; humid summers drive heavy mosquito and termite pressure, and cool weather pushes roaches and mice inside.",
+    localServiceNote:
+      "Bowling Green is on our South-Central Kentucky route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "smiths-grove",
+    city: "Smiths Grove",
+    badge: "Northern Warren County",
+    tier: 2,
+    county: "warren-county",
+    metaDescription:
+      "Pest control in Smiths Grove, KY — three-zone Summit Shield protection for the historic small town north of Bowling Green, from antique-district homes to rural acreage.",
+    intro: [
+      "Smiths Grove is a historic small town in northern Warren County, just off I-65 between Bowling Green and Mammoth Cave country. Known for its antique district and walkable old downtown, it's surrounded by farmland and the same karst limestone landscape that defines the region.",
+      "Older homes in the historic core deal with overwintering invaders slipping through settled foundations, carpenter ants in mature trees, and spiders in basements and outbuildings, while the surrounding farm fields and cave-country ground give ants, rodents, and roaches steady routes toward the nearest structure. Summer brings heavy mosquito and tick pressure off the creek bottoms and wooded acreage. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["Historic downtown & antique district", "Established streets in old-town Smiths Grove", "New homes off the I-65 interchange", "Rural farm acreage"],
+    landmarks: ["Smiths Grove antique district", "Historic downtown", "I-65 interchange", "Warren County farmland"],
+    housingStock:
+      "Historic small-town homes around the antique district, with newer homes and farm acreage on the edges.",
+    topPests: ["General household pests", "Ants", "Spiders", "Rodents", "Mosquitoes", "Cockroaches"],
+    seasonalNote:
+      "Cave-country ground and farm fields keep ants and rodents active year-round; humid summers drive mosquito and tick pressure off the creek bottoms.",
+    localServiceNote:
+      "Smiths Grove is on our Warren County route — easy scheduling, and free re-services within 48 hours.",
+  },
+  {
+    slug: "oakland",
+    city: "Oakland",
+    badge: "Eastern Warren County",
+    tier: 2,
+    county: "warren-county",
+    metaDescription:
+      "Pest control in Oakland, KY — three-zone Summit Shield protection for the small town in eastern Warren County, from established homes to rural farm acreage.",
+    intro: [
+      "Oakland is a small incorporated town in eastern Warren County, set among the farmland and rolling countryside between Bowling Green and Smiths Grove. It's a quiet mix of established in-town homes, newer builds, and working farms — country living within a short drive of Bowling Green's jobs and amenities.",
+      "Rural and farm properties see the pressure you'd expect: field mice and rodents moving in as the weather cools and the fields are harvested, ants and spiders year-round, and heavy mosquito and tick activity off the creek bottoms and wooded acreage in summer. The region's karst limestone gives pests underground routes toward foundations, too. Our three-zone Summit Shield process treats the whole home — property line to peak line — and holds it with seasonal service, backed by the Apex Promise.",
+    ],
+    neighborhoods: ["In-town Oakland", "Established streets off US-31E", "New builds on former farmland", "Rural farm acreage and wooded lots"],
+    landmarks: ["Historic downtown Oakland", "US-31E corridor", "Warren County farmland", "Drakes Creek area"],
+    housingStock:
+      "A quiet mix of established in-town homes, newer builds, and working farms.",
+    topPests: ["General household pests", "Field mice & rodents", "Ants", "Spiders", "Mosquitoes", "Ticks"],
+    seasonalNote:
+      "Farm fields and creek bottoms drive summer mosquito and tick pressure; harvest and cool weather send field mice looking for a way indoors.",
+    localServiceNote:
+      "Oakland is on our Warren County route — easy scheduling, and free re-services within 48 hours.",
+  },
 ];
 
 export function getLocation(slug: string): Location | undefined {

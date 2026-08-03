@@ -11,7 +11,7 @@ import { citiesByCounty } from "@/lib/locations";
 export const metadata: Metadata = {
   title: "Service Areas — Pest Control Across Central Kentucky",
   description:
-    "Apex Pest Solutions serves Jefferson, Oldham, Bullitt, and Hardin counties with three-zone Summit Shield protection. Find your county and city.",
+    "Apex Pest Solutions serves Jefferson, Oldham, Bullitt, Hardin, Shelby, Meade, and Warren counties with three-zone Summit Shield protection. Find your county and city.",
   alternates: { canonical: "/locations" },
 };
 
