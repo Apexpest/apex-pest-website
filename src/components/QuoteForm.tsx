@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { site } from "@/lib/site";
-import { locations } from "@/lib/locations";
+import { counties } from "@/lib/counties";
 
 const SERVICES = [
   "General Pest Control",
@@ -18,7 +18,7 @@ const SERVICES = [
 type Data = {
   service: string;
   propertyType: "Home" | "Business" | "";
-  city: string;
+  county: string;
   zip: string;
   details: string;
   name: string;
@@ -31,7 +31,7 @@ type Data = {
 const initial: Data = {
   service: "",
   propertyType: "",
-  city: "",
+  county: "",
   zip: "",
   details: "",
   name: "",
@@ -75,7 +75,7 @@ export function QuoteForm() {
       } else {
         // No webhook configured yet — don't lose the lead: open a prefilled email.
         const body = encodeURIComponent(
-          `New quote request\n\nService: ${data.service}\nProperty: ${data.propertyType}\nCity: ${data.city}\nZIP: ${data.zip}\nDetails: ${data.details}\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nAddress: ${data.address}`
+          `New quote request\n\nService: ${data.service}\nProperty: ${data.propertyType}\nCounty: ${data.county}\nZIP: ${data.zip}\nDetails: ${data.details}\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nAddress: ${data.address}`
         );
         window.location.href = `mailto:${site.email}?subject=${encodeURIComponent("Website quote request")}&body=${body}`;
       }
@@ -183,11 +183,11 @@ export function QuoteForm() {
           <h2 className="font-display text-[20px] font-extrabold text-charcoal">Where&apos;s the property?</h2>
           <div className="mt-5 grid gap-5 sm:grid-cols-2">
             <div>
-              <label className={labelClass} htmlFor="city">City / area</label>
-              <select id="city" value={data.city} onChange={(e) => set("city", e.target.value)} className={inputClass}>
+              <label className={labelClass} htmlFor="county">County</label>
+              <select id="county" value={data.county} onChange={(e) => set("county", e.target.value)} className={inputClass}>
                 <option value="">Select…</option>
-                {locations.map((l) => (
-                  <option key={l.slug} value={l.city}>{l.city}</option>
+                {counties.map((c) => (
+                  <option key={c.slug} value={c.name}>{c.name}</option>
                 ))}
                 <option value="Other">Other in Central KY</option>
               </select>
