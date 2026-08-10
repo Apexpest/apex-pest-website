@@ -4,6 +4,7 @@ import { SiteShell } from "@/components/SiteShell";
 import { PageHeader } from "@/components/PageHeader";
 import { Plans } from "@/components/Plans";
 import { CtaBand } from "@/components/CtaBand";
+import { TruckBand } from "@/components/TruckBand";
 import { Container } from "@/components/ui";
 import { getSiteSettings } from "@/lib/getSiteSettings";
 import { services, getService } from "@/lib/services";
@@ -91,6 +92,7 @@ export default async function ServicePage({
       </section>
 
       <Plans />
+      <TruckBand />
       <CtaBand />
     </SiteShell>
   );

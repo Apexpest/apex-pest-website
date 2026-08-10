@@ -39,9 +39,9 @@ export default async function Home() {
         <WhyApex />
         <SummitShield />
         <FourStep />
+        <TruckBand />
         <Comparison />
         <Reviews />
-        <TruckBand />
         <CtaBand />
       </main>
       <SiteFooter settings={settings} />
