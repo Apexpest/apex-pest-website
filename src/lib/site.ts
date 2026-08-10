@@ -101,10 +101,10 @@ export const zones = [
 ] as const;
 
 export const steps = [
-  { num: 1, name: "Survey", body: "We walk the whole property first — all five points, documented with photos in your service record." },
-  { num: 2, name: "Clear", body: "We treat what's active now, addressing where pests nest and breed — not just where they've been seen." },
-  { num: 3, name: "Shield", body: "We build the five-point barrier from the property line to the peak line, sealing the routes pests use." },
-  { num: 4, name: "Hold", body: "Seasonal service tuned to the regional pest calendar. If pests return between visits, we re-treat at no charge." },
+  { num: 1, name: "Inspect", body: "We start with a full 20-point inspection, inside and out, documented in your service record — so the plan fits your home." },
+  { num: 2, name: "Flush", body: "We flush out and treat what's active now — knocking down nests and hitting where pests breed, not just where they've been seen." },
+  { num: 3, name: "Shield", body: "We build the five-point Summit Shield barrier from the property line to the peak line, sealing the routes pests use." },
+  { num: 4, name: "Maintain", body: "Seasonal service tuned to the regional pest calendar. If pests return between visits, we re-treat at no charge." },
 ] as const;
 
 export const comparison = {

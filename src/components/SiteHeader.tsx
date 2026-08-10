@@ -6,6 +6,22 @@ import type { ResolvedSite } from "@/lib/getSiteSettings";
 
 export function SiteHeader({ settings }: { settings: ResolvedSite }) {
   return (
+    <>
+      {/* light top strip — balances the dark header */}
+      <div className="bg-stone-soft text-charcoal">
+        <div className="mx-auto flex h-9 max-w-[1280px] items-center justify-between px-6 text-[12.5px]">
+          <span className="hidden font-medium text-[#5a5a52] sm:block">
+            Thorough, reliable pest control across Central Kentucky
+          </span>
+          <div className="flex items-center gap-4">
+            <span className="hidden text-[#5a5a52] md:inline">Licensed &amp; insured in Kentucky</span>
+            <span className="hidden text-summit-sage md:inline" aria-hidden="true">·</span>
+            <a href={settings.phoneHref} className="font-display font-bold text-apex-green">
+              {settings.phone}
+            </a>
+          </div>
+        </div>
+      </div>
     <header className="sticky top-0 z-50 border-b border-white/10 bg-black/90 backdrop-blur-md text-white">
       <div className="mx-auto flex h-[74px] max-w-[1280px] items-center justify-between px-6">
         <Logo className="shrink-0 text-white" />
@@ -35,5 +51,6 @@ export function SiteHeader({ settings }: { settings: ResolvedSite }) {
         <MobileMenu settings={settings} />
       </div>
     </header>
+    </>
   );
 }

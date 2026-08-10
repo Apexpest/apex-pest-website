@@ -7,9 +7,9 @@ import { getSiteSettings } from "@/lib/getSiteSettings";
 import { steps } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "How It Works — Survey, Clear, Shield, Hold",
+  title: "How It Works — Inspect, Flush, Shield, Maintain",
   description:
-    "Every Apex service follows the same four steps: Survey the whole property, Clear what's active, Shield with the five-point barrier, and Hold with seasonal service.",
+    "Every Apex service follows the same four steps: Inspect with a 20-point check, Flush out what's active, Shield with the five-point barrier, and Maintain with seasonal service.",
   alternates: { canonical: "/the-apex-standard/how-it-works" },
 };
 
@@ -19,7 +19,7 @@ export default async function HowItWorksPage() {
     <SiteShell settings={settings}>
       <PageHeader
         eyebrow="The Apex Standard"
-        title="Survey → Clear → Shield → Hold"
+        title="Inspect → Flush → Shield → Maintain"
         intro="The same disciplined method on every property, so your service is thorough and consistent no matter who's at the door."
         crumbs={[{ label: "Home", href: "/" }, { label: "The Apex Standard", href: "/the-apex-standard" }, { label: "How It Works" }]}
       />

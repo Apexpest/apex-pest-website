@@ -27,17 +27,17 @@ export function SummitShield() {
             return (
               <div
                 key={z.no}
-                className="w-full rounded-2xl border border-white/10 bg-white/[0.05] p-7 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
+                className="w-full rounded-2xl bg-white p-7 shadow-[0_18px_50px_-24px_rgba(0,0,0,0.5)] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
               >
                 <div className="flex items-center gap-3">
-                  <span className={`font-display text-[15px] font-extrabold tracking-[0.05em] ${amber ? "text-alert-amber" : "text-summit-sage"}`}>
+                  <span className={`font-display text-[15px] font-extrabold tracking-[0.05em] ${amber ? "text-alert-amber" : "text-apex-green"}`}>
                     {z.no}
                   </span>
-                  <span className={`h-px flex-1 ${amber ? "bg-alert-amber/30" : "bg-summit-sage/25"}`} />
+                  <span className={`h-px flex-1 ${amber ? "bg-alert-amber/40" : "bg-apex-green/20"}`} />
                 </div>
-                <h3 className="mt-5 font-display text-[20px] font-bold text-white">{z.name}</h3>
-                <p className="mt-1.5 font-display text-[14px] font-semibold text-summit-sage">{z.headline}</p>
-                <p className="mt-3 text-[14.5px] leading-relaxed text-white/70">{z.body}</p>
+                <h3 className="mt-5 font-display text-[20px] font-bold text-charcoal">{z.name}</h3>
+                <p className="mt-1.5 font-display text-[14px] font-semibold text-apex-green">{z.headline}</p>
+                <p className="mt-3 text-[14.5px] leading-relaxed text-[#5a5a52]">{z.body}</p>
               </div>
             );
           })}

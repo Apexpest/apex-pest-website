@@ -8,7 +8,7 @@ export function FourStep() {
         <div className="mx-auto mb-[54px] max-w-[720px] text-center">
           <Eyebrow tone="green">How it works</Eyebrow>
           <h2 className="mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-extrabold text-charcoal">
-            Survey → Clear → Shield → Hold
+            Inspect → Flush → Shield → Maintain
           </h2>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">

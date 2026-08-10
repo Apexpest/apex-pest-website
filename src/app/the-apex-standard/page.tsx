@@ -9,13 +9,13 @@ import { getSiteSettings } from "@/lib/getSiteSettings";
 export const metadata: Metadata = {
   title: "The Apex Standard",
   description:
-    "The Apex Standard is how we work: the Summit Shield five-point system, our Survey → Clear → Shield → Hold method, the Apex Promise, and the team behind it.",
+    "The Apex Standard is how we work: the Summit Shield five-point system, our Inspect → Flush → Shield → Maintain method, the Apex Promise, and the team behind it.",
   alternates: { canonical: "/the-apex-standard" },
 };
 
 const pages = [
   { title: "Summit Shield", href: "/the-apex-standard/summit-shield", body: "Our five-point system — property line to peak line — and why treating the whole property matters." },
-  { title: "How It Works", href: "/the-apex-standard/how-it-works", body: "The four steps behind every service: Survey, Clear, Shield, Hold." },
+  { title: "How It Works", href: "/the-apex-standard/how-it-works", body: "The four steps behind every service: Inspect, Flush, Shield, Maintain." },
   { title: "The Apex Promise", href: "/the-apex-standard/apex-promise", body: "Our guarantee: if pests return between scheduled visits, we come back at no charge." },
   { title: "Our Team", href: "/the-apex-standard/our-team", body: "The licensed, trained technicians who run the Apex Standard on every visit." },
 ];
