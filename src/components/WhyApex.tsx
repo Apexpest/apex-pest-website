@@ -10,7 +10,7 @@ const paths: Record<string, string> = {
 
 function Icon({ name }: { name: string }) {
   return (
-    <svg className="mb-3.5 h-[38px] w-[38px] text-summit-sage" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <svg className="mb-3.5 h-[38px] w-[38px] text-apex-green" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       {paths[name].split(" M").map((d, i) => (
         <path key={i} d={i === 0 ? d : "M" + d} />
       ))}
@@ -20,14 +20,14 @@ function Icon({ name }: { name: string }) {
 
 export function WhyApex() {
   return (
-    <section className="bg-black py-[92px] text-white">
+    <section className="bg-white py-[92px]">
       <Container>
         <div className="mx-auto mb-[54px] max-w-[720px] text-center">
-          <Eyebrow>Why choose Apex</Eyebrow>
-          <h2 className="mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-extrabold">
+          <Eyebrow tone="green">Why choose Apex</Eyebrow>
+          <h2 className="mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-extrabold text-charcoal">
             A thorough process, clearly communicated.
           </h2>
-          <p className="mt-4 text-[18px] text-white/70">
+          <p className="mt-4 text-[18px] text-[#5a5a52]">
             Treating a home is only part of the job. Consistent scheduling, proactive updates,
             technicians who arrive on time, and simple billing are what make the service
             dependable — and we handle all of it.
@@ -35,10 +35,10 @@ export function WhyApex() {
         </div>
         <div className="grid gap-[22px] sm:grid-cols-2 lg:grid-cols-4">
           {whyApex.map((item) => (
-            <div key={item.title} className="rounded-xl border border-white/10 bg-white/[0.04] p-[26px]">
+            <div key={item.title} className="rounded-xl border border-[#e4e1d8] bg-stone-soft p-[26px]">
               <Icon name={item.icon} />
-              <h3 className="mb-2 font-display text-[17px] font-bold text-white">{item.title}</h3>
-              <p className="text-[14.5px] text-white/70">{item.body}</p>
+              <h3 className="mb-2 font-display text-[17px] font-bold text-charcoal">{item.title}</h3>
+              <p className="text-[14.5px] text-[#5a5a52]">{item.body}</p>
             </div>
           ))}
         </div>

@@ -26,16 +26,22 @@ export function Hero({ settings }: { settings: ResolvedSite }) {
             </p>
           </div>
 
-          <div className="rounded-[14px] border border-summit-sage/30 bg-[linear-gradient(160deg,rgba(30,77,52,0.5),rgba(19,45,30,0.75))] p-[30px]">
-            {settings.heroStats.map((s, i) => (
-              <div
-                key={`${s.value}-${i}`}
-                className={`flex items-baseline gap-3 py-4 ${i < settings.heroStats.length - 1 ? "border-b border-white/10" : ""}`}
-              >
-                <span className="min-w-[96px] font-display text-[30px] font-extrabold text-white">{s.value}</span>
-                <span className="text-[14px] text-white/70">{s.label}</span>
-              </div>
-            ))}
+          <div className="overflow-hidden rounded-2xl bg-white shadow-[0_24px_70px_-24px_rgba(0,0,0,0.55)]">
+            <div className="grid grid-cols-2">
+              {settings.heroStats.map((s, i) => {
+                const rightCol = i % 2 === 1;
+                const topRow = i < 2;
+                return (
+                  <div
+                    key={`${s.value}-${i}`}
+                    className={`p-6 ${!rightCol ? "border-r border-[#eeece6]" : ""} ${topRow ? "border-b border-[#eeece6]" : ""}`}
+                  >
+                    <div className="font-display text-[32px] font-extrabold leading-none text-apex-green">{s.value}</div>
+                    <div className="mt-2 text-[13px] leading-snug text-[#5a5a52]">{s.label}</div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </Container>
