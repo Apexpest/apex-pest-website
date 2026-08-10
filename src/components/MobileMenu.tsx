@@ -30,16 +30,16 @@ export function MobileMenu({ settings }: { settings: ResolvedSite }) {
               className="fixed inset-0 z-[90] bg-black/60"
             />
             {/* drawer */}
-            <div className="fixed inset-y-0 right-0 z-[100] flex w-[86%] max-w-[360px] flex-col bg-black shadow-2xl">
-              <div className="flex h-[74px] shrink-0 items-center justify-between border-b border-white/10 px-6">
-                <span className="font-display text-[15px] font-bold uppercase tracking-[0.08em] text-summit-sage">
+            <div className="fixed inset-y-0 right-0 z-[100] flex w-[86%] max-w-[360px] flex-col bg-white shadow-2xl">
+              <div className="flex h-[74px] shrink-0 items-center justify-between border-b border-[#e4e1d8] px-6">
+                <span className="font-display text-[15px] font-bold uppercase tracking-[0.08em] text-apex-green">
                   Menu
                 </span>
                 <button
                   type="button"
                   aria-label="Close menu"
                   onClick={() => setOpen(false)}
-                  className="flex h-11 w-11 items-center justify-center rounded-md text-white hover:bg-white/10"
+                  className="flex h-11 w-11 items-center justify-center rounded-md text-charcoal hover:bg-black/5"
                 >
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true">
                     <line x1="6" y1="6" x2="18" y2="18" />
@@ -53,7 +53,7 @@ export function MobileMenu({ settings }: { settings: ResolvedSite }) {
                     key={item.href}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="border-b border-white/10 py-4 font-display text-[18px] font-semibold text-white/90 hover:text-white"
+                    className="border-b border-[#e4e1d8] py-4 font-display text-[18px] font-semibold text-charcoal hover:text-apex-green"
                   >
                     {item.label}
                   </a>
@@ -67,7 +67,7 @@ export function MobileMenu({ settings }: { settings: ResolvedSite }) {
                 </a>
                 <a
                   href={settings.phoneHref}
-                  className="mt-3 rounded-md border border-white/25 px-6 py-4 text-center font-display text-[16px] font-bold text-white"
+                  className="mt-3 rounded-md border border-charcoal/25 px-6 py-4 text-center font-display text-[16px] font-bold text-charcoal"
                 >
                   Call {settings.phone}
                 </a>
