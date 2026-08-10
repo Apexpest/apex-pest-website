@@ -18,7 +18,7 @@ const pages = [
   { title: "Summit Shield", href: "/the-apex-standard/summit-shield", body: "Our five-point system — property line to peak line — and why treating the whole property matters." },
   { title: "How It Works", href: "/the-apex-standard/how-it-works", body: "The four steps behind every service: Inspect, Flush, Shield, Maintain." },
   { title: "The Apex Promise", href: "/the-apex-standard/apex-promise", body: "Our guarantee: if pests return between scheduled visits, we come back at no charge." },
-  { title: "Our Team", href: "/the-apex-standard/our-team", body: "The licensed, trained technicians who run the Apex Standard on every visit." },
+  { title: "Our Team", href: "#team", body: "The licensed, trained technicians who run the Apex Standard on every visit." },
 ];
 
 const team = [
@@ -52,7 +52,7 @@ export default async function ApexStandardHub() {
         </Container>
       </section>
       {/* About us — meet the team */}
-      <section className="bg-stone-soft py-[92px]">
+      <section id="team" className="scroll-mt-[90px] bg-stone-soft py-[92px]">
         <Container>
           <div className="mx-auto max-w-[720px] text-center">
             <span className="eyebrow text-apex-green">About us</span>
