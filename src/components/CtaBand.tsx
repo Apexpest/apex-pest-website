@@ -3,8 +3,9 @@ import { Button, Container } from "./ui";
 import { site } from "@/lib/site";
 
 /**
- * Bottom call-to-action: the branded truck on the left, the free-inspection
- * ask on the brand green to the right. Stacks on mobile (image on top).
+ * Bottom call-to-action: the branded truck on the left, and the "on the route"
+ * message + free-inspection ask on the brand green to the right. Stacks on
+ * mobile (image on top).
  */
 export function CtaBand() {
   return (
@@ -21,14 +22,15 @@ export function CtaBand() {
               className="object-cover object-center"
             />
           </div>
-          {/* Right — inspection CTA on brand green */}
-          <div className="flex flex-col justify-center bg-[linear-gradient(120%_120%_at_20%_0%,#215838,#132d1e)] p-10 text-white sm:p-12">
-            <h2 className="font-display text-[clamp(26px,3vw,38px)] font-extrabold">
-              Request your free inspection.
+          {/* Right — on-the-route message + inspection CTA on brand green */}
+          <div className="flex flex-col justify-center bg-[radial-gradient(120%_120%_at_20%_0%,#215838,#132d1e)] p-10 text-white sm:p-12">
+            <span className="eyebrow text-summit-sage">On the route</span>
+            <h2 className="mt-3 font-display text-[clamp(24px,2.6vw,34px)] font-extrabold leading-[1.1]">
+              Local, licensed, and in your neighborhood
             </h2>
-            <p className="mt-3.5 max-w-[460px] text-white/80">
-              Tell us what's going on and we'll build a plan for your home or business — the
-              inspection, the treatment, and the follow-ups.
+            <p className="mt-4 max-w-[460px] text-white/80">
+              Kentucky-based and on the road across Central Kentucky. When you call Apex, a real local
+              team shows up — on time, in uniform, and ready to protect your home.
             </p>
             <div className="mt-7 flex flex-wrap gap-3.5">
               <Button href="/get-a-quote" variant="white">
