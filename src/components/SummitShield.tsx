@@ -1,55 +1,46 @@
 import { Container, Eyebrow } from "./ui";
 import { zones } from "@/lib/site";
-import { SummitShieldDiagram } from "./SummitShieldDiagram";
 
 /**
- * Homepage signature section: the five Summit Shield points listed beside a
- * simple, static picture of a home with each protected area highlighted.
+ * Homepage signature section: the five Summit Shield points presented as a
+ * clean, editorial grid of minimal cards on the brand green — no diagram.
  */
 export function SummitShield() {
   return (
-    <section id="summit-shield" className="bg-forest-green py-[92px] text-white">
+    <section id="summit-shield" className="bg-forest-green py-[100px] text-white">
       <Container>
-        <div className="mx-auto mb-[54px] max-w-[720px] text-center">
+        <div className="mx-auto max-w-[760px] text-center">
           <Eyebrow>The Apex Standard</Eyebrow>
-          <h2 className="mt-3.5 font-display text-[clamp(28px,3.6vw,42px)] font-extrabold">
-            Summit Shield™ — Five-Point Home Defense
+          <h2 className="mt-4 font-display text-[clamp(28px,3.6vw,44px)] font-extrabold">
+            Summit Shield — five-point home defense
           </h2>
-          <p className="mt-4 text-[18px] text-white/70">
-            Most companies spray a band around your foundation and leave. We protect your home in
-            five points — the yard, the perimeter, the entry points, the roofline, and inside —
-            because pests get in from all of them.
+          <p className="mx-auto mt-5 max-w-[640px] text-[18px] leading-relaxed text-white/70">
+            Most companies spray a band around your foundation and leave. Summit Shield protects your
+            home in five points — from the property line to the peak line, and inside — because pests
+            get in from all of them.
           </p>
         </div>
 
-        <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            {zones.map((z) => {
-              const amber = z.tone === "amber";
-              return (
-                <div
-                  key={z.no}
-                  className={`mb-4 flex gap-4 rounded-r-[10px] border-l-[3px] bg-white/[0.05] px-[22px] py-4 ${
-                    amber ? "border-alert-amber" : "border-summit-sage"
-                  }`}
-                >
-                  <span
-                    className={`mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border font-display text-[13px] font-extrabold ${
-                      amber ? "border-alert-amber text-alert-amber" : "border-summit-sage text-summit-sage"
-                    }`}
-                  >
+        <div className="mt-16 flex flex-wrap justify-center gap-5">
+          {zones.map((z) => {
+            const amber = z.tone === "amber";
+            return (
+              <div
+                key={z.no}
+                className="w-full rounded-2xl border border-white/10 bg-white/[0.05] p-7 sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)]"
+              >
+                <div className="flex items-center gap-3">
+                  <span className={`font-display text-[15px] font-extrabold tracking-[0.05em] ${amber ? "text-alert-amber" : "text-summit-sage"}`}>
                     {z.no}
                   </span>
-                  <span>
-                    <span className="block font-display text-[18px] font-bold text-white">{z.name}</span>
-                    <span className="mt-1 block text-[14.5px] text-white/70">{z.body}</span>
-                  </span>
+                  <span className={`h-px flex-1 ${amber ? "bg-alert-amber/30" : "bg-summit-sage/25"}`} />
                 </div>
-              );
-            })}
-          </div>
-
-          <SummitShieldDiagram caption="Every point treated on every service — from the property line to the peak line, and inside." />
+                <h3 className="mt-5 font-display text-[20px] font-bold text-white">{z.name}</h3>
+                <p className="mt-1.5 font-display text-[14px] font-semibold text-summit-sage">{z.headline}</p>
+                <p className="mt-3 text-[14.5px] leading-relaxed text-white/70">{z.body}</p>
+              </div>
+            );
+          })}
         </div>
       </Container>
     </section>

@@ -5,7 +5,6 @@ import { CtaBand } from "@/components/CtaBand";
 import { Container } from "@/components/ui";
 import { getSiteSettings } from "@/lib/getSiteSettings";
 import { zones } from "@/lib/site";
-import { SummitShieldDiagram } from "@/components/SummitShieldDiagram";
 
 export const metadata: Metadata = {
   title: "Summit Shield — Five-Point Protection",
@@ -37,9 +36,6 @@ export default async function SummitShieldPage() {
       />
       <section className="py-[92px]">
         <Container>
-          <div className="mb-14">
-            <SummitShieldDiagram caption="The five protected areas — from the property line to the peak line, and inside the home." />
-          </div>
           <div className="space-y-6">
             {zones.map((z) => (
               <div key={z.no} className="grid gap-5 rounded-2xl border border-[#e4e1d8] bg-white p-8 md:grid-cols-[auto_1fr]">
