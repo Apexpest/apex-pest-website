@@ -63,22 +63,13 @@ export function QuoteForm() {
     setStatus("sending");
     setError("");
     const payload = { ...data, source: "get-a-quote", submittedAt: new Date().toISOString() };
-    const webhook = process.env.NEXT_PUBLIC_QUOTE_WEBHOOK_URL;
     try {
-      if (webhook) {
-        const res = await fetch(webhook, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-        if (!res.ok) throw new Error(`Request failed (${res.status})`);
-      } else {
-        // No webhook configured yet — don't lose the lead: open a prefilled email.
-        const body = encodeURIComponent(
-          `New quote request\n\nService: ${data.service}\nProperty: ${data.propertyType}\nCounty: ${data.county}\nZIP: ${data.zip}\nDetails: ${data.details}\n\nName: ${data.name}\nPhone: ${data.phone}\nEmail: ${data.email}\nAddress: ${data.address}`
-        );
-        window.location.href = `mailto:${site.email}?subject=${encodeURIComponent("Website quote request")}&body=${body}`;
-      }
+      const res = await fetch("/api/quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`Request failed (${res.status})`);
       setStatus("done");
     } catch (e) {
       setStatus("error");
