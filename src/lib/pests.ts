@@ -1,420 +1,906 @@
 /**
- * Pest library — the educational SEO engine.
- *
- * Each pest is hand-written for Kentucky homeowners: how to identify it, the
- * signs of an infestation, why it matters, and a Kentucky-specific note. This
- * is the single source of truth for now and maps 1:1 to the Sanity `pest`
- * document (see src/sanity/schemaTypes/pest.ts). Categories match the schema's
- * list exactly so a later CMS migration is near-zero.
+ * Pest library — full catalog (identification + photo), grouped by category.
+ * Photos are freely-licensed images via Wikimedia Commons.
+ * 'What a pest pro would do' is defined per category in categoryMeta.
  */
-
-export type PestCategory =
-  | "Wasps"
-  | "Ants"
-  | "Spiders"
-  | "Occasional Invaders"
-  | "Ticks/Fleas/Mosquitoes"
-  | "Rodents";
 
 export type Pest = {
   slug: string;
   name: string;
-  category: PestCategory;
-  /** One-line summary for the hub card + meta description. */
-  summary: string;
-  /** How to identify it. */
-  identification: string;
-  /** Body paragraphs (habits, why it matters). */
-  body: string[];
-  /** Signs of an infestation (bullet list). */
-  signs: string[];
-  /** Kentucky-specific note. */
-  kentuckyNote: string;
-  /** The Summit Shield zone(s) where we stop it. */
-  zone: string;
-  /** Slug of the most relevant service page. */
-  relatedService: string;
+  category: string;
+  bio: string;
+  image: string;
 };
 
-export const pestCategories: { name: PestCategory; blurb: string }[] = [
-  { name: "Wasps", blurb: "Paper wasps, yellowjackets and hornets that nest in eaves, ground and wall voids." },
-  { name: "Ants", blurb: "From nuisance trails to wood-destroying carpenter ants." },
-  { name: "Spiders", blurb: "Including Kentucky's two medically significant species." },
-  { name: "Occasional Invaders", blurb: "Seasonal home-invaders that show up by the hundreds." },
-  { name: "Ticks/Fleas/Mosquitoes", blurb: "The biting, disease-carrying pests of Kentucky's warm months." },
-  { name: "Rodents", blurb: "Mice and rats that chew, contaminate and multiply fast." },
+export type CategoryMeta = {
+  blurb: string;
+  service: string;
+  proApproach: string[];
+};
+
+export const categoryOrder: string[] = [
+  "Ants",
+  "Wasps, Bees & Hornets",
+  "Spiders",
+  "Cockroaches",
+  "Rodents",
+  "Termites",
+  "Mosquitoes",
+  "Ticks",
+  "Fleas",
+  "Flies",
+  "Beetles",
+  "Moths",
+  "Bed Bugs",
+  "Nuisance Wildlife",
+  "Other Bugs",
 ];
 
+export const categoryMeta: Record<string, CategoryMeta> = {
+  "Ants": {
+    blurb: "From nuisance trails to wood-destroying carpenter ants.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect to identify the species and trace trails back to nests and entry points.",
+      "Treat with professional non-repellent products and targeted baits the colony carries back — eliminating the whole nest, not just the ants you see.",
+      "Treat the Foundation Line and seal the cracks and gaps ants trail through.",
+      "Re-service on the quarterly Summit Shield schedule, backed by the Apex Promise.",
+    ],
+  },
+  "Wasps, Bees & Hornets": {
+    blurb: "Paper wasps, yellowjackets, hornets, and wood-boring carpenter bees.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect the eaves, soffits, roofline, ground, and voids for active nests.",
+      "Treat and remove nests safely, timed for when the colony is least active — high or hidden nests are handled with the right equipment.",
+      "Apply a residual barrier to the Peak Line where new queens rebuild; honey bees are referred for live relocation, not killed.",
+      "Return through the season to catch new nests early.",
+    ],
+  },
+  "Spiders": {
+    blurb: "Common cobweb spiders plus Kentucky's medically significant species.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect harborage — corners, closets, basements, garages, woodpiles, and the foundation.",
+      "Knock down webbing and egg sacs and apply residual treatments to harborage and the exterior barrier.",
+      "Reduce the insect prey they feed on with a whole-home barrier, and seal entry points.",
+      "Medically significant species (brown recluse, black widow) are treated and monitored with extra care.",
+    ],
+  },
+  "Cockroaches": {
+    blurb: "From kitchen-dwelling German roaches to large outdoor species.",
+    service: "cockroach-control",
+    proApproach: [
+      "Inspect kitchens, baths, drains, and voids to find harborage and moisture.",
+      "Apply professional gel baits, dusts, and growth regulators where they nest and breed — not just where they're seen.",
+      "Seal entry points and address moisture, then follow up to break the breeding cycle.",
+      "Discreet, documented service backed by free re-services.",
+    ],
+  },
+  "Rodents": {
+    blurb: "Mice and rats that chew, contaminate, and multiply fast.",
+    service: "rodent-control",
+    proApproach: [
+      "Inspect for droppings, gnaw marks, and rub marks to map runways and entry points.",
+      "Seal exterior gaps (the Entry Points) — mice fit through a dime-sized hole — so new rodents can't replace the ones removed.",
+      "Set tamper-resistant stations and traps in the right locations, with kids and pets in mind.",
+      "Return to monitor, re-bait, and confirm the structure stays sealed and clear.",
+    ],
+  },
+  "Termites": {
+    blurb: "Wood-destroying insects that cause serious structural damage.",
+    service: "termite-control",
+    proApproach: [
+      "Inspect the structure and soil for mud tubes, swarmers, frass, and damaged wood.",
+      "Install a professional termite treatment (liquid barrier and/or baiting) matched to the species and structure.",
+      "Address the moisture and wood-to-soil contact that invited them.",
+      "Backed by our full termite warranty — prevention and elimination — on the VIP plan.",
+    ],
+  },
+  "Mosquitoes": {
+    blurb: "Biting pests that breed in standing water through the humid months.",
+    service: "mosquito-control",
+    proApproach: [
+      "Inspect the property for standing-water breeding sites — gutters, drains, containers, low spots.",
+      "Eliminate or treat breeding water and apply a residual barrier to shaded resting areas, foliage, and under decks (the Property Line).",
+      "Treat on a recurring schedule through the warm season when pressure peaks.",
+      "Free re-services if they bounce back between visits.",
+    ],
+  },
+  "Ticks": {
+    blurb: "Blood-feeding parasites that wait along brushy, wooded edges.",
+    service: "flea-tick-control",
+    proApproach: [
+      "Inspect the yard's shaded, brushy, and tall-grass edges — the transition zones ticks wait in.",
+      "Apply a professional yard treatment to those edges and a barrier between lawn and wooded areas.",
+      "Treat on a recurring schedule through tick season and advise on pet and host prevention.",
+      "Part of the flea & tick program, tied to the Property Line.",
+    ],
+  },
+  "Fleas": {
+    blurb: "Fast-breeding biters that ride in on pets and wildlife.",
+    service: "flea-tick-control",
+    proApproach: [
+      "Inspect indoors (carpet, bedding, pet areas) and the shaded, moist yard spots where they breed.",
+      "Apply a professional treatment with a growth regulator to break the breeding cycle — not just the adults.",
+      "Coordinate indoor, outdoor, and pet timing so the infestation doesn't rebound.",
+      "Follow up to catch newly emerged fleas, covered by the Apex Promise.",
+    ],
+  },
+  "Flies": {
+    blurb: "Nuisance and filth flies tied to moisture and organic buildup.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect to find the breeding source — drains, garbage, decaying organic matter, or moisture.",
+      "Eliminate the source and apply targeted professional treatments to breeding and resting areas.",
+      "Seal entry points and screen gaps, and treat exterior resting surfaces where needed.",
+      "Follow up until the source is fully cleared.",
+    ],
+  },
+  "Beetles": {
+    blurb: "Pantry, fabric, and wood-boring beetles.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect to identify the beetle and its source — stored food, fabric, or structural wood.",
+      "Treat harborage and entry points with professional materials; wood-boring beetles get a treatment matched to the species.",
+      "Remove or protect infested materials and seal entry points.",
+      "Re-inspect to confirm the source is gone.",
+    ],
+  },
+  "Moths": {
+    blurb: "Pantry and fabric moths whose larvae do the damage.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect closets, pantries, and stored goods to find the infested source and larvae.",
+      "Treat harborage and cracks with professional materials and remove infested items.",
+      "Protect stored fabric or dry goods and monitor with traps.",
+      "Follow up to confirm the breeding cycle is broken.",
+    ],
+  },
+  "Bed Bugs": {
+    blurb: "Hitchhiking biters that hide in beds and furniture.",
+    service: "general-pest-control",
+    proApproach: [
+      "Perform a thorough inspection of mattresses, seams, furniture, and cracks to confirm and map the infestation.",
+      "Treat with a professional multi-step approach that reaches every harborage.",
+      "Follow up on a schedule to catch newly hatched bugs and confirm elimination.",
+      "Bed bugs are notoriously hard to clear — professional treatment is strongly recommended over DIY.",
+    ],
+  },
+  "Nuisance Wildlife": {
+    blurb: "Larger animals that den in attics, chimneys, and under structures.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect for den sites and entry points in attics, chimneys, crawl spaces, and under decks.",
+      "Humanely remove or exclude the animal, timed to avoid trapping young, then clean and repair the affected areas.",
+      "Seal and reinforce entry points so wildlife can't return.",
+      "Some wildlife is regulated — it's handled legally and safely.",
+    ],
+  },
+  "Other Bugs": {
+    blurb: "Occasional invaders, moisture pests, and garden bugs.",
+    service: "general-pest-control",
+    proApproach: [
+      "Inspect to correctly identify the pest and where it's coming from — indoors, the foundation, or the landscape.",
+      "Apply targeted professional treatment to harborage, entry points, and the exterior barrier.",
+      "Reduce the moisture and clutter that draw them and seal the gaps they use to get in.",
+      "Most occasional invaders are handled on the regular Summit Shield service.",
+    ],
+  },
+};
+
 export const pests: Pest[] = [
-  // ---------- WASPS ----------
   {
-    slug: "paper-wasps",
-    name: "Paper Wasps",
-    category: "Wasps",
-    summary:
-      "Slender, long-legged wasps that build open, umbrella-shaped nests under eaves, porch ceilings and grill covers.",
-    identification:
-      "Brownish with yellow or reddish markings, about ¾–1 inch long, with long legs that dangle in flight. Their nests are open, gray, honeycomb-like combs hung from a single stalk — usually under an eave, soffit, porch ceiling, or deck rail.",
-    body: [
-      "Paper wasps are one of the most common stinging pests around Kentucky homes. They're not especially aggressive out foraging, but they defend the nest hard — and because they build right where people walk, doorways, porches, and eaves become no-go zones by late summer.",
-      "A single queen starts the nest in spring; by August a mature colony can hold dozens of workers. Unlike honeybees, wasps can sting repeatedly, which makes an active nest by a front door a real hazard for anyone with an allergy.",
-    ],
-    signs: [
-      "Open, gray honeycomb nests under eaves, soffits, or porch ceilings",
-      "Wasps repeatedly flying to and from the same spot",
-      "Activity concentrated around doorways, decks, and rooflines",
-    ],
-    kentuckyNote:
-      "Paper wasps target the Peak Line — eaves, soffits, and the roofline — which is exactly the area most pest companies skip. Summit Shield treats it on every visit.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
-  },
-  {
-    slug: "yellowjackets",
-    name: "Yellowjackets",
-    category: "Wasps",
-    summary:
-      "Aggressive black-and-yellow wasps that nest underground or in wall voids and turn nasty in late summer.",
-    identification:
-      "About ½ inch long, boldly banded black and yellow, with a fast, darting flight. Nests are hidden — in old rodent burrows and ground holes, in wall voids, or under decks — so you often see a stream of wasps disappearing into a single spot in the ground or siding.",
-    body: [
-      "Yellowjackets are the wasp behind most late-summer stings. Colonies grow all season and peak in August and September, when workers turn scavenger and start crashing cookouts, trash cans, and anything sweet.",
-      "They're highly defensive: mowing over a ground nest or bumping a wall void can trigger dozens of stings in seconds. Because the nest is usually concealed, DIY sprays often miss the colony entirely and just make the workers angry.",
-    ],
-    signs: [
-      "A steady stream of wasps entering a hole in the ground or a gap in siding",
-      "Aggressive wasps around trash, food, and drinks in late summer",
-      "Buzzing or rustling inside a wall or ceiling void",
-    ],
-    kentuckyNote:
-      "Ground and wall-void nests make yellowjackets a Property Line and Peak Line problem — the zones where Summit Shield seals and treats the routes they actually use.",
-    zone: "Property Line & Peak Line",
-    relatedService: "general-pest-control",
-  },
-  {
-    slug: "bald-faced-hornets",
-    name: "Bald-faced Hornets",
-    category: "Wasps",
-    summary:
-      "Large black-and-white wasps that build the big gray football-shaped aerial nests you see in trees and on eaves.",
-    identification:
-      "Bigger than most wasps — up to ¾ inch — and black with an ivory-white face and markings. Their nest is the classic large, gray, papery, enclosed 'football' hanging from a tree limb, shrub, or the side of a house.",
-    body: [
-      "Bald-faced hornets are actually a type of yellowjacket, and they are extremely protective of their aerial nest. They can sting repeatedly and will pursue a perceived threat several feet from the nest, which makes a nest near a doorway or play area genuinely dangerous.",
-      "A mature nest can house hundreds of workers by late summer. Because the nest is enclosed and often high up, removal is not a DIY job — disturbing it without the right approach and protection is how people end up in the ER.",
-    ],
-    signs: [
-      "A large gray, papery, enclosed nest in a tree, shrub, or on the eaves",
-      "Big black-and-white wasps patrolling near the nest",
-      "Hornets reacting aggressively when you approach the area",
-    ],
-    kentuckyNote:
-      "Aerial nests on eaves and rooflines are a Peak Line problem. We remove and treat them safely rather than leaving a hazard by your door.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
-  },
-
-  // ---------- ANTS ----------
-  {
-    slug: "carpenter-ants",
-    name: "Carpenter Ants",
+    slug: "acrobat-ant",
+    name: "Acrobat Ant",
     category: "Ants",
-    summary:
-      "Large black ants that excavate galleries in damp or damaged wood — a structural concern, not just a nuisance.",
-    identification:
-      "Among the largest ants you'll see indoors, ¼–½ inch long and usually black (sometimes dark red-and-black). Unlike termites, they don't eat wood — they hollow it out to nest, leaving behind piles of sawdust-like shavings called frass.",
-    body: [
-      "Carpenter ants nest in wood that's been softened by moisture — around leaky roofs, window frames, decks, and crawlspaces. Left alone, a colony expands its galleries over years and can cause real structural damage.",
-      "Seeing large black ants indoors, especially in winter or spring, often means a nest is inside the structure rather than outside. Spraying the trail you see rarely reaches the parent nest, so the problem keeps coming back until the colony itself is treated.",
-    ],
-    signs: [
-      "Large black ants indoors, especially at night",
-      "Small piles of sawdust-like frass beneath wood",
-      "A faint rustling in walls, or winged ants emerging indoors",
-    ],
-    kentuckyNote:
-      "Kentucky's humidity feeds the moisture problems carpenter ants love. Summit Shield addresses both the ants and the entry points along the Peak Line where they get in.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
+    bio: "Dark brown to black ants, 1/8 inch, recognizable by their heart-shaped abdomen which they raise over their body when threatened. Often nests in moisture-damaged wood, insulation, or old carpenter ant galleries.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/10/Acrobat_ant%2C_queen_%28Myrmicinae%2C_Crematogaster_sp.%29_%2831240548445%29.jpg",
   },
   {
-    slug: "odorous-house-ants",
-    name: "Odorous House Ants",
+    slug: "argentine-ant",
+    name: "Argentine Ant",
     category: "Ants",
-    summary:
-      "Tiny brown ants that trail across counters and give off a rotten-coconut smell when crushed.",
-    identification:
-      "Small — about ⅛ inch — and brown to black. The giveaway is the smell: crush one and it gives off an unpleasant, coconut-like odor. They travel in well-defined trails along counters, baseboards, and plumbing lines.",
-    body: [
-      "Odorous house ants are the classic kitchen nuisance ant. They're drawn to moisture and sweets, so they show up around sinks, dishwashers, and pantries, often after rain pushes them indoors.",
-      "Their colonies have many queens and split easily, which is why DIY sprays can actually make things worse — the colony 'buds' into several new ones. Effective control targets the colony with the right baits and a barrier that keeps new trails from forming.",
-    ],
-    signs: [
-      "Trails of tiny brown ants across counters and floors",
-      "A rotten-coconut smell when an ant is crushed",
-      "Ants clustered around sinks, dishwashers, and sweet spills",
-    ],
-    kentuckyNote:
-      "Rainy Kentucky springs reliably push these ants indoors. Our Foundation Line and Peak Line barrier intercepts them before they reach the kitchen.",
-    zone: "Foundation Line & Peak Line",
-    relatedService: "general-pest-control",
+    bio: "Light to dark brown ants, about 1/12 inch, notable for forming massive interconnected colonies with multiple queens. They travel in dense trails and are strongly attracted to sweet and sugary foods.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f9/Argentine_ants_accessing_trap.JPG",
   },
   {
-    slug: "pavement-ants",
-    name: "Pavement Ants",
+    slug: "carpenter-ant",
+    name: "Carpenter Ant",
     category: "Ants",
-    summary:
-      "Small brown-black ants that nest under driveways, sidewalks and slabs and trail indoors for food.",
-    identification:
-      "About ⅛ inch, brown to blackish, often seen with the small mounds of excavated soil they push up between cracks in pavement, driveways, and foundation slabs. Indoors they trail along floors and baseboards.",
-    body: [
-      "Pavement ants nest under hard surfaces and foundations, then forage indoors for grease, sweets, and crumbs. They're a persistent nuisance in garages, basements, and ground-floor kitchens.",
-      "Because the nest is under a slab or driveway, surface sprays don't reach it. Long-term control means treating the perimeter and the nesting sites along the foundation line, not just the ants you see inside.",
-    ],
-    signs: [
-      "Small soil mounds in pavement cracks and along the foundation",
-      "Ant trails in garages, basements, and ground-floor rooms",
-      "Foraging around pet food, grease, and crumbs",
-    ],
-    kentuckyNote:
-      "These are a textbook Foundation Line pest — the soil band and foundation seams Summit Shield treats first, where most pests make contact with the structure.",
-    zone: "Foundation Line",
-    relatedService: "general-pest-control",
+    bio: "Large black or red-and-black ants, 1/4 to 1/2 inch long, that excavate smooth tunnels in damp or decaying wood to build nests. Unlike termites, they don't eat wood — they push out small piles of sawdust-like debris (frass) near entry points. Winged reproductives ('swarmers') emerging indoors in spring are a strong sign of an established nest.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Camponotus_herculeanus_queen_high_res.jpg",
   },
-
-  // ---------- SPIDERS ----------
   {
-    slug: "brown-recluse-spider",
-    name: "Brown Recluse Spider",
+    slug: "crazy-ant",
+    name: "Crazy Ant",
+    category: "Ants",
+    bio: "Dark brown ants, about 1/8 inch, named for their fast, erratic, non-linear running pattern. They form large colonies and are drawn to electrical equipment as well as food.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Nylanderia_fulva_-_Tawny_Crazy_Ant_%2831569780291%29.jpg",
+  },
+  {
+    slug: "fire-ant",
+    name: "Fire Ant",
+    category: "Ants",
+    bio: "Reddish-brown ants, 1/8 to 1/4 inch, that build large dome-shaped dirt mounds in open, sunny areas. Their sting causes a painful, burning welt that can blister.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9d/Solenopsis_invicta_-_fire_ant_worker.jpg",
+  },
+  {
+    slug: "little-black-ant",
+    name: "Little Black Ant",
+    category: "Ants",
+    bio: "Tiny jet-black ants, about 1/16 inch, that nest in soil, under stones, or in wood, and forage in visible trails both indoors and outdoors.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Monomorium_carbonarium_casent0173040_profile_1.jpg",
+  },
+  {
+    slug: "odorous-house-ant",
+    name: "Odorous House Ant",
+    category: "Ants",
+    bio: "Small dark brown to black ants, about 1/8 inch, that release a strong rotten-coconut smell when crushed. They nest in shallow soil, under mulch, or in wall voids, and form large, fast-moving trails to food, especially sweets.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Tapinoma_sessile_182139460.jpg",
+  },
+  {
+    slug: "pavement-ant",
+    name: "Pavement Ant",
+    category: "Ants",
+    bio: "Small brown-black ants, about 1/8 inch, that nest in and under cracks in pavement, sidewalks, and foundations. Small mounds of excavated soil around cracks are a common sign of activity.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Pavement_ant_swarm_Tetramorium_immigrans_2255.jpg",
+  },
+  {
+    slug: "pharaoh-ant",
+    name: "Pharaoh Ant",
+    category: "Ants",
+    bio: "Tiny yellow to light brown ants, about 1/16 inch, common indoors year-round, especially in heated buildings. Colonies split easily when disturbed, making them notoriously difficult to control with contact sprays alone.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Hormiga_fara%C3%B3n_%28Monomorium_pharaonis%29%2C_Hartelholz%2C_M%C3%BAnich%2C_Alemania%2C_2020-06-21%2C_DD_29-45_FS.jpg",
+  },
+  {
+    slug: "thief-ant",
+    name: "Thief Ant",
+    category: "Ants",
+    bio: "Extremely small yellow to brown ants, about 1/32 inch, that nest near other ant colonies and steal their brood and food, and are drawn to greasy and protein-rich foods indoors.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c2/Solenopsis_molesta_casent0106027_profile_1.jpg",
+  },
+  {
+    slug: "bald-faced-hornet",
+    name: "Bald-Faced Hornet",
+    category: "Wasps, Bees & Hornets",
+    bio: "Black wasps with white/ivory facial markings that build large, enclosed, gray papery nests high in trees or on structures. Defends the nest aggressively when approached.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Bald-faced_hornet_%2821291%29.jpg",
+  },
+  {
+    slug: "carpenter-bee",
+    name: "Carpenter Bee",
+    category: "Wasps, Bees & Hornets",
+    bio: "Large, robust bees resembling bumblebees but with a shiny, hairless black abdomen. Females bore perfectly round 1/2-inch holes into untreated wood — eaves, decks, fences — to build nesting galleries.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7f/Eastern_carpenter_bee_%28Xylocopa_virginica%29.jpg",
+  },
+  {
+    slug: "cicada-killer-wasp",
+    name: "Cicada Killer Wasp",
+    category: "Wasps, Bees & Hornets",
+    bio: "Very large solitary wasps, black and yellow, that dig burrows in sandy or bare soil and hunt cicadas to provision their nests. Males are territorial but harmless; females rarely sting unless handled.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Cicada_Killer_Wasp_%28Sphecidae%2C_Sphecius_speciosus%29_%2830141105201%29.jpg",
+  },
+  {
+    slug: "european-hornet",
+    name: "European Hornet",
+    category: "Wasps, Bees & Hornets",
+    bio: "The largest true hornet in the US, brown and yellow with a reddish head, that nests in hollow trees or wall voids and is attracted to lights at night.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/3f/Vespa_crabro_head_01.jpg",
+  },
+  {
+    slug: "honey-bee",
+    name: "Honey Bee",
+    category: "Wasps, Bees & Hornets",
+    bio: "Golden-brown, fuzzy bees that live in large colonies and occasionally swarm or establish hives in wall voids and chimneys. Because they're vital pollinators, live removal/relocation is generally preferred over extermination.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Apis_mellifera_-_Melilotus_albus_-_Keila.jpg",
+  },
+  {
+    slug: "mud-dauber-wasp",
+    name: "Mud Dauber Wasp",
+    category: "Wasps, Bees & Hornets",
+    bio: "Slender, non-aggressive wasps that build tube-shaped mud nests on walls, eaves, and ceilings, provisioning them with paralyzed spiders for their larvae.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Sceliphron_caementarium_MHNT_Profil.jpg",
+  },
+  {
+    slug: "paper-wasp",
+    name: "Paper Wasp",
+    category: "Wasps, Bees & Hornets",
+    bio: "Slender wasps with long legs that build open, umbrella-shaped paper nests under eaves, railings, and other overhangs. Generally less aggressive than yellowjackets unless the nest is disturbed.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7b/French_paper_wasp_%28Polistes_gallicus%29_female_Malta.jpg",
+  },
+  {
+    slug: "yellowjacket",
+    name: "Yellowjacket",
+    category: "Wasps, Bees & Hornets",
+    bio: "Black-and-yellow banded wasps that nest in the ground, wall voids, or hollow trees, and become aggressive in late summer/fall as colonies peak and food sources dwindle.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/59/Vespula_germanica_Richard_Bartz.jpg",
+  },
+  {
+    slug: "american-house-spider",
+    name: "American House Spider",
     category: "Spiders",
-    summary:
-      "Kentucky's most medically significant spider — a shy brown spider with a violin mark whose bite can cause serious wounds.",
-    identification:
-      "Light-to-medium brown, about ⅜ inch body, with a distinctive darker violin-shaped mark on the back behind the head and six eyes arranged in three pairs (most spiders have eight). They hide in dark, undisturbed places — closets, basements, garages, storage boxes, and behind furniture.",
-    body: [
-      "The brown recluse is genuinely established in Kentucky, and it's the spider homeowners most need to take seriously. It's not aggressive — bites usually happen when one is trapped against skin in a shoe, glove, or bedsheet — but a bite can cause a slow-healing, necrotic wound that needs medical attention.",
-      "Recluses like clutter and quiet, so they thrive in storage areas, wall voids, and behind baseboards. Because they hide so well, a few sightings can mean a larger population. Control combines targeted treatment of harborage areas with reducing the clutter and gaps they shelter in.",
-    ],
-    signs: [
-      "Brown spiders with a violin-shaped mark in closets, basements, or boxes",
-      "Irregular, off-white webbing in undisturbed corners and storage",
-      "Sightings in shoes, gloves, stored clothing, or behind furniture",
-    ],
-    kentuckyNote:
-      "Brown recluse are well established across Kentucky. If you're seeing them, treat it seriously — we target the hidden harborage points, not just the spider on the wall.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
+    bio: "Small brown spiders with a bulbous, mottled abdomen that build messy, irregular cobwebs in corners, closets, and basements. Common and largely harmless indoor spiders.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/1e/Parasteatoda_tepidariorum-Common_House_Spider_%28NZAC06001410%29.jpg",
   },
   {
     slug: "black-widow-spider",
     name: "Black Widow Spider",
     category: "Spiders",
-    summary:
-      "A glossy black spider with a red hourglass whose venomous bite makes it Kentucky's other spider to respect.",
-    identification:
-      "The adult female is glossy jet-black with a red hourglass marking on the underside of the abdomen, about ½ inch body. She builds a strong, irregular, tangled web low to the ground in dark, sheltered spots — under decks, in wood piles, crawlspaces, garages, and outdoor clutter.",
-    body: [
-      "Black widows are shy and stay near their webs, but their venom is potent, and a bite can cause severe muscle pain, cramping, and other symptoms that warrant medical care. Bites typically happen when someone reaches into a sheltered spot where a widow is hiding.",
-      "They favor undisturbed, protected places outdoors and in outbuildings — exactly the spots people reach into without looking. Control focuses on treating and clearing those harborage areas and sealing the gaps that let them shelter against the home.",
-    ],
-    signs: [
-      "Glossy black spiders with a red hourglass in sheltered, low spots",
-      "Strong, messy, irregular webbing under decks, in wood piles or crawlspaces",
-      "Round, papery egg sacs in the web",
-    ],
-    kentuckyNote:
-      "Wood piles, crawlspaces, and outbuildings across rural Hardin County are prime widow habitat. Our Property Line and Foundation Line work targets exactly those spots.",
-    zone: "Property Line & Foundation Line",
-    relatedService: "general-pest-control",
+    bio: "Shiny black spiders with a signature red hourglass marking on the underside of the abdomen. They build irregular, tangled webs in dark, sheltered spots like woodpiles, garages, and sheds. Their venomous bite can cause serious symptoms and warrants medical attention.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/00/Black_widow_spider_9854_lores.jpg",
   },
   {
-    slug: "wolf-spiders",
-    name: "Wolf Spiders",
+    slug: "brown-recluse-spider",
+    name: "Brown Recluse Spider",
     category: "Spiders",
-    summary:
-      "Large, fast, hairy hunting spiders that don't build webs and often wander indoors in fall.",
-    identification:
-      "Big, hairy, and brown-to-gray with darker markings, up to more than an inch including the legs. They don't spin snare webs — they hunt on the ground and move fast, which is what makes them alarming when one darts across a floor.",
-    body: [
-      "Wolf spiders are harmless to your home and actually eat other insects, but their size and speed make them one of the most unsettling spiders to find indoors. They wander in through gaps at ground level, especially as the weather cools in fall.",
-      "Seeing wolf spiders inside is usually a sign of two things: easy entry points along the foundation, and a food supply of other insects already indoors. Control both — seal the gaps and knock down the pest population they're feeding on — and the wolf spiders move on.",
-    ],
-    signs: [
-      "Large, fast spiders running across floors, especially in fall",
-      "Sightings at ground level — basements, garages, ground-floor rooms",
-      "No organized web; the spider is out in the open",
-    ],
-    kentuckyNote:
-      "A wolf spider indoors usually means other pests are indoors too. Summit Shield seals the Foundation Line gaps and reduces the insects they hunt.",
-    zone: "Foundation Line",
-    relatedService: "general-pest-control",
-  },
-
-  // ---------- OCCASIONAL INVADERS ----------
-  {
-    slug: "stink-bugs",
-    name: "Brown Marmorated Stink Bugs",
-    category: "Occasional Invaders",
-    summary:
-      "Shield-shaped bugs that pack into homes by the dozens each fall and release a foul odor when disturbed.",
-    identification:
-      "Shield- or triangle-shaped, about ⅝ inch, mottled brown with alternating light-and-dark bands on the antennae and abdomen edge. Crushed or threatened, they release the sharp, cilantro-like odor they're named for.",
-    body: [
-      "Brown marmorated stink bugs are an invasive species that has spread across Kentucky. They don't bite, sting, or breed indoors — the problem is sheer numbers. On warm fall days they gather on sunny exterior walls and push inside through cracks to overwinter.",
-      "Once inside walls and attics, they emerge on warm days all winter and spring. Vacuuming picks up stray ones, but the real fix is sealing the entry points and treating the exterior before they move in, in early fall.",
-    ],
-    signs: [
-      "Shield-shaped bugs clustered on sunny exterior walls in fall",
-      "Bugs appearing indoors on warm winter and spring days",
-      "A pungent odor when they're disturbed or vacuumed",
-    ],
-    kentuckyNote:
-      "Fall is the window. A Peak Line treatment before the first cold snap keeps them out of the walls in the first place.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
+    bio: "Light to dark brown spiders with a distinctive dark violin-shaped marking on the top of the head area and six eyes (most spiders have eight). They favor dark, undisturbed spaces like closets, boxes, and basements, and their bite can cause a serious wound requiring medical attention.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Brown-recluse-2.jpg",
   },
   {
-    slug: "asian-lady-beetles",
-    name: "Asian Lady Beetles",
-    category: "Occasional Invaders",
-    summary:
-      "Ladybug look-alikes that swarm homes in fall, stain surfaces, and bite mildly — unlike native ladybugs.",
-    identification:
-      "Similar to native ladybugs but variable in color from orange to red, usually with an 'M'- or 'W'-shaped mark just behind the head. They gather in large numbers on sunny walls in fall.",
-    body: [
-      "Asian lady beetles are beneficial in the garden but a real nuisance when they overwinter indoors. Like stink bugs, they seek warm sunny walls in fall and slip through gaps into wall voids and attics, then reappear on warm days.",
-      "When disturbed they can give a mild bite and secrete a yellow fluid that stains walls and fabrics and smells unpleasant. Sealing gaps and treating the exterior in early fall stops the invasion before it starts.",
-    ],
-    signs: [
-      "Orange-to-red beetles massing on sunny exterior walls in fall",
-      "Beetles indoors on warm winter days near windows and ceilings",
-      "Yellow staining and a faint odor where they cluster",
-    ],
-    kentuckyNote:
-      "They ride the same fall push indoors as stink bugs and ladybugs. We treat the roofline and structure gaps together before they settle in.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
+    slug: "cellar-spider",
+    name: "Cellar Spider",
+    category: "Spiders",
+    bio: "Also called 'daddy long legs spiders' — pale, long-legged spiders with small bodies that build loose, tangled webs in damp, dark areas like basements and crawl spaces.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fd/Cellar_Spider_with_Eggs.jpg",
   },
   {
-    slug: "boxelder-bugs",
-    name: "Boxelder Bugs",
-    category: "Occasional Invaders",
-    summary:
-      "Black bugs with red-orange markings that gather in huge numbers on warm walls and slip inside for winter.",
-    identification:
-      "About ½ inch, black with distinctive red-orange lines on the body and wing edges. Nymphs are bright red. They congregate in large numbers on the sunny south and west sides of buildings in fall.",
-    body: [
-      "Boxelder bugs feed on boxelder, maple, and ash trees through summer, then move to warm structures as fall arrives. They don't damage the home or breed indoors, but they cluster on siding by the hundreds and work their way into wall voids to overwinter.",
-      "Like other fall invaders, they reappear on warm days through winter and spring. The effective approach is exclusion plus a well-timed exterior treatment before they mass on the walls.",
-    ],
-    signs: [
-      "Large clusters of black-and-red bugs on sunny walls in fall",
-      "Bugs around windows and doors on warm winter days",
-      "Concentrations near boxelder, maple, or ash trees",
-    ],
-    kentuckyNote:
-      "Central Kentucky's mix of maples and ash gives boxelder bugs plenty of host trees. Timing the fall exterior treatment is what keeps them off your walls.",
-    zone: "Peak Line",
-    relatedService: "general-pest-control",
-  },
-
-  // ---------- TICKS / FLEAS / MOSQUITOES ----------
-  {
-    slug: "mosquitoes",
-    name: "Mosquitoes",
-    category: "Ticks/Fleas/Mosquitoes",
-    summary:
-      "Biting pests that breed in standing water and rest in shaded foliage — relentless through Kentucky's humid summers.",
-    identification:
-      "Small, slender flies with long legs and a piercing mouthpart. You'll notice the bites and the whine long before you see the insect. They're most active at dawn and dusk and cluster in shaded, humid areas.",
-    body: [
-      "Mosquitoes need only a bottle cap of standing water to breed, and they rest during the day in cool, shaded harborage — dense shrubs, tall grass, under decks, and along tree lines. A quick spray of the open lawn does almost nothing because it misses both the breeding sites and the resting sites.",
-      "Beyond the itch, mosquitoes are a public-health concern as carriers of disease. An effective program treats the shaded resting areas where adults spend the day and knocks down the standing-water sites where the next generation is developing.",
-    ],
-    signs: [
-      "Biting activity at dawn and dusk, especially near shade and water",
-      "Mosquitoes resting in dense foliage, under decks, and along tree lines",
-      "Standing water in gutters, planters, birdbaths, and low spots",
-    ],
-    kentuckyNote:
-      "Kentucky's river valleys and humid summers make mosquitoes especially bad near the Nolin River, Otter Creek, and shaded low ground. Our seasonal program targets where they actually breed and rest.",
-    zone: "Property Line",
-    relatedService: "mosquito-control",
+    slug: "grass-spider",
+    name: "Grass Spider",
+    category: "Spiders",
+    bio: "Brown, striped spiders that build flat, funnel-shaped webs in grass, shrubs, and along foundations, retreating into a funnel when disturbed.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/53/Grass_Spider_-_Agelenopsis_species_possibly_pennsylvanica%3F%2C_Vernon%2C_British_Columbia.jpg",
   },
   {
-    slug: "ticks",
-    name: "Ticks",
-    category: "Ticks/Fleas/Mosquitoes",
-    summary:
-      "Blood-feeding parasites that wait along brushy edges and can transmit serious illness — including the alpha-gal connection.",
-    identification:
-      "Small, flat, eight-legged parasites ranging from pinhead size to pea-size when engorged. Kentucky's common species include the lone star tick (with a white dot on the female's back), the American dog tick, and the blacklegged (deer) tick.",
-    body: [
-      "Ticks don't fly or jump — they 'quest,' climbing to the tip of grass and brush and waiting to grab a passing host. That makes yard edges, tall grass, and tree lines the danger zones, especially on rural and wooded properties.",
-      "Kentucky has meaningful tick pressure, and the health stakes are real: ticks here can transmit several diseases, and the lone star tick is linked to alpha-gal syndrome, a serious red-meat allergy. A targeted yard program that treats the questing zones is the practical way to cut your family's and pets' exposure.",
-    ],
-    signs: [
-      "Ticks found on people or pets after time outdoors",
-      "Activity concentrated along brushy edges, tall grass, and tree lines",
-      "Higher pressure on rural, wooded, and field-adjacent properties",
-    ],
-    kentuckyNote:
-      "The lone star tick and its alpha-gal connection are a real concern across rural Hardin County. We treat the yard edges and harborage where ticks wait, not just the open lawn.",
-    zone: "Property Line",
-    relatedService: "flea-tick-control",
+    slug: "hobo-spider",
+    name: "Hobo Spider",
+    category: "Spiders",
+    bio: "Brown, fast-running spiders with a chevron pattern on the abdomen that build funnel-shaped webs at ground level, often near foundations. Most common in the Pacific Northwest.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a6/Eratigena_agrestis_%E2%99%80_%28Walckenaer%2C_1802%29_1.jpg",
   },
   {
-    slug: "fleas",
-    name: "Fleas",
-    category: "Ticks/Fleas/Mosquitoes",
-    summary:
-      "Tiny biting insects that ride in on pets and wildlife, then multiply fast in carpet, bedding, and yards.",
-    identification:
-      "Very small (about ⅛ inch), dark, and flattened side-to-side, with powerful legs for jumping. You'll usually notice itchy bites around the ankles and 'flea dirt' (dark specks) in pet fur and bedding before you spot the fleas themselves.",
-    body: [
-      "Fleas come in on pets, and on the wildlife — mice, opossums, strays — that pass through the yard. Once indoors, a few fleas become an infestation quickly: eggs drop into carpet, bedding, and floor cracks, and the life cycle keeps regenerating for weeks.",
-      "Because most of a flea population is eggs, larvae, and pupae hidden in the environment rather than adults on the pet, treating the animal alone rarely solves it. Effective control treats the indoor harborage and the outdoor shaded areas where the cycle continues, alongside your vet's pet treatment.",
-    ],
-    signs: [
-      "Itchy bites, usually around the ankles and lower legs",
-      "Pets scratching, plus 'flea dirt' in fur and bedding",
-      "Tiny insects jumping in carpet, rugs, and pet resting spots",
-    ],
-    kentuckyNote:
-      "Wildlife traffic on rural and wooded Hardin County lots keeps re-seeding flea problems. We treat the yard harborage and the indoor sites the cycle relies on.",
-    zone: "Property Line & Peak Line",
-    relatedService: "flea-tick-control",
+    slug: "jumping-spider",
+    name: "Jumping Spider",
+    category: "Spiders",
+    bio: "Compact, fuzzy spiders with large forward-facing eyes and excellent vision, known for stalking prey and jumping rather than building webs. Harmless but can startle homeowners with sudden movement.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cc/Plexippus_petersi_%28jumping_spider%29_on_a_human_finger_at_golden_hour.jpg",
   },
-
-  // ---------- RODENTS ----------
   {
-    slug: "house-mice",
-    name: "House Mice",
+    slug: "orb-weaver-spider",
+    name: "Orb Weaver Spider",
+    category: "Spiders",
+    bio: "Large, often colorful spiders that build the classic large, circular, spiral webs outdoors between structures, plants, and eaves — most noticeable in late summer and fall.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2e/Orb_Weaver_spider_2_LR.jpg",
+  },
+  {
+    slug: "wolf-spider",
+    name: "Wolf Spider",
+    category: "Spiders",
+    bio: "Large, hairy, brown-and-gray mottled spiders that hunt on the ground rather than spinning webs. Often mistaken for tarantulas, they wander indoors especially in fall while seeking shelter.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Erdwolfsspinne_Trochosa_terricola_2.jpg",
+  },
+  {
+    slug: "yellow-sac-spider",
+    name: "Yellow Sac Spider",
+    category: "Spiders",
+    bio: "Pale yellow to greenish spiders that build small silk sacs in corners of ceilings and walls where they rest during the day. Their bite is more likely than most house spiders to cause a reaction.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/cf/Long_Legged_Sac_Spider_%28Cheiracanthium_mildei%29.jpg",
+  },
+  {
+    slug: "american-cockroach",
+    name: "American Cockroach",
+    category: "Cockroaches",
+    bio: "The largest common house cockroach, reddish-brown with a pale figure-8 marking behind the head, often found in basements, sewers, and around plumbing.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Cockroach_July_2013-1.jpg",
+  },
+  {
+    slug: "brown-banded-cockroach",
+    name: "Brown-Banded Cockroach",
+    category: "Cockroaches",
+    bio: "Small light brown roaches with two lighter bands across the wings, notable for preferring warmer, drier areas than other roaches — often found in bedrooms and living rooms, not just kitchens.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/86/Supella_longipalpa_cdc.jpg",
+  },
+  {
+    slug: "german-cockroach",
+    name: "German Cockroach",
+    category: "Cockroaches",
+    bio: "Light brown roaches, about 1/2 to 5/8 inch, with two dark parallel stripes behind the head. The most common indoor cockroach, favoring warm, humid areas near kitchens and bathrooms, and reproducing quickly.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Blattodea._Cascuda._Santiago_de_Compostela_1.jpg",
+  },
+  {
+    slug: "oriental-cockroach",
+    name: "Oriental Cockroach",
+    category: "Cockroaches",
+    bio: "Shiny black-brown roaches, sometimes called 'water bugs,' that prefer cool, damp areas like drains, basements, and crawl spaces, and emit a strong musty odor in heavy infestations.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/Cockroach_May_2007-1.jpg",
+  },
+  {
+    slug: "smoky-brown-cockroach",
+    name: "Smoky Brown Cockroach",
+    category: "Cockroaches",
+    bio: "Large, uniformly dark mahogany roaches that thrive outdoors in mulch and leaf litter in warm climates, entering homes through gaps and vents.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/2a/Periplaneta_fuliginosa_%28Serville%2C_1839%29_Smoky_Brown_Cockroach_%2824516346127%29.jpg",
+  },
+  {
+    slug: "deer-mouse",
+    name: "Deer Mouse",
     category: "Rodents",
-    summary:
-      "Small rodents that squeeze through dime-sized gaps, contaminate food, chew wiring, and breed year-round.",
-    identification:
-      "Small, gray-brown rodents about 2–4 inches in body with a long, nearly hairless tail and large ears. More often you'll find the evidence first — droppings, gnaw marks, and a musky odor — than the mouse itself.",
-    body: [
-      "A house mouse can slip through a gap the size of a dime, so utility penetrations, garage door corners, and foundation gaps are all open doors. Once inside, mice contaminate far more food than they eat, gnaw on wiring (a real fire risk), and reproduce fast — a small problem becomes a big one in weeks.",
-      "Mice press indoors hardest as the weather cools and at harvest, when field mice on rural properties look for shelter. Lasting control is about exclusion — finding and sealing the entry points along the peak line — paired with knocking down the active population, not just setting a couple of traps.",
-    ],
-    signs: [
-      "Small dark droppings along walls, in cabinets, and in drawers",
-      "Gnaw marks on food packaging, wiring, and baseboards",
-      "Scratching or scurrying in walls and ceilings at night, plus a musky smell",
-    ],
-    kentuckyNote:
-      "On Hardin County's rural and farm properties, harvest and the first cold snap drive field mice indoors in force. We seal the Peak Line entry points and clear the active population together.",
-    zone: "Peak Line",
-    relatedService: "rodent-control",
+    bio: "Bi-colored rodents with white undersides and brown backs, common in rural and wooded areas, and a known carrier of hantavirus — droppings should be handled with care.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/19/Deer_Mouse_%28Peromyscus_maniculatus%29_%289310532204%29.jpg",
+  },
+  {
+    slug: "eastern-gray-squirrel",
+    name: "Eastern Gray Squirrel",
+    category: "Rodents",
+    bio: "Common gray tree squirrels that can chew into attics and soffits to nest, causing damage to insulation and wiring. Most active seeking shelter in fall.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Eastern_Grey_Squirrel_in_St_James%27s_Park%2C_London_-_Nov_2006_edit.jpg",
+  },
+  {
+    slug: "house-mouse",
+    name: "House Mouse",
+    category: "Rodents",
+    bio: "Small gray-brown rodents, 2.5 to 3.75 inches long (plus tail), that can squeeze through gaps as small as a dime. Signs include small dark droppings, gnaw marks, and greasy rub marks along walls.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/House_mouse_%28Mus_musculus%29_2808.jpg",
+  },
+  {
+    slug: "norway-rat",
+    name: "Norway Rat",
+    category: "Rodents",
+    bio: "Large, heavy-bodied rats, brown-gray, that burrow at ground level near foundations, woodpiles, and garbage areas, and are strong swimmers often found near sewers and waterways.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/68/Brown_Rat_%28Rattus_norvegicus%29_also_called_Norway_Rat_or_Common_Rat_-with_food_container_-_Mathias_Baldwin_Park%2C_Philadelphia%2C_Pennsylvania%2C_USA.jpg",
+  },
+  {
+    slug: "roof-rat",
+    name: "Roof Rat",
+    category: "Rodents",
+    bio: "Slender, agile rats, black to brown, that are excellent climbers and prefer nesting in attics, trees, and upper parts of structures rather than at ground level.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a3/Roof_rat-%28rattus_rattus%29.jpg",
+  },
+  {
+    slug: "vole",
+    name: "Vole",
+    category: "Rodents",
+    bio: "Small, stocky rodents with short tails that create visible surface runways in lawns and gardens by chewing grass and feeding on roots and bulbs.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Eastern_meadow_vole_%28Microtus_pennsylvanicus%29_emerging_from_a_runway_in_the_snow_in_Kennebunk%2C_Maine%2C_USA.jpg",
+  },
+  {
+    slug: "dampwood-termite",
+    name: "Dampwood Termite",
+    category: "Termites",
+    bio: "Larger termites that infest moisture-damaged or decaying wood, often signaling an underlying leak or moisture problem near the infestation site.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/42/Pacific_Coast_Dampwood_Termite_-_Zootermopsis_angusticollis%2C_Delta%2C_British_Columbia.jpg",
+  },
+  {
+    slug: "drywood-termite",
+    name: "Drywood Termite",
+    category: "Termites",
+    bio: "Termites that infest dry wood directly (no soil contact needed), leaving behind distinctive small, hard, pellet-shaped droppings (frass) near infested wood.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/54/Incisitermes_minor.jpg",
+  },
+  {
+    slug: "eastern-subterranean-termite",
+    name: "Eastern Subterranean Termite",
+    category: "Termites",
+    bio: "Cream-colored workers that live in underground colonies and build visible mud tubes to travel between soil and wood. Winged swarmers emerging in spring are often the first visible sign of infestation.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Reticulitermes_flavipes_K8085-6.jpg",
+  },
+  {
+    slug: "formosan-termite",
+    name: "Formosan Termite",
+    category: "Termites",
+    bio: "An aggressive, fast-reproducing subterranean termite species capable of building large above-ground 'carton' nests, and causing severe structural damage quickly.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coptotermes_formosanus_shiraki_USGov_k8204-7.jpg",
+  },
+  {
+    slug: "asian-tiger-mosquito",
+    name: "Asian Tiger Mosquito",
+    category: "Mosquitoes",
+    bio: "Aggressive daytime-biting mosquitoes with distinctive black-and-white striped legs, breeding in small containers of standing water around the yard.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/6b/Asian_Tiger_Mosquito%28Aedes_albopictus%29.jpg",
+  },
+  {
+    slug: "house-mosquito",
+    name: "House Mosquito",
+    category: "Mosquitoes",
+    bio: "Common brown mosquitoes that breed in stagnant water — clogged gutters, bird baths, old tires — and are the primary vector for West Nile virus in the US.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/35/Culex_pipiens_2007-1.jpg",
+  },
+  {
+    slug: "yellow-fever-mosquito",
+    name: "Yellow Fever Mosquito",
+    category: "Mosquitoes",
+    bio: "Dark mosquitoes with white lyre-shaped markings on the thorax, a known vector for dengue, Zika, and yellow fever, most common in warmer southern states.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/21/Aedes_aegypti_on_leaf.jpg",
+  },
+  {
+    slug: "american-dog-tick",
+    name: "American Dog Tick",
+    category: "Ticks",
+    bio: "Brown ticks with mottled white-gray markings on the back, common in grassy and wooded areas, and a known vector of Rocky Mountain spotted fever.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/American_Dog_Tick_%28Dermacentor_variabilis%29.jpg",
+  },
+  {
+    slug: "brown-dog-tick",
+    name: "Brown Dog Tick",
+    category: "Ticks",
+    bio: "Uniformly reddish-brown ticks that can complete their entire life cycle indoors, making them capable of infesting homes and kennels even without outdoor exposure.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Brown_Dog_Tick._Rhipicephalus_sanguineus_-_Flickr_-_gailhampshire.jpg",
+  },
+  {
+    slug: "deer-tick",
+    name: "Deer Tick",
+    category: "Ticks",
+    bio: "Also called the blacklegged tick — small, reddish-brown, and the primary carrier of Lyme disease in the US. Most active in wooded, leafy edge habitats.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Adult_deer_tick%28cropped%29.jpg",
+  },
+  {
+    slug: "lone-star-tick",
+    name: "Lone Star Tick",
+    category: "Ticks",
+    bio: "Reddish-brown ticks identifiable by a single white spot on the female's back, aggressive in seeking hosts, and associated with alpha-gal (red meat) allergy syndrome.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fe/Lone_Star_Tick_%28Amblyomma_americanum%29_%E2%99%80_%2814444538883%29.jpg",
+  },
+  {
+    slug: "cat-flea",
+    name: "Cat Flea",
+    category: "Fleas",
+    bio: "Small, dark, wingless jumping insects, the most common flea species infesting both cats and dogs, that lay eggs in carpet, bedding, and yards.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9d/%D0%9A%D0%BE%D1%88%D0%B0%D1%87%D1%8C%D1%8F_%D0%B1%D0%BB%D0%BE%D1%85%D0%B0.jpg",
+  },
+  {
+    slug: "dog-flea",
+    name: "Dog Flea",
+    category: "Fleas",
+    bio: "Nearly identical in appearance to the cat flea, this flea species also infests dogs and can bite humans, thriving in warm, humid conditions.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/88/Ctenocephalides-canis.jpg",
+  },
+  {
+    slug: "cluster-fly",
+    name: "Cluster Fly",
+    category: "Flies",
+    bio: "Slow-moving, dark gray flies that seek shelter indoors in large numbers in fall, clustering in attics and wall voids to overwinter.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/29/Pollenia_rudis_female.jpg",
+  },
+  {
+    slug: "drain-fly",
+    name: "Drain Fly",
+    category: "Flies",
+    bio: "Small, fuzzy moth-like flies that breed in the gelatinous film inside drains, often signaling buildup that needs cleaning rather than a pesticide treatment.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c7/IMG_psychodidae.jpg",
+  },
+  {
+    slug: "fruit-fly",
+    name: "Fruit Fly",
+    category: "Flies",
+    bio: "Tiny tan flies with red eyes that breed explosively in overripe produce, drains, and fermenting liquids — often traced to a single forgotten piece of fruit.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/7a/Drosophila_melanogaster_53362116.jpg",
+  },
+  {
+    slug: "fungus-gnat",
+    name: "Fungus Gnat",
+    category: "Flies",
+    bio: "Small dark gnats that breed in overly moist potting soil, feeding on fungus and organic matter around plant roots.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c4/Sciaridae_%28Sciaridae%29_%28Unidentified_Dark-winged_fungus_gnat%29_-_%28imago%29%2C_Arnhem%2C_the_Netherlands.jpg",
+  },
+  {
+    slug: "horse-fly",
+    name: "Horse Fly",
+    category: "Flies",
+    bio: "Large, fast-flying flies with a painful bite, most active outdoors near standing water in summer.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/1/14/Horse_fly_Tabanus_2.jpg",
+  },
+  {
+    slug: "house-fly",
+    name: "House Fly",
+    category: "Flies",
+    bio: "Gray flies with four dark stripes on the thorax that breed in garbage, manure, and decaying organic matter, and can mechanically spread bacteria between surfaces.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/8f/Musca_domestica_September_2007-1.jpg",
+  },
+  {
+    slug: "asian-lady-beetle",
+    name: "Asian Lady Beetle",
+    category: "Beetles",
+    bio: "Orange beetles resembling ladybugs that congregate on sunny exterior walls in fall before squeezing indoors to overwinter in large numbers.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a0/Harmonia_axyridis%2C_Woodbridge%2C_Virginia.jpg",
+  },
+  {
+    slug: "carpet-beetle",
+    name: "Carpet Beetle",
+    category: "Beetles",
+    bio: "Small, oval beetles whose larvae feed on natural fibers like wool, fur, and feathers, often damaging carpets, upholstery, and stored clothing.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/78/Anthrenus_verbasci_MHNT_Fronton_Side_view.jpg",
+  },
+  {
+    slug: "click-beetle",
+    name: "Click Beetle",
+    category: "Beetles",
+    bio: "Elongated brown-black beetles known for the audible clicking sound they make to flip upright when placed on their backs; larvae (wireworms) can damage garden roots.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Click_Beetle_%28Elateridae%29_-_Kitchener%2C_Ontario.jpg",
+  },
+  {
+    slug: "darkling-beetle",
+    name: "Darkling Beetle",
+    category: "Beetles",
+    bio: "Dark, hard-shelled beetles often found in stored grain, damp basements, or around outdoor lighting at night.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b5/Strongylium_from_Laos.jpg",
+  },
+  {
+    slug: "japanese-beetle",
+    name: "Japanese Beetle",
+    category: "Beetles",
+    bio: "Metallic green-and-copper beetles that feed heavily on garden plants and turf, with root-feeding grub larvae that damage lawns.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Japanese_Beetle_%28Popillia_japonica%29_on_a_lantana.jpg",
+  },
+  {
+    slug: "old-house-borer",
+    name: "Old House Borer",
+    category: "Beetles",
+    bio: "A long-horned wood-boring beetle whose larvae tunnel extensively through structural softwood, sometimes producing an audible chewing sound within walls.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Hylotrupes_bajulus01.jpg",
+  },
+  {
+    slug: "pantry-weevil",
+    name: "Pantry Weevil",
+    category: "Beetles",
+    bio: "Small reddish-brown beetles with a distinctive snout that infest stored grains, flour, rice, and pasta, usually arriving in already-infested packaged food.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0e/CSIRO_ScienceImage_3504_The_Granary_Weevil_Sitophilus_granarius.jpg",
+  },
+  {
+    slug: "powderpost-beetle",
+    name: "Powderpost Beetle",
+    category: "Beetles",
+    bio: "Small wood-boring beetles whose larvae tunnel through seasoned hardwood, leaving fine, flour-like powder (frass) and tiny round exit holes.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/41/Lyctoxylon_dentatum.jpg",
+  },
+  {
+    slug: "clothes-moth",
+    name: "Clothes Moth",
+    category: "Moths",
+    bio: "Small, pale gold moths whose larvae feed on natural fibers — wool, silk, fur — often damaging stored clothing in dark, undisturbed closets.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/02/Tineola_bisselliella_-_Common_clothes_moth_-_%D0%9C%D0%BE%D0%BB%D1%8C_%D0%BF%D0%BB%D0%B0%D1%82%D1%8F%D0%BD%D0%B0%D1%8F_%2839446568700%29.jpg",
+  },
+  {
+    slug: "pantry-moth",
+    name: "Pantry Moth",
+    category: "Moths",
+    bio: "Small moths with reddish-brown wing tips whose larvae infest stored dry goods like grains, cereal, and pet food, leaving fine silk webbing in the product.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/50/Indianmeal_moth_2009.jpg",
+  },
+  {
+    slug: "spongy-moth",
+    name: "Spongy Moth",
+    category: "Moths",
+    bio: "An invasive moth whose caterpillars can defoliate large numbers of hardwood trees during outbreak years; egg masses are tan, fuzzy, and found on tree trunks and outdoor surfaces.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Lymantria_dispar_MHNT_Chenille.jpg",
+  },
+  {
+    slug: "bed-bug",
+    name: "Bed Bug",
+    category: "Bed Bugs",
+    bio: "Small, flat, reddish-brown insects that hide in mattress seams, box springs, and furniture crevices, feeding on human blood at night and leaving itchy bite marks in a line or cluster.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/87/Bed_bug%2C_Cimex_lectularius.jpg",
+  },
+  {
+    slug: "bat",
+    name: "Bat",
+    category: "Nuisance Wildlife",
+    bio: "Small flying mammals that roost in attics, chimneys, and wall voids in colonies, entering through gaps as small as 3/8 inch. Exclusion work is typically timed outside maternity season to avoid trapping pups.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Little_Brown_Bat_FWS.jpg",
+  },
+  {
+    slug: "chipmunk",
+    name: "Chipmunk",
+    category: "Nuisance Wildlife",
+    bio: "Small striped rodents that burrow extensively under patios, foundations, and retaining walls, sometimes undermining structural stability over time.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f4/Tamias_striatus_CT.jpg",
+  },
+  {
+    slug: "garter-snake",
+    name: "Garter Snake",
+    category: "Nuisance Wildlife",
+    bio: "Common, non-venomous, striped snakes that shelter under debris, mulch, and foundations, and are typically more of a nuisance presence than a genuine hazard.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/c0/California_Red-Sided_Garter_Snake_%28Thamnophis_sirtalis_infernalis%29.jpg",
+  },
+  {
+    slug: "groundhog",
+    name: "Groundhog",
+    category: "Nuisance Wildlife",
+    bio: "Large, stocky rodents (also called woodchucks) that dig extensive burrow systems under sheds, decks, and foundations, and feed heavily on garden vegetation.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/93/Marmota_monax_UL_04.jpg",
+  },
+  {
+    slug: "mole",
+    name: "Mole",
+    category: "Nuisance Wildlife",
+    bio: "Small, velvety-furred burrowing mammals with paddle-like front feet that create raised surface tunnels and volcano-shaped mounds while feeding on grubs and earthworms in lawns.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a1/Scalopus_aquaticus_111213974.jpg",
+  },
+  {
+    slug: "opossum",
+    name: "Opossum",
+    category: "Nuisance Wildlife",
+    bio: "North America's only marsupial — gray, cat-sized, with a hairless prehensile tail — that often dens under porches, sheds, and decks.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/27/Opossum_2.jpg",
+  },
+  {
+    slug: "pigeon",
+    name: "Pigeon",
+    category: "Nuisance Wildlife",
+    bio: "Gray birds that roost and nest on ledges, rooftops, and building overhangs in urban areas, with droppings that can damage surfaces and pose a sanitation concern.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e5/Columba_livia_Luc_Viatour.jpg",
+  },
+  {
+    slug: "raccoon",
+    name: "Raccoon",
+    category: "Nuisance Wildlife",
+    bio: "Gray-brown mammals with a distinctive black facial mask and ringed tail, known for raiding garbage and denning in attics, chimneys, and crawl spaces, especially females seeking a spot to raise young.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/ed/Raccoon_%28Procyon_lotor%29_2.jpg",
+  },
+  {
+    slug: "skunk",
+    name: "Skunk",
+    category: "Nuisance Wildlife",
+    bio: "Black-and-white striped mammals known for spraying a strong-smelling defensive musk, that dig burrows under porches, sheds, and foundations.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Striped_Skunk_%28Mephitis_mephitis%29_DSC_0030.jpg",
+  },
+  {
+    slug: "starling",
+    name: "Starling",
+    category: "Nuisance Wildlife",
+    bio: "Glossy black birds with iridescent sheen that nest in large, noisy colonies in vents, eaves, and signage, often displacing native cavity-nesting birds.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9e/Sturnus_vulgaris_-California-8.jpg",
+  },
+  {
+    slug: "aphid",
+    name: "Aphid",
+    category: "Other Bugs",
+    bio: "Tiny soft-bodied insects, often green or black, that cluster on new plant growth to feed on sap and excrete sticky honeydew that attracts ants and sooty mold.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/Aphidoidea_fight.jpg",
+  },
+  {
+    slug: "assassin-bug",
+    name: "Assassin Bug",
+    category: "Other Bugs",
+    bio: "Predatory true bugs with a curved, piercing mouthpart used to feed on other insects; while beneficial in gardens, some species can deliver a painful bite if handled.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/6/63/Assassin_bug_%28Rhynocoris_iracundus%29_with_bee_%28Apis_ssp%29_prey.jpg",
+  },
+  {
+    slug: "boxelder-bug",
+    name: "Boxelder Bug",
+    category: "Other Bugs",
+    bio: "Black bugs with distinctive red-orange wing markings that congregate in large numbers on sunny walls near boxelder and maple trees in fall.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/51/Eastern_boxelder_bug_%2841288%29.jpg",
+  },
+  {
+    slug: "cave-cricket",
+    name: "Cave Cricket",
+    category: "Other Bugs",
+    bio: "Also called camel crickets — humpbacked, wingless (silent) crickets with very long legs, commonly found in damp basements, crawl spaces, and garages.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/25/Ceuthophilus_stygius_%28camel_cricket%29_inside_entrance_to_Great_Onyx_Cave_%28Flint_Ridge%2C_Mammoth_Cave_National_Park%2C_Kentucky%2C_USA%29_1_%288314214922%29.jpg",
+  },
+  {
+    slug: "chinch-bug",
+    name: "Chinch Bug",
+    category: "Other Bugs",
+    bio: "Small black-and-white true bugs that feed on grass at the soil line, causing irregular yellow-brown patches in lawns that are often mistaken for drought stress.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5d/Hairy_Chinch_Bug_-_Blissus_leucopteru_%2850594763067%29.jpg",
+  },
+  {
+    slug: "earwig",
+    name: "Earwig",
+    category: "Other Bugs",
+    bio: "Reddish-brown insects with prominent pincers (cerci) at the rear of the abdomen, active at night and found in damp mulch, under debris, and occasionally indoors.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0d/%28MHNT%29_Forficula_auricularia_%28female%29.jpg",
+  },
+  {
+    slug: "firebrat",
+    name: "Firebrat",
+    category: "Other Bugs",
+    bio: "Close relatives of silverfish with mottled gray-brown coloring, preferring warmer areas near furnaces, ovens, and attics rather than cool basements.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/26/Firebrat_%28Thermobia_domestica%29.jpg",
+  },
+  {
+    slug: "house-centipede",
+    name: "House Centipede",
+    category: "Other Bugs",
+    bio: "Fast-moving, long-legged arthropods with a yellowish-gray banded body, found in damp areas like basements and bathrooms — actually beneficial predators of other household insects.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Scutigera_coleoptrata_MHNT_.jpg",
+  },
+  {
+    slug: "house-cricket",
+    name: "House Cricket",
+    category: "Other Bugs",
+    bio: "Light brown crickets known for their loud chirping, drawn indoors by warmth and light, and capable of damaging fabric and paper when populations are high.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/86/Acheta-domestica-1.jpg",
+  },
+  {
+    slug: "kissing-bug",
+    name: "Kissing Bug",
+    category: "Other Bugs",
+    bio: "Dark, flat-bodied bugs with red-orange markings on the abdomen edge that feed on blood at night, most concerning as a rare carrier of Chagas disease in southern states.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/f/f5/Eastern_Blood-sucking_Conenose_-_Triatoma_sanguisuga%2C_Woodend_Sanctuary%2C_Chevy_Chase%2C_Maryland.jpg",
+  },
+  {
+    slug: "mealybug",
+    name: "Mealybug",
+    category: "Other Bugs",
+    bio: "Small, soft insects covered in a white, cottony wax coating, clustering in leaf joints and undersides where they feed on plant sap.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/98/Mealybug_PNr%C2%B00443.jpg",
+  },
+  {
+    slug: "millipede",
+    name: "Millipede",
+    category: "Other Bugs",
+    bio: "Cylindrical, dark-colored arthropods with two pairs of legs per body segment that curl into a spiral when disturbed, common in mulch and moist soil, occasionally wandering indoors after heavy rain.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/Harpaphe_haydeniana_0446.JPG",
+  },
+  {
+    slug: "pillbug",
+    name: "Pillbug",
+    category: "Other Bugs",
+    bio: "Gray, segmented crustaceans (not insects) that roll into a tight ball when disturbed, living in moist soil, mulch, and under debris outdoors.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/07/Blue_roly-poly_with_virus.jpg",
+  },
+  {
+    slug: "scale-insect",
+    name: "Scale Insect",
+    category: "Other Bugs",
+    bio: "Small, immobile insects that attach to stems and leaves under a hard or waxy shell-like covering, weakening plants over time by feeding on sap.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/84/Male_Scale_Insect_%28Hemiptera%2C_Sternorrhyncha%2C_Coccoidea%29_%2841746657491%29.jpg",
+  },
+  {
+    slug: "silverfish",
+    name: "Silverfish",
+    category: "Other Bugs",
+    bio: "Wingless, silvery, carrot-shaped insects with a fast, fish-like wiggle, found in damp, dark areas like basements and bathrooms, feeding on paper, glue, and starches.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/a/a7/Lepisma_saccharina_1a.JPG",
+  },
+  {
+    slug: "sowbug",
+    name: "Sowbug",
+    category: "Other Bugs",
+    bio: "Similar to pillbugs but unable to roll into a full ball, these gray crustaceans thrive in damp mulch, under stones, and near foundations with excess moisture.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d5/ConvocationofSowbugs.jpg",
+  },
+  {
+    slug: "spider-mite",
+    name: "Spider Mite",
+    category: "Other Bugs",
+    bio: "Microscopic arachnids that cause fine speckled yellowing on leaves and produce delicate webbing on plants during hot, dry conditions.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Tetranychus_urticae_with_silk_threads.jpg",
+  },
+  {
+    slug: "squash-bug",
+    name: "Squash Bug",
+    category: "Other Bugs",
+    bio: "Flat, brown-gray true bugs that feed on squash and pumpkin vines, causing wilting, and lay distinctive clusters of bronze eggs on the underside of leaves.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Anasa_tristis_gathered_on_a_pumpkin.jpg",
+  },
+  {
+    slug: "stink-bug",
+    name: "Stink Bug",
+    category: "Other Bugs",
+    bio: "Shield-shaped brown bugs that release a pungent odor when disturbed or crushed, and gather on sunny exterior walls in fall seeking a way indoors to overwinter.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/7/71/Halyomorpha_halys_nymph_lab.jpg",
+  },
+  {
+    slug: "whitefly",
+    name: "Whitefly",
+    category: "Other Bugs",
+    bio: "Tiny white, moth-like insects that cluster on the underside of leaves, flying up in a small cloud when disturbed, and weakening plants by feeding on sap.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Whitefly_sp._Aleyrodidae_-_Flickr_-_gailhampshire.jpg",
   },
 ];
+
+export const pestCategories: { name: string; blurb: string }[] = categoryOrder.map((name) => ({
+  name,
+  blurb: categoryMeta[name].blurb,
+}));
 
 export function getPest(slug: string): Pest | undefined {
   return pests.find((p) => p.slug === slug);
 }
 
-export function pestsByCategory(category: PestCategory): Pest[] {
+export function pestsByCategory(category: string): Pest[] {
   return pests.filter((p) => p.category === category);
 }

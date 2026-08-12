@@ -25,6 +25,9 @@ const wixRedirects: { source: string; destination: string }[] = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [{ protocol: "https", hostname: "upload.wikimedia.org" }],
+  },
   async redirects() {
     return [
       ...hardinCities.map((c) => ({
