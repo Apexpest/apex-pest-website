@@ -31,7 +31,7 @@ const teamGroups = [
   {
     section: "Operations",
     members: [
-      { name: "Kameron Owens", role: "Lead Technician", photo: "/team/kameron-owens.jpg", initials: "KO" },
+      { name: "Kameron Owens", role: "Technician", photo: "/team/kameron-owens.jpg", initials: "KO" },
     ],
   },
   {
@@ -43,8 +43,8 @@ const teamGroups = [
   {
     section: "Sales",
     members: [
-      { name: "Vicente Garcia", role: "Sales Manager", photo: "/team/vicente-garcia.jpg", initials: "VG" },
-      { name: "America Pendley", role: "Assistant Sales Manager", photo: "/team/america-pendley.jpg", initials: "AP" },
+      { name: "Vicente Garcia", role: "Sales Representative", photo: "/team/vicente-garcia.jpg", initials: "VG" },
+      { name: "America Pendley", role: "Sales Representative", photo: "/team/america-pendley.jpg", initials: "AP" },
       { name: "Kaiden Morgan", role: "Sales Representative", photo: null, initials: "KM" },
     ],
   },
