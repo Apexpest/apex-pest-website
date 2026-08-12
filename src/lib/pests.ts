@@ -44,7 +44,7 @@ export const categoryMeta: Record<string, CategoryMeta> = {
       "Inspect to identify the species and trace trails back to nests and entry points.",
       "Treat with professional non-repellent products and targeted baits the colony carries back — eliminating the whole nest, not just the ants you see.",
       "Treat the Foundation Line and seal the cracks and gaps ants trail through.",
-      "Re-service on the quarterly Summit Shield schedule, backed by the Apex Promise.",
+      "Re-service on the bimonthly Summit Shield schedule, backed by the Apex Promise.",
     ],
   },
   "Wasps, Bees & Hornets": {

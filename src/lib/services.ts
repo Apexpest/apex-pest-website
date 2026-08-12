@@ -17,7 +17,7 @@ export const services: Service[] = [
     body: [
       "General pest control is the backbone of the Apex Promise. We build the Summit Shield five-point barrier around your home — from the property line to the peak line — and then hold it with scheduled seasonal service tuned to Kentucky's pest calendar.",
       "Every visit is documented in your service record, applied by licensed technicians to product-label directions. If pests show up between scheduled visits, we come back and re-treat at no charge — that's the guarantee, in writing.",
-      "Most homeowners start on our Quarterly plan and never think about pests again. You get the reminders, the arrival texts, and a clear note of exactly what we treated and where.",
+      "Most homeowners start on our Bimonthly plan and never think about pests again. You get the reminders, the arrival texts, and a clear note of exactly what we treated and where.",
     ],
     highlights: [
       "Covers ants, spiders, cockroaches, silverfish, and common invaders",
@@ -138,8 +138,8 @@ export type Plan = {
 
 export const plans: Plan[] = [
   {
-    name: "Quarterly Pest Control",
-    price: "$48",
+    name: "Bimonthly Pest Control",
+    price: "$75",
     cadence: "/month",
     features: [
       "General pests — spiders, cockroaches, ants, rodents and more",
@@ -148,8 +148,8 @@ export const plans: Plan[] = [
     ],
   },
   {
-    name: "Monthly + Mosquito",
-    price: "$70",
+    name: "Bimonthly + Mosquito",
+    price: "$120",
     cadence: "/month",
     features: [
       "All general pests, inside and outside the home",
@@ -160,11 +160,11 @@ export const plans: Plan[] = [
   },
   {
     name: "VIP — Pest, Mosquito & Termite",
-    price: "$125",
+    price: "$150",
     cadence: "/month",
     best: true,
     features: [
-      "Everything in Monthly + Mosquito",
+      "Everything in Bimonthly + Mosquito",
       "Full termite warranty — prevention and elimination",
       "Our best-value complete protection",
       "Free re-services for persistent pests",
