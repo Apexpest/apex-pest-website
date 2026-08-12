@@ -39,7 +39,7 @@ export const services: Service[] = [
     highlights: [
       "Targets breeding and resting sites, not just open lawn",
       "Recurring coverage through mosquito season",
-      "Bundles with the Monthly + Mosquito and VIP plans",
+      "Bundles with the Bimonthly + Mosquito and VIP plans",
     ],
   },
   {
