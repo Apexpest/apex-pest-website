@@ -24,7 +24,7 @@ const pages = [
 const team = [
   { name: "Ben Riches", role: "Founder", photo: "/team/ben-riches.jpg", initials: "BR" },
   { name: "Kameron Owens", role: "Lead Technician", photo: null, initials: "KO" },
-  { name: "Juanita Lomeli", role: "Office Manager", photo: null, initials: "JL" },
+  { name: "Juanita Lomeli", role: "Office Manager", photo: "/team/juanita-lomeli.jpg", initials: "JL" },
   { name: "Vicente Garcia", role: "Sales Manager", photo: "/team/vicente-garcia.jpg", initials: "VG" },
 ];
 
@@ -91,7 +91,7 @@ export default async function ApexStandardHub() {
             ))}
           </div>
           <p className="mx-auto mt-10 max-w-[560px] text-center text-[13.5px] text-[#8a8a80]">
-            Team photos for Kameron and Juanita are on the way — we&apos;ll add them soon.
+            Kameron&apos;s photo is on the way — we&apos;ll add it soon.
           </p>
         </Container>
       </section>
