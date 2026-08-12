@@ -21,11 +21,31 @@ const pages = [
   { title: "Our Team", href: "#team", body: "The licensed, trained technicians who run the Apex Standard on every visit." },
 ];
 
-const team = [
-  { name: "Ben Riches", role: "Founder", photo: "/team/ben-riches.jpg", initials: "BR" },
-  { name: "Kameron Owens", role: "Lead Technician", photo: "/team/kameron-owens.jpg", initials: "KO" },
-  { name: "Juanita Lomeli", role: "Office Manager", photo: "/team/juanita-lomeli.jpg", initials: "JL" },
-  { name: "Vicente Garcia", role: "Sales Manager", photo: "/team/vicente-garcia.jpg", initials: "VG" },
+const teamGroups = [
+  {
+    section: "Management",
+    members: [
+      { name: "Ben Riches", role: "Founder", photo: "/team/ben-riches.jpg", initials: "BR" },
+    ],
+  },
+  {
+    section: "Operations",
+    members: [
+      { name: "Kameron Owens", role: "Lead Technician", photo: "/team/kameron-owens.jpg", initials: "KO" },
+    ],
+  },
+  {
+    section: "Office",
+    members: [
+      { name: "Juanita Lomeli", role: "Office Manager", photo: "/team/juanita-lomeli.jpg", initials: "JL" },
+    ],
+  },
+  {
+    section: "Sales",
+    members: [
+      { name: "Vicente Garcia", role: "Sales Manager", photo: "/team/vicente-garcia.jpg", initials: "VG" },
+    ],
+  },
 ];
 
 export default async function ApexStandardHub() {
@@ -65,27 +85,37 @@ export default async function ApexStandardHub() {
               every visit.
             </p>
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {team.map((m) => (
-              <div key={m.name} className="overflow-hidden rounded-2xl border border-[#e4e1d8] bg-white">
-                {m.photo ? (
-                  <div className="relative aspect-[4/5] w-full">
-                    <Image
-                      src={m.photo}
-                      alt={`${m.name} — ${m.role}, Apex Pest Solutions`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      className="object-cover object-top"
-                    />
-                  </div>
-                ) : (
-                  <div className="flex aspect-[4/5] w-full items-center justify-center bg-[linear-gradient(160deg,#1e4d34,#132d1e)]">
-                    <span className="font-display text-[44px] font-extrabold text-white/90">{m.initials}</span>
-                  </div>
-                )}
-                <div className="p-5">
-                  <h3 className="font-display text-[18px] font-bold text-charcoal">{m.name}</h3>
-                  <p className="mt-1 font-display text-[14px] font-semibold text-apex-green">{m.role}</p>
+          <div className="mt-14 space-y-14">
+            {teamGroups.map((g) => (
+              <div key={g.section}>
+                <div className="mb-6 flex items-center gap-4">
+                  <h3 className="font-display text-[14px] font-bold uppercase tracking-[0.1em] text-apex-green">{g.section}</h3>
+                  <span className="h-px flex-1 bg-[#d8d4c8]" />
+                </div>
+                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                  {g.members.map((m) => (
+                    <div key={m.name} className="overflow-hidden rounded-2xl border border-[#e4e1d8] bg-white">
+                      {m.photo ? (
+                        <div className="relative aspect-[4/5] w-full">
+                          <Image
+                            src={m.photo}
+                            alt={`${m.name} — ${m.role}, Apex Pest Solutions`}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                            className="object-cover object-top"
+                          />
+                        </div>
+                      ) : (
+                        <div className="flex aspect-[4/5] w-full items-center justify-center bg-[linear-gradient(160deg,#1e4d34,#132d1e)]">
+                          <span className="font-display text-[44px] font-extrabold text-white/90">{m.initials}</span>
+                        </div>
+                      )}
+                      <div className="p-5">
+                        <h4 className="font-display text-[18px] font-bold text-charcoal">{m.name}</h4>
+                        <p className="mt-1 font-display text-[14px] font-semibold text-apex-green">{m.role}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             ))}
