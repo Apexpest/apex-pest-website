@@ -44,6 +44,8 @@ const teamGroups = [
     section: "Sales",
     members: [
       { name: "Vicente Garcia", role: "Sales Manager", photo: "/team/vicente-garcia.jpg", initials: "VG" },
+      { name: "America Pendley", role: "Sales Representative", photo: null, initials: "AP" },
+      { name: "Kaiden Morgan", role: "Sales Representative", photo: null, initials: "KM" },
     ],
   },
 ];
