@@ -29,13 +29,12 @@ export default async function PestsHub() {
       <section className="py-[72px]">
         <Container>
           <div className="space-y-4">
-            {categoryOrder.map((cat, ci) => {
+            {categoryOrder.map((cat) => {
               const items = pestsByCategory(cat);
               if (items.length === 0) return null;
               return (
                 <details
                   key={cat}
-                  open={ci === 0}
                   className="group overflow-hidden rounded-2xl border border-[#e4e1d8] bg-white"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-7 py-6 marker:hidden">
